@@ -390,7 +390,7 @@
                 enter <span class="material-symbols-outlined text-sm">arrow_forward</span>
               </button>
               <button class="bg-surface-container-low border-2 border-outline px-6 py-2 font-button-text uppercase tracking-wider shadow-[2px_2px_0px_#82737a] hover:bg-surface-container transition-colors">
-                about us
+                about me
               </button>
             </div>
           </div>
@@ -620,32 +620,38 @@
           <div class="p-3 bg-surface-container flex flex-col justify-center gap-2">
             <p class="font-label-mono text-[9px] text-center text-on-surface-variant">connect with me</p>
             <div class="grid grid-cols-4 gap-2 px-1 w-full justify-items-center">
+              
               <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full" href="mailto:debra.nethania.s@gmail.com">
                 <div class="w-8 h-8 bg-white border border-outline flex items-center justify-center shadow-[2px_2px_0px_#82737a]">
                   <span class="material-symbols-outlined text-primary text-base">mail</span>
                 </div>
                 <span class="font-label-mono text-[7px] mt-1">email</span>
               </a>
-              <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full" href="#">
+              
+              <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full" href="https://github.com/Songyingxiu" target="_blank" rel="noopener noreferrer">
                 <div class="w-8 h-8 bg-white border border-outline flex items-center justify-center shadow-[2px_2px_0px_#82737a]">
                   <span class="material-symbols-outlined text-secondary text-base">terminal</span>
                 </div>
                 <span class="font-label-mono text-[7px] mt-1">github</span>
               </a>
-              <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full" href="#">
+              
+              <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full" href="https://www.linkedin.com/in/debra-stevenson-257109373" target="_blank" rel="noopener noreferrer">
                 <div class="w-8 h-8 bg-white border border-outline flex items-center justify-center shadow-[2px_2px_0px_#82737a]">
                   <span class="material-symbols-outlined text-tertiary text-base">work</span>
                 </div>
                 <span class="font-label-mono text-[7px] mt-1">linkedin</span>
               </a>
-              <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full" href="#">
+              
+              <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full" href="https://github.com/Songyingxiu" target="_blank" rel="noopener noreferrer">
                 <div class="w-8 h-8 bg-white border border-outline flex items-center justify-center shadow-[2px_2px_0px_#82737a]">
                   <span class="material-symbols-outlined text-outline text-base">link</span>
                 </div>
                 <span class="font-label-mono text-[7px] mt-1">links</span>
               </a>
+
             </div>
           </div>
+        </div>
         </div>
         
       </div>
