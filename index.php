@@ -420,15 +420,18 @@
             <span class="bg-secondary-container px-2 py-1 text-xs font-label-mono border border-secondary text-on-secondary-fixed">CI4 + SQA</span>
           </div>
           <p class="font-body-md text-sm text-on-surface-variant mb-4">
-            A robust web platform engineered using CodeIgniter 4. Features intelligent Search API route architectures fully tested with automated Gherkin-style behaviors.
+            Project Lunera, collaboratively developed by myself and my friend, is a secure full-stack content management system and RESTful API designed for organizing Anime streaming media. <br> 
+            Bridging a robust CodeIgniter 4 backend with a Flutter frontend, the platform features a role-based Admin Dashboard for managing catalogs and users, alongside a strictly controlled, read-only public API. <br>
+            Built with a strong focus on Software Quality Assurance (SQA), Lunera implements strict routing firewalls to block unauthorized write requests, dynamic input validations, and secure credential hashing to ensure data integrity, 
+            serving as a practical demonstration of a scalable and highly secure modern web application.
           </p>
           <div class="flex gap-2">
             <button onclick="openLuneraModal()" class="y2k-sticker px-4 py-1 text-sm flex items-center gap-1">
               <span class="material-symbols-outlined text-xs">visibility</span> view case study
             </button>
-            <button class="border border-outline px-4 py-1 text-sm bg-white hover:bg-surface-container-low font-label-mono flex items-center gap-1">
+            <a href="https://github.com/Songyingxiu/lunera" target="_blank" rel="noopener noreferrer" class="border border-outline px-4 py-1 text-sm bg-white hover:bg-surface-container-low font-label-mono flex items-center gap-1 text-on-surface">
               <span class="material-symbols-outlined text-xs">code</span> github repo
-            </button>
+            </a>
           </div>
         </div>
       </div>
