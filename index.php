@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>dollhouse - welcome to my world</title>
+  <title>debra.exe - welcome to my world</title>
   
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com" rel="preconnect" />
@@ -275,7 +275,7 @@
   <header class="fixed w-full z-50 top-0 border-b-2 border-outline bg-surface-container-low shadow-[0_2px_0_rgba(130,115,122,0.2)]">
     <nav class="flex justify-between items-center w-full px-container-padding py-2 max-w-[1440px] mx-auto">
       <div class="font-display-xl text-primary text-3xl italic tracking-tight drop-shadow-[2px_2px_0px_#ffffff]">
-        dollhouse
+        debra.exe
       </div>
       <div class="hidden md:flex items-center gap-6">
         <a class="font-button-text text-button-text text-primary flex flex-col items-center gap-1 hover:text-on-primary-container" href="#home">
@@ -557,7 +557,7 @@
 
       <div class="lg:col-span-4 flex flex-col gap-6">
         
-        <div class="y2k-window">
+        <div class="y2k-window w-full">
           <div class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed">
             <div class="y2k-window-header-title">
               <span class="material-symbols-outlined text-sm">music_note</span>
@@ -569,39 +569,16 @@
               <button class="y2k-control-btn">×</button>
             </div>
           </div>
-          <div class="p-3 bg-surface-container-low">
-            <div class="bg-inverse-surface text-inverse-on-surface p-2 mb-2 border border-outline shadow-[inset_2px_2px_0px_rgba(0,0,0,0.3)]">
-              <div class="flex justify-between items-center mb-1">
-                <span class="font-label-mono text-[8px] uppercase tracking-tighter opacity-70">now playing</span>
-                <span class="material-symbols-outlined text-[10px]">equalizer</span>
-              </div>
-              <div class="font-label-mono truncate">
-                <p class="text-xs text-tertiary-fixed">dreaming.mp3</p>
-              </div>
-              <div class="mt-2">
-                <div class="w-full h-1 bg-surface-variant relative">
-                  <div class="absolute top-0 left-0 h-full w-1/3 bg-tertiary"></div>
-                </div>
-              </div>
-            </div>
-            <div class="flex justify-center items-center gap-1.5">
-              <button class="y2k-control-btn w-6 h-6 flex items-center justify-center">
-                <span class="material-symbols-outlined text-xs">skip_previous</span>
-              </button>
-              <button class="y2k-sticker w-8 h-8 flex items-center justify-center">
-                <span class="material-symbols-outlined text-base">play_arrow</span>
-              </button>
-              <button class="y2k-control-btn w-6 h-6 flex items-center justify-center">
-                <span class="material-symbols-outlined text-xs">pause</span>
-              </button>
-              <button class="y2k-control-btn w-6 h-6 flex items-center justify-center">
-                <span class="material-symbols-outlined text-xs">skip_next</span>
-              </button>
-            </div>
+          <div class="bg-surface-container-low p-2 border-b border-outline">
+             <iframe data-testid="embed-iframe" style="border-radius:0px; border: 1px solid #82737a; box-shadow: inset 2px 2px 0px rgba(0,0,0,0.1);" src="https://open.spotify.com/embed/track/2oBMZYteeO8DyXV9gDx6Za?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+          <div class="bg-surface-container p-1 px-2 flex justify-between items-center text-[9px] font-label-mono text-on-surface-variant">
+             <span>Status: Online</span>
+             <span>Bitrate: 320kbps</span>
           </div>
         </div>
 
-        <div class="y2k-window" id="calendar-app">
+        <div class="y2k-window w-full" id="calendar-app">
           <div class="y2k-window-header bg-gradient-to-r from-primary-container to-secondary-container">
             <div class="y2k-window-header-title">
               <span class="material-symbols-outlined text-sm">calendar_today</span>
@@ -619,7 +596,7 @@
               <p id="cal-day-number" class="font-display-xl text-4xl text-primary mt-1 drop-shadow-[1px_1px_0px_#ffb7e1]">...</p>
               <p id="cal-day-name" class="font-label-mono text-xs text-secondary mt-1">...</p>
             </div>
-            <div class="grid grid-cols-7 gap-1 text-[8px] font-label-mono text-on-surface-variant">
+            <div class="grid grid-cols-7 gap-1 text-[8px] font-label-mono text-on-surface-variant w-full">
               <div>S</div><div>M</div><div>T</div><div>W</div><div class="text-primary font-bold">T</div><div>F</div><div>S</div>
             </div>
             <div class="w-full h-[2px] bg-outline-variant my-1"></div>
@@ -627,7 +604,7 @@
           </div>
         </div>
 
-        <div class="y2k-window" id="contact">
+        <div class="y2k-window w-full" id="contact">
           <div class="y2k-window-header bg-gradient-to-r from-primary-container to-primary-fixed">
             <div class="y2k-window-header-title">
               <span class="material-symbols-outlined text-sm">mail</span>
@@ -639,30 +616,30 @@
           </div>
           <div class="p-3 bg-surface-container flex flex-col justify-center gap-2">
             <p class="font-label-mono text-[9px] text-center text-on-surface-variant">connect with me</p>
-            <div class="grid grid-cols-4 gap-2 px-1">
-              <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform" href="mailto:debra.nethania.s@gmail.com">
+            <div class="grid grid-cols-4 gap-2 px-1 w-full justify-items-center">
+              <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full" href="mailto:debra.nethania.s@gmail.com">
                 <div class="w-8 h-8 bg-white border border-outline flex items-center justify-center shadow-[2px_2px_0px_#82737a]">
                   <span class="material-symbols-outlined text-primary text-base">mail</span>
                 </div>
-                <span class="font-label-mono text-[7px]">email</span>
+                <span class="font-label-mono text-[7px] mt-1">email</span>
               </a>
-              <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform" href="#">
+              <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full" href="#">
                 <div class="w-8 h-8 bg-white border border-outline flex items-center justify-center shadow-[2px_2px_0px_#82737a]">
                   <span class="material-symbols-outlined text-secondary text-base">terminal</span>
                 </div>
-                <span class="font-label-mono text-[7px]">github</span>
+                <span class="font-label-mono text-[7px] mt-1">github</span>
               </a>
-              <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform" href="#">
+              <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full" href="#">
                 <div class="w-8 h-8 bg-white border border-outline flex items-center justify-center shadow-[2px_2px_0px_#82737a]">
                   <span class="material-symbols-outlined text-tertiary text-base">work</span>
                 </div>
-                <span class="font-label-mono text-[7px]">linkedin</span>
+                <span class="font-label-mono text-[7px] mt-1">linkedin</span>
               </a>
-              <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform" href="#">
+              <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full" href="#">
                 <div class="w-8 h-8 bg-white border border-outline flex items-center justify-center shadow-[2px_2px_0px_#82737a]">
                   <span class="material-symbols-outlined text-outline text-base">link</span>
                 </div>
-                <span class="font-label-mono text-[7px]">links</span>
+                <span class="font-label-mono text-[7px] mt-1">links</span>
               </a>
             </div>
           </div>
