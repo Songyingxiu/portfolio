@@ -339,7 +339,7 @@
 
     .floating-element {
       animation: float 6s ease-in-out infinite;
-      position: absolute;
+      position: fixed; /* FIXED SO THEY ALWAYS SHOW WHEN SCROLLING! */
       z-index: 0;
       pointer-events: none;
     }
@@ -376,20 +376,95 @@
 </head>
 <body class="font-body-md text-body-md text-on-surface min-h-screen flex flex-col pt-[60px] pb-[40px] relative overflow-x-hidden">
 
-  <div class="floating-element top-20 left-10 text-primary-container">
+  <div class="floating-element top-[10%] left-[5%] text-primary-container" style="animation-delay: 0s;">
     <span class="material-symbols-outlined" style="font-size: 48px;">star</span>
   </div>
-  <div class="floating-element top-40 right-20 text-secondary-container" style="animation-delay: 1s;">
+  <div class="floating-element top-[15%] right-[10%] text-secondary-container" style="animation-delay: 1s;">
     <span class="material-symbols-outlined" style="font-size: 32px;">auto_awesome</span>
   </div>
-  <div class="floating-element top-1/2 left-5 text-tertiary-container" style="animation-delay: 2s;">
+  <div class="floating-element top-[30%] left-[15%] text-tertiary-container" style="animation-delay: 2s;">
     <span class="material-symbols-outlined" style="font-size: 40px;">favorite</span>
   </div>
-  <div class="floating-element bottom-40 right-10 text-primary-fixed" style="animation-delay: 1.5s;">
+  <div class="floating-element top-[40%] right-[5%] text-primary-fixed" style="animation-delay: 1.5s;">
     <span class="material-symbols-outlined" style="font-size: 56px;">star</span>
   </div>
-  <div class="floating-element bottom-20 left-1/4 text-secondary-fixed" style="animation-delay: 0.5s;">
+  <div class="floating-element top-[60%] left-[25%] text-secondary-fixed" style="animation-delay: 0.5s;">
     <span class="material-symbols-outlined" style="font-size: 36px;">filter_vintage</span>
+  </div>
+  <div class="floating-element bottom-[20%] right-[15%] text-primary-container" style="animation-delay: 2.5s;">
+    <span class="material-symbols-outlined" style="font-size: 42px;">favorite</span>
+  </div>
+  <div class="floating-element bottom-[10%] left-[10%] text-tertiary-container" style="animation-delay: 1.2s;">
+    <span class="material-symbols-outlined" style="font-size: 50px;">music_note</span>
+  </div>
+  <div class="floating-element top-[20%] left-[40%] text-outline-variant opacity-50" style="animation-delay: 3s;">
+    <span class="material-symbols-outlined" style="font-size: 24px;">cruelty_free</span>
+  </div>
+  <div class="floating-element top-[70%] right-[30%] text-secondary-container opacity-70" style="animation-delay: 0.8s;">
+    <span class="material-symbols-outlined" style="font-size: 38px;">local_cafe</span>
+  </div>
+  <div class="floating-element top-[50%] left-[5%] text-primary-fixed-dim" style="animation-delay: 1.8s;">
+    <span class="material-symbols-outlined" style="font-size: 30px;">mood</span>
+  </div>
+  <div class="floating-element bottom-[30%] left-[45%] text-secondary-fixed-dim" style="animation-delay: 2.2s;">
+    <span class="material-symbols-outlined" style="font-size: 28px;">bolt</span>
+  </div>
+  <div class="floating-element top-[5%] left-[60%] text-tertiary-fixed-dim" style="animation-delay: 0.3s;">
+    <span class="material-symbols-outlined" style="font-size: 35px;">auto_awesome</span>
+  </div>
+  <div class="floating-element top-[80%] left-[50%] text-primary opacity-40" style="animation-delay: 4s;">
+    <span class="material-symbols-outlined" style="font-size: 20px;">water_drop</span>
+  </div>
+  <div class="floating-element top-[25%] right-[25%] text-secondary opacity-30" style="animation-delay: 2.7s;">
+    <span class="material-symbols-outlined" style="font-size: 45px;">code</span>
+  </div>
+  <div class="floating-element bottom-[15%] right-[40%] text-tertiary opacity-50" style="animation-delay: 1.1s;">
+    <span class="material-symbols-outlined" style="font-size: 33px;">pets</span>
+  </div>
+  <div class="floating-element top-[45%] left-[80%] text-[#ffffa5] opacity-60" style="animation-delay: 3.5s;">
+    <span class="material-symbols-outlined" style="font-size: 26px;">cake</span>
+  </div>
+  <div class="floating-element top-[8%] right-[45%] text-primary-container opacity-80" style="animation-delay: 0.7s;">
+    <span class="material-symbols-outlined" style="font-size: 18px;">favorite</span>
+  </div>
+  <div class="floating-element bottom-[5%] right-[2%] text-secondary-container opacity-40" style="animation-delay: 4.2s;">
+    <span class="material-symbols-outlined" style="font-size: 64px;">star</span>
+  </div>
+  <div class="floating-element top-[55%] right-[15%] text-tertiary-container opacity-60" style="animation-delay: 1.9s;">
+    <span class="material-symbols-outlined" style="font-size: 22px;">filter_vintage</span>
+  </div>
+  <div class="floating-element top-[35%] left-[30%] text-primary-fixed opacity-70" style="animation-delay: 2.1s;">
+    <span class="material-symbols-outlined" style="font-size: 30px;">music_note</span>
+  </div>
+  <div class="floating-element bottom-[40%] right-[50%] text-secondary-fixed opacity-50" style="animation-delay: 3.8s;">
+    <span class="material-symbols-outlined" style="font-size: 40px;">auto_awesome</span>
+  </div>
+  <div class="floating-element top-[85%] left-[20%] text-tertiary-fixed opacity-30" style="animation-delay: 0.6s;">
+    <span class="material-symbols-outlined" style="font-size: 55px;">mood</span>
+  </div>
+  <div class="floating-element top-[12%] left-[25%] text-primary-fixed-dim opacity-60" style="animation-delay: 4.5s;">
+    <span class="material-symbols-outlined" style="font-size: 25px;">local_cafe</span>
+  </div>
+  <div class="floating-element bottom-[25%] left-[70%] text-secondary-fixed-dim opacity-40" style="animation-delay: 1.4s;">
+    <span class="material-symbols-outlined" style="font-size: 48px;">cruelty_free</span>
+  </div>
+  <div class="floating-element top-[65%] right-[5%] text-tertiary-fixed-dim opacity-70" style="animation-delay: 2.9s;">
+    <span class="material-symbols-outlined" style="font-size: 34px;">bolt</span>
+  </div>
+  <div class="floating-element top-[75%] left-[35%] text-outline-variant opacity-50" style="animation-delay: 3.2s;">
+    <span class="material-symbols-outlined" style="font-size: 28px;">terminal</span>
+  </div>
+  <div class="floating-element bottom-[45%] left-[10%] text-primary-container opacity-90" style="animation-delay: 0.2s;">
+    <span class="material-symbols-outlined" style="font-size: 20px;">star</span>
+  </div>
+  <div class="floating-element top-[5%] left-[85%] text-secondary-container opacity-50" style="animation-delay: 4.8s;">
+    <span class="material-symbols-outlined" style="font-size: 36px;">favorite</span>
+  </div>
+  <div class="floating-element bottom-[50%] right-[20%] text-tertiary-container opacity-20" style="animation-delay: 1.6s;">
+    <span class="material-symbols-outlined" style="font-size: 50px;">code</span>
+  </div>
+  <div class="floating-element top-[90%] right-[80%] text-[#ffffa5] opacity-80" style="animation-delay: 3.1s;">
+    <span class="material-symbols-outlined" style="font-size: 26px;">auto_awesome</span>
   </div>
 
   <header class="fixed w-full z-50 top-0 border-b-2 border-outline bg-surface-container-low shadow-[0_2px_0_rgba(130,115,122,0.2)]">
@@ -530,7 +605,7 @@
         </div>
         <div class="p-6 bg-surface">
           <div class="aspect-video bg-surface-container-high border border-outline mb-4 flex items-center justify-center overflow-hidden">
-              <img alt="Screenshot of Lunera Project Search API" class="w-full h-full object-cover" src="assets/lunera-search.png" />
+              <img alt="Screenshot of Lunera Project" class="w-full h-full object-cover" src="assets/lunera-search.png" />
           </div>
           <div class="flex justify-between items-start mb-2">
             <h3 class="font-headline-lg-mobile text-xl text-primary">Project Lunera</h3>
@@ -553,21 +628,21 @@
 
       <div class="y2k-window transition-all duration-200 bg-surface-container-low h-[600px] lg:h-auto" id="resume-window" style="display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 100%; min-height: 500px;">
         
-        <div class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed flex-none shrink-0 min-h-[32px]">
+        <div class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed w-full">
           <div class="y2k-window-header-title">
             <span class="material-symbols-outlined text-sm">description</span>
             <span class="font-label-mono text-label-mono text-on-surface">resume.pdf</span>
           </div>
           <div class="y2k-controls">
-            <button class="y2k-control-btn font-bold" onclick="minimizeResume()" title="Restore Down">_</button>
-            <button class="y2k-control-btn font-bold" onclick="maximizeResume()" title="Maximize">□</button>
-            <button class="y2k-control-btn font-bold">×</button>
+            <button class="y2k-control-btn" onclick="minimizeResume()" title="Restore Down">_</button>
+            <button class="y2k-control-btn" onclick="maximizeResume()" title="Maximize">□</button>
+            <button class="y2k-control-btn">×</button>
           </div>
         </div>
         
-        <div class="flex-1 min-h-0 overflow-y-auto custom-scroll p-4 sm:p-6 flex flex-col items-center w-full">
+        <div class="w-full overflow-y-auto custom-scroll p-4 sm:p-6 flex justify-center">
           
-          <div class="w-full max-w-2xl bg-white border border-outline shadow-md p-4 sm:p-6 font-label-mono text-on-surface shrink-0 cv-container">
+          <div class="w-full max-w-2xl bg-white border border-outline shadow-md p-4 sm:p-6 font-label-mono text-on-surface h-max cv-container">
             <div class="text-center border-b-2 border-outline pb-2 cv-header">
               <h1 class="text-[10px] font-bold text-primary cv-title">DEBRA NETHANIA STEVENSON</h1>
               <p class="text-[6px] mt-1 text-on-surface-variant cv-subtitle">debra.nethania.s@gmail.com | Jakarta, ID</p>
@@ -641,7 +716,7 @@
           </div>
         </div>
 
-        <div class="flex-none shrink-0 w-full p-4 flex justify-center bg-surface-container-low border-t border-outline/20">
+        <div class="w-full p-4 flex justify-center items-center bg-surface-container-low border-t border-outline/20">
           <a href="assets/Debra_Stevenson_CV.pdf" download="Debra_Stevenson_CV.pdf" class="y2k-sticker px-6 py-2 flex items-center gap-2 w-3/4 max-w-sm justify-center text-on-surface hover:text-on-surface">
             <span class="material-symbols-outlined">download</span>
             DOWNLOAD CV
