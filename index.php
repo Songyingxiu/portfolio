@@ -100,6 +100,33 @@
   </script>
   
   <script>
+    // --- SEARCH ENGINE LOGIC ---
+    function performSearch() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      if (!query) return;
+
+      if (query.includes('resume') || query.includes('cv')) {
+        document.getElementById('resume-window').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else if (query.includes('about') || query.includes('profile')) {
+        openAboutModal();
+      } else if (query.includes('skill')) {
+        openSkillsModal();
+      } else if (query.includes('project') || query.includes('portfolio') || query.includes('work')) {
+        document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+      } else if (query.includes('contact') || query.includes('email') || query.includes('github') || query.includes('linkedin')) {
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else if (query.includes('music') || query.includes('spotify')) {
+        document.getElementById('music-player').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else if (query.includes('calendar') || query.includes('date')) {
+        document.getElementById('calendar-app').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        alert("Error 404: File not found for '" + query + ".exe'");
+      }
+      
+      // Clear the input after searching
+      document.getElementById('searchInput').value = '';
+    }
+
     // --- GENERIC DYNAMIC MODAL LOGIC (ADDED FOR PROJECTS) ---
     function openModal(modalId) {
       document.getElementById(modalId).classList.remove('hidden');
@@ -179,6 +206,13 @@
     window.onload = function() {
       updateTimeAndDate();
       setInterval(updateTimeAndDate, 1000);
+
+      // Listen for the "Enter" key on the search bar
+      document.getElementById('searchInput').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+          performSearch();
+        }
+      });
     };
   </script>
   
@@ -382,10 +416,10 @@
       </div>
       <div class="flex items-center gap-2">
         <div class="relative bg-white border border-outline flex items-center px-2 py-1">
-          <input class="border-none outline-none text-sm w-32 focus:ring-0 p-0" placeholder="search..." type="text" />
+          <input id="searchInput" class="border-none outline-none text-sm w-32 focus:ring-0 p-0" placeholder="search..." type="text" />
           <span class="material-symbols-outlined text-sm text-outline">search</span>
         </div>
-        <button class="y2k-sticker p-1 flex items-center justify-center">
+        <button onclick="performSearch()" class="y2k-sticker p-1 flex items-center justify-center">
           <span class="material-symbols-outlined text-sm">search</span>
         </button>
       </div>
@@ -443,8 +477,8 @@
         </div>
       </div>
 
-      <div class="lg:col-span-9">
-        <div class="y2k-window h-full">
+      <div class="lg:col-span-9 flex flex-col justify-center">
+        <div class="y2k-window w-full lg:w-5/6 mx-auto shadow-[8px_8px_0px_rgba(130,115,122,0.2)]">
           <div class="y2k-window-header">
             <div class="y2k-window-header-title">
               <span class="material-symbols-outlined text-sm">terminal</span>
@@ -456,17 +490,20 @@
               <button class="y2k-control-btn">×</button>
             </div>
           </div>
-          <div class="p-8 md:p-12 flex flex-col items-center justify-center text-center gap-6 h-full relative overflow-hidden bg-white/50">
+          <div class="p-6 md:p-8 flex flex-col items-center justify-center text-center gap-4 relative overflow-hidden bg-white/50">
             <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#854b70 1px, transparent 1px); background-size: 20px 20px;"></div>
-            <h1 class="font-display-xl text-4xl md:text-6xl text-primary drop-shadow-[3px_3px_0px_#ffb7e1] relative z-10">
+            
+            <h1 class="font-display-xl text-3xl md:text-5xl text-primary drop-shadow-[2px_2px_0px_#ffb7e1] relative z-10 leading-tight">
               HELLO, I'M <br> DEBRA STEVENSON
             </h1>
-            <p class="font-label-mono text-base md:text-lg text-on-surface-variant max-w-lg relative z-10 bg-white/80 p-4 border border-outline border-dashed">
+            
+            <p class="font-label-mono text-sm text-on-surface-variant max-w-md relative z-10 bg-white/80 p-4 border border-outline border-dashed">
               I am an Information Technology student at CCIT FTUI and Asia E University, dedicated to bridging the gap between robust backend architecture and intuitive UI/UX design.
               I leverage tools like CodeIgniter 4, Spring Boot, and Flutter to build scalable applications while ensuring top-tier performance through rigorous automated testing. 𑣲⋆
             </p>
-            <div class="flex gap-4 mt-4 relative z-10">
-              <a href="#projects" class="y2k-sticker font-button-text text-button-text px-8 py-2 rounded-none uppercase tracking-wider flex items-center gap-2 text-on-surface hover:text-on-surface">
+            
+            <div class="flex gap-4 mt-2 relative z-10">
+              <a href="#projects" class="y2k-sticker font-button-text text-button-text px-6 py-2 rounded-none uppercase tracking-wider flex items-center gap-2 text-on-surface hover:text-on-surface">
                 enter <span class="material-symbols-outlined text-sm">arrow_forward</span>
               </a>
               <button onclick="openModal('aboutModal')" class="bg-surface-container-low border-2 border-outline px-6 py-2 font-button-text uppercase tracking-wider shadow-[2px_2px_0px_#82737a] hover:bg-surface-container transition-colors">
@@ -493,7 +530,7 @@
         </div>
         <div class="p-6 bg-surface">
           <div class="aspect-video bg-surface-container-high border border-outline mb-4 flex items-center justify-center overflow-hidden">
-              <img alt="Screenshot of Lunera Project" class="w-full h-full object-cover" src="assets/lunera-search.png" />
+              <img alt="Screenshot of Lunera Project Search API" class="w-full h-full object-cover" src="assets/lunera-search.png" />
           </div>
           <div class="flex justify-between items-start mb-2">
             <h3 class="font-headline-lg-mobile text-xl text-primary">Project Lunera</h3>
@@ -514,23 +551,23 @@
         </div>
       </div>
 
-      <div class="y2k-window transition-all duration-200 bg-surface-container-low" id="resume-window" style="display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 100%; min-height: 500px;">
+      <div class="y2k-window transition-all duration-200 bg-surface-container-low h-[600px] lg:h-auto" id="resume-window" style="display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 100%; min-height: 500px;">
         
-        <div class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed w-full">
+        <div class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed flex-none shrink-0 min-h-[32px]">
           <div class="y2k-window-header-title">
             <span class="material-symbols-outlined text-sm">description</span>
             <span class="font-label-mono text-label-mono text-on-surface">resume.pdf</span>
           </div>
           <div class="y2k-controls">
-            <button class="y2k-control-btn" onclick="minimizeResume()" title="Restore Down">_</button>
-            <button class="y2k-control-btn" onclick="maximizeResume()" title="Maximize">□</button>
-            <button class="y2k-control-btn">×</button>
+            <button class="y2k-control-btn font-bold" onclick="minimizeResume()" title="Restore Down">_</button>
+            <button class="y2k-control-btn font-bold" onclick="maximizeResume()" title="Maximize">□</button>
+            <button class="y2k-control-btn font-bold">×</button>
           </div>
         </div>
         
-        <div class="w-full overflow-y-auto custom-scroll p-4 sm:p-6 flex justify-center">
+        <div class="flex-1 min-h-0 overflow-y-auto custom-scroll p-4 sm:p-6 flex flex-col items-center w-full">
           
-          <div class="w-full max-w-2xl bg-white border border-outline shadow-md p-4 sm:p-6 font-label-mono text-on-surface h-max cv-container">
+          <div class="w-full max-w-2xl bg-white border border-outline shadow-md p-4 sm:p-6 font-label-mono text-on-surface shrink-0 cv-container">
             <div class="text-center border-b-2 border-outline pb-2 cv-header">
               <h1 class="text-[10px] font-bold text-primary cv-title">DEBRA NETHANIA STEVENSON</h1>
               <p class="text-[6px] mt-1 text-on-surface-variant cv-subtitle">debra.nethania.s@gmail.com | Jakarta, ID</p>
@@ -604,7 +641,7 @@
           </div>
         </div>
 
-        <div class="w-full p-4 flex justify-center items-center bg-surface-container-low border-t border-outline/20">
+        <div class="flex-none shrink-0 w-full p-4 flex justify-center bg-surface-container-low border-t border-outline/20">
           <a href="assets/Debra_Stevenson_CV.pdf" download="Debra_Stevenson_CV.pdf" class="y2k-sticker px-6 py-2 flex items-center gap-2 w-3/4 max-w-sm justify-center text-on-surface hover:text-on-surface">
             <span class="material-symbols-outlined">download</span>
             DOWNLOAD CV
@@ -754,7 +791,7 @@
 
       <div class="lg:col-span-4 flex flex-col gap-6">
         
-        <div class="y2k-window w-full">
+        <div class="y2k-window w-full" id="music-player">
           <div class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed">
             <div class="y2k-window-header-title">
               <span class="material-symbols-outlined text-sm">music_note</span>
