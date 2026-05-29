@@ -657,34 +657,39 @@
             </div>
           </div>
           <div class="p-6 bg-surface-container-highest flex gap-6 overflow-x-auto custom-scroll border-t border-outline/30 items-center min-h-[220px]">
+            
             <div class="min-w-[150px] bg-white p-3 pb-8 border border-outline shadow-[4px_4px_0px_rgba(130,115,122,0.3)] transform rotate-[-3deg] hover:rotate-0 hover:-translate-y-2 transition-all cursor-pointer">
-              <div class="aspect-square bg-primary-container mb-3 border border-outline border-dashed flex items-center justify-center opacity-90">
-                <span class="material-symbols-outlined text-primary text-5xl">event_available</span>
+              <div class="aspect-square bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-90">
+                <img alt="Head of Dept" class="w-full h-full object-cover" src="assets/org1.jpg" onerror="this.src='https://placehold.co/400x400/ffb7e1/7c4468?text=Photo+1'" />
               </div>
-              <p class="font-label-mono text-xs text-center text-on-surface font-bold">Event Coordinator</p>
-              <p class="font-label-mono text-[10px] text-center text-on-surface-variant mt-1">Tech Club '22</p>
+              <p class="font-label-mono text-xs text-center text-on-surface font-bold">Head of Dept</p>
+              <p class="font-label-mono text-[9px] text-center text-on-surface-variant mt-1">Student Advocacy</p>
             </div>
+
             <div class="min-w-[150px] bg-white p-3 pb-8 border border-outline shadow-[4px_4px_0px_rgba(130,115,122,0.3)] transform rotate-[4deg] hover:rotate-0 hover:-translate-y-2 transition-all cursor-pointer">
-              <div class="aspect-square bg-secondary-container mb-3 border border-outline border-dashed flex items-center justify-center opacity-90">
-                <span class="material-symbols-outlined text-secondary text-5xl">brush</span>
+              <div class="aspect-square bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-90">
+                <img alt="Head of Publication" class="w-full h-full object-cover" src="assets/PDD.jpeg" onerror="this.src='https://placehold.co/400x400/c2b0fd/504084?text=Photo+2'" />
               </div>
-              <p class="font-label-mono text-xs text-center text-on-surface font-bold">Design Lead</p>
-              <p class="font-label-mono text-[10px] text-center text-on-surface-variant mt-1">Creative Collective</p>
+              <p class="font-label-mono text-xs text-center text-on-surface font-bold">Head of Publication</p>
+              <p class="font-label-mono text-[9px] text-center text-on-surface-variant mt-1">PEMIRA CSS</p>
             </div>
+
             <div class="min-w-[150px] bg-white p-3 pb-8 border border-outline shadow-[4px_4px_0px_rgba(130,115,122,0.3)] transform rotate-[-2deg] hover:rotate-0 hover:-translate-y-2 transition-all cursor-pointer">
-              <div class="aspect-square bg-tertiary-container mb-3 border border-outline border-dashed flex items-center justify-center opacity-90">
-                <span class="material-symbols-outlined text-tertiary text-5xl">campaign</span>
+              <div class="aspect-square bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-90">
+                <img alt="Head of Medics" class="w-full h-full object-cover" src="assets/medic.jpeg" onerror="this.src='https://placehold.co/400x400/a3d7c5/2d5f50?text=Photo+3'" />
               </div>
-              <p class="font-label-mono text-xs text-center text-on-surface font-bold">PR Manager</p>
-              <p class="font-label-mono text-[10px] text-center text-on-surface-variant mt-1">Student Union</p>
+              <p class="font-label-mono text-xs text-center text-on-surface font-bold">Head of Medics</p>
+              <p class="font-label-mono text-[9px] text-center text-on-surface-variant mt-1">CCIT Induction Days 2025</p>
             </div>
+
             <div class="min-w-[150px] bg-white p-3 pb-8 border border-outline shadow-[4px_4px_0px_rgba(130,115,122,0.3)] transform rotate-[2deg] hover:rotate-0 hover:-translate-y-2 transition-all cursor-pointer">
-              <div class="aspect-square bg-surface-variant mb-3 border border-outline border-dashed flex items-center justify-center opacity-90">
-                <span class="material-symbols-outlined text-outline text-5xl">group</span>
+              <div class="aspect-square bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-90">
+                <img alt="Staff Art & Culture" class="w-full h-full object-cover" src="assets/staff.jpeg" onerror="this.src='https://placehold.co/400x400/e1e2e7/50434a?text=Photo+4'" />
               </div>
-              <p class="font-label-mono text-xs text-center text-on-surface font-bold">Mentor</p>
-              <p class="font-label-mono text-[10px] text-center text-on-surface-variant mt-1">Freshman Welcome</p>
+              <p class="font-label-mono text-xs text-center text-on-surface font-bold">Staff</p>
+              <p class="font-label-mono text-[9px] text-center text-on-surface-variant mt-1">Art & Culture</p>
             </div>
+            
           </div>
         </div>
       </div>
