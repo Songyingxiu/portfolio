@@ -168,6 +168,14 @@
       document.getElementById('skillsModal').classList.add('hidden');
     }
 
+    // --- RESUME MAXIMIZE & MINIMIZE LOGIC ---
+    function maximizeResume() {
+      document.getElementById('resume-window').classList.add('y2k-maximized');
+    }
+    function minimizeResume() {
+      document.getElementById('resume-window').classList.remove('y2k-maximized');
+    }
+
     window.onload = function() {
       updateTimeAndDate();
       setInterval(updateTimeAndDate, 1000);
@@ -191,6 +199,61 @@
       box-shadow: 4px 4px 0px rgba(130, 115, 122, 0.2);
       border-radius: 0;
       overflow: hidden;
+    }
+
+    /* BULLETPROOF CSS FOR MAXIMIZING THE RESUME */
+    .y2k-maximized {
+      position: fixed !important;
+      top: 80px !important; /* Locks safely below the top Navigation Tabs */
+      left: 20px !important; /* Leaves a preview gap on the sides */
+      right: 20px !important;
+      bottom: 60px !important; /* Locks safely above the bottom Taskbar */
+      width: auto !important;
+      height: auto !important;
+      z-index: 40 !important; /* Slides perfectly underneath the nav tabs (z-50) */
+      margin: 0 !important;
+      border: 2px solid #82737a !important; 
+      /* This massive shadow dims the background portfolio slightly without hiding the top/bottom bars! */
+      box-shadow: 0 0 0 100vmax rgba(25, 28, 31, 0.5), 8px 8px 0px rgba(130, 115, 122, 0.4) !important;
+    }
+
+    /* DYNAMIC CV TEXT SCALING FOR MAXIMIZED VIEW */
+    .y2k-maximized .cv-container {
+      max-width: 800px !important;
+      padding: 48px !important;
+    }
+    .y2k-maximized .cv-title {
+      font-size: 28px !important;
+      line-height: 36px !important;
+    }
+    .y2k-maximized .cv-subtitle {
+      font-size: 14px !important;
+      line-height: 20px !important;
+      margin-top: 8px !important;
+    }
+    .y2k-maximized .cv-header {
+      padding-bottom: 24px !important;
+    }
+    .y2k-maximized .cv-section {
+      margin-top: 24px !important;
+    }
+    .y2k-maximized .cv-heading {
+      font-size: 16px !important;
+      padding: 4px 8px !important;
+      margin-bottom: 12px !important;
+    }
+    .y2k-maximized .cv-text {
+      font-size: 14px !important;
+      line-height: 24px !important;
+    }
+    .y2k-maximized .cv-list {
+      padding-left: 24px !important;
+    }
+    .y2k-maximized .cv-list > li {
+      margin-bottom: 8px !important;
+    }
+    .y2k-maximized .cv-sub-section {
+      margin-bottom: 16px !important;
     }
 
     .y2k-window-header {
@@ -302,24 +365,19 @@
       </div>
       <div class="hidden md:flex items-center gap-6">
         <a class="font-button-text text-button-text text-primary flex flex-col items-center gap-1 hover:text-on-primary-container" href="#home">
-          <span class="material-symbols-outlined text-xl">home</span>
-          home
+          <span class="material-symbols-outlined text-xl">home</span> home
         </a>
-        <a class="font-button-text text-button-text text-on-surface-variant flex flex-col items-center gap-1 hover:text-primary" href="#about">
-          <span class="material-symbols-outlined text-xl">favorite</span>
-          about
-        </a>
+        <button onclick="openModal('aboutModal')" class="font-button-text text-button-text text-on-surface-variant flex flex-col items-center gap-1 hover:text-primary">
+          <span class="material-symbols-outlined text-xl">favorite</span> about
+        </button>
         <a class="font-button-text text-button-text text-on-surface-variant flex flex-col items-center gap-1 hover:text-primary" href="#projects">
-          <span class="material-symbols-outlined text-xl">folder</span>
-          projects
+          <span class="material-symbols-outlined text-xl">folder</span> projects
         </a>
-        <a class="font-button-text text-button-text text-on-surface-variant flex flex-col items-center gap-1 hover:text-primary" href="#skills">
-          <span class="material-symbols-outlined text-xl">star</span>
-          skills
-        </a>
+        <button onclick="openModal('skillsModal')" class="font-button-text text-button-text text-on-surface-variant flex flex-col items-center gap-1 hover:text-primary">
+          <span class="material-symbols-outlined text-xl">star</span> skills
+        </button>
         <a class="font-button-text text-button-text text-on-surface-variant flex flex-col items-center gap-1 hover:text-primary" href="#contact">
-          <span class="material-symbols-outlined text-xl">mail</span>
-          contact
+          <span class="material-symbols-outlined text-xl">mail</span> contact
         </a>
       </div>
       <div class="flex items-center gap-2">
@@ -352,18 +410,18 @@
           </div>
           <div class="p-4 flex flex-col items-center gap-4 bg-surface-container-low">
             <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-primary bg-surface-container shadow-[2px_2px_0px_#854b70]">
-              <img alt="Profile Picture" class="w-full h-full object-cover" src="assets/profile3.jpeg" />
+              <img alt="Profile Picture" class="w-full h-full object-cover" src="assets/profile3.jpeg" onerror="this.src='https://placehold.co/400x400/ffb7e1/7c4468?text=Photo'" />
             </div>
             <div class="text-center">
               <h2 class="font-headline-lg-mobile text-xl text-primary">Debra Stevenson</h2>
               <p class="font-label-mono text-label-mono text-on-surface-variant mt-1">status: trying my best...</p>
             </div>
             <div class="w-full border-t border-outline border-dashed pt-4 flex flex-col gap-2">
-              <button onclick="openAboutModal()" class="w-full flex justify-between items-center text-sm font-label-mono hover:text-primary hover:bg-primary-container/20 px-2 py-1 cursor-pointer">
+              <button onclick="openModal('aboutModal')" class="w-full flex justify-between items-center text-sm font-label-mono hover:text-primary hover:bg-primary-container/20 px-2 py-1 cursor-pointer">
                 <span class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">favorite</span> about me</span>
                 <span>></span>
               </button>
-              <button onclick="openSkillsModal()" class="w-full flex justify-between items-center text-sm font-label-mono hover:text-primary hover:bg-primary-container/20 px-2 py-1 cursor-pointer">
+              <button onclick="openModal('skillsModal')" class="w-full flex justify-between items-center text-sm font-label-mono hover:text-primary hover:bg-primary-container/20 px-2 py-1 cursor-pointer">
                 <span class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">star</span> skills</span>
                 <span>></span>
               </button>
@@ -408,10 +466,10 @@
               I leverage tools like CodeIgniter 4, Spring Boot, and Flutter to build scalable applications while ensuring top-tier performance through rigorous automated testing. 𑣲⋆
             </p>
             <div class="flex gap-4 mt-4 relative z-10">
-              <button class="y2k-sticker font-button-text text-button-text px-8 py-2 rounded-none uppercase tracking-wider flex items-center gap-2">
+              <a href="#projects" class="y2k-sticker font-button-text text-button-text px-8 py-2 rounded-none uppercase tracking-wider flex items-center gap-2 text-on-surface hover:text-on-surface">
                 enter <span class="material-symbols-outlined text-sm">arrow_forward</span>
-              </button>
-              <button class="bg-surface-container-low border-2 border-outline px-6 py-2 font-button-text uppercase tracking-wider shadow-[2px_2px_0px_#82737a] hover:bg-surface-container transition-colors">
+              </a>
+              <button onclick="openModal('aboutModal')" class="bg-surface-container-low border-2 border-outline px-6 py-2 font-button-text uppercase tracking-wider shadow-[2px_2px_0px_#82737a] hover:bg-surface-container transition-colors">
                 about me
               </button>
             </div>
@@ -442,10 +500,8 @@
             <span class="bg-secondary-container px-2 py-1 text-xs font-label-mono border border-secondary text-on-secondary-fixed">CI4 + SQA</span>
           </div>
           <p class="font-body-md text-sm text-on-surface-variant mb-4">
-            Project Lunera, collaboratively developed by myself and my friend, is a secure full-stack content management system and RESTful API designed for organizing Anime streaming media. <br> 
-            Bridging a robust CodeIgniter 4 backend with a Flutter frontend, the platform features a role-based Admin Dashboard for managing catalogs and users, alongside a strictly controlled, read-only public API. <br>
-            Built with a strong focus on Software Quality Assurance (SQA), Lunera implements strict routing firewalls to block unauthorized write requests, dynamic input validations, and secure credential hashing to ensure data integrity, 
-            serving as a practical demonstration of a scalable and highly secure modern web application.
+            Project Lunera, collaboratively developed by myself and my friend, is a secure full-stack content management system and RESTful API designed for organizing Anime streaming media. <br><br>
+            Bridging a robust CodeIgniter 4 backend with a Flutter frontend, the platform features a role-based Admin Dashboard for managing catalogs and users, alongside a strictly controlled, read-only public API. Built with a strong focus on Software Quality Assurance (SQA), Lunera implements strict routing firewalls to block unauthorized write requests, dynamic input validations, and secure credential hashing to ensure data integrity.
           </p>
           <div class="flex gap-2">
             <button onclick="openLuneraModal()" class="y2k-sticker px-4 py-1 text-sm flex items-center gap-1">
@@ -458,48 +514,49 @@
         </div>
       </div>
 
-      <div class="y2k-window flex flex-col">
-        <div class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed">
+      <div class="y2k-window transition-all duration-200 bg-surface-container-low" id="resume-window" style="display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 100%; min-height: 500px;">
+        
+        <div class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed w-full">
           <div class="y2k-window-header-title">
             <span class="material-symbols-outlined text-sm">description</span>
             <span class="font-label-mono text-label-mono text-on-surface">resume.pdf</span>
           </div>
           <div class="y2k-controls">
-            <button class="y2k-control-btn">_</button>
-            <button class="y2k-control-btn">□</button>
+            <button class="y2k-control-btn" onclick="minimizeResume()" title="Restore Down">_</button>
+            <button class="y2k-control-btn" onclick="maximizeResume()" title="Maximize">□</button>
             <button class="y2k-control-btn">×</button>
           </div>
         </div>
-        <div class="flex-grow bg-surface-container-low p-4 flex flex-col items-center justify-center gap-4 relative overflow-hidden">
+        
+        <div class="w-full overflow-y-auto custom-scroll p-4 sm:p-6 flex justify-center">
           
-          <div class="w-3/4 aspect-[1/1.4] bg-white border border-outline shadow-md p-4 flex flex-col gap-3 relative z-10 custom-scroll overflow-y-auto font-label-mono text-on-surface">
-            
-            <div class="text-center border-b-2 border-outline pb-2">
-              <h1 class="text-[10px] font-bold text-primary">DEBRA NETHANIA STEVENSON</h1>
-              <p class="text-[6px] mt-1 text-on-surface-variant">debra.nethania.s@gmail.com | Jakarta, ID</p>
+          <div class="w-full max-w-2xl bg-white border border-outline shadow-md p-4 sm:p-6 font-label-mono text-on-surface h-max cv-container">
+            <div class="text-center border-b-2 border-outline pb-2 cv-header">
+              <h1 class="text-[10px] font-bold text-primary cv-title">DEBRA NETHANIA STEVENSON</h1>
+              <p class="text-[6px] mt-1 text-on-surface-variant cv-subtitle">debra.nethania.s@gmail.com | Jakarta, ID</p>
             </div>
             
-            <div>
-              <h2 class="text-[7px] font-bold bg-primary-container inline-block px-1 mb-1 border border-primary">ABOUT ME</h2>
-              <p class="text-[6px] leading-tight text-on-surface-variant">
+            <div class="mt-3 cv-section">
+              <h2 class="text-[7px] font-bold bg-primary-container inline-block px-1 mb-1 border border-primary cv-heading">ABOUT ME</h2>
+              <p class="text-[6px] leading-tight text-on-surface-variant cv-text">
                 Analytical IT student at CCIT FTUI and Asia e University with a background in Full Stack development, Software Quality Assurance (SQA), and database management. Dedicated to leveraging technical logic, DevOps practices, and data-driven insights to support evidence-based research and scalable application development.
               </p>
             </div>
 
-            <div>
-              <h2 class="text-[7px] font-bold bg-secondary-container inline-block px-1 mb-1 border border-secondary text-on-secondary-fixed">EDUCATION</h2>
-              <div class="mb-1">
-                <p class="text-[6px] leading-tight font-bold">Asia e University | 2024-Now</p>
-                <p class="text-[6px] leading-tight text-on-surface-variant italic">Faculty of Information and Communication Technology</p>
-                <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3">
+            <div class="mt-3 cv-section">
+              <h2 class="text-[7px] font-bold bg-secondary-container inline-block px-1 mb-1 border border-secondary text-on-secondary-fixed cv-heading">EDUCATION</h2>
+              <div class="mb-1 cv-sub-section">
+                <p class="text-[6px] leading-tight font-bold cv-text">Asia e University | 2024-Now</p>
+                <p class="text-[6px] leading-tight text-on-surface-variant italic cv-text">Faculty of Information and Communication Technology</p>
+                <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 cv-list cv-text">
                   <li>Relevant Coursework: Discrete Mathematics, Database Systems, Information Systems Analysis & Design, and DSS.</li>
                   <li>Focus: Comprehensive understanding of information systems supporting organizational strategy and data security.</li>
                 </ul>
               </div>
-              <div>
-                <p class="text-[6px] leading-tight font-bold">CCIT FTUI | 2024-Now</p>
-                <p class="text-[6px] leading-tight text-on-surface-variant italic">Information Technology (Full Stack Developer)</p>
-                <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3">
+              <div class="cv-sub-section">
+                <p class="text-[6px] leading-tight font-bold cv-text">CCIT FTUI | 2024-Now</p>
+                <p class="text-[6px] leading-tight text-on-surface-variant italic cv-text">Information Technology (Full Stack Developer)</p>
+                <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 cv-list cv-text">
                   <li>Technical Focus: PHP, Web Application Programming (WAP), and DevOps.</li>
                   <li>Database Management: Practical experience in MySQL and MongoDB for building scalable applications.</li>
                   <li>Methodology: Software Engineering fundamentals and HCI to ensure user-centric product development.</li>
@@ -507,9 +564,9 @@
               </div>
             </div>
 
-            <div>
-              <h2 class="text-[7px] font-bold bg-tertiary-container inline-block px-1 mb-1 border border-tertiary">TECHNICAL & ACADEMIC PROJECTS</h2>
-              <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 space-y-1">
+            <div class="mt-3 cv-section">
+              <h2 class="text-[7px] font-bold bg-tertiary-container inline-block px-1 mb-1 border border-tertiary cv-heading">TECHNICAL & ACADEMIC PROJECTS</h2>
+              <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 space-y-1 cv-list cv-text">
                 <li><b>Lunera Streaming Platform | Full Stack & SQA:</b> Co-developed web/mobile platform (CI4/Flutter) using MVC. Executed Gherkin-style test cases and metrics for SQA.</li>
                 <li><b>Comic Web Application | Front-End & DevOps:</b> Built distributed PHP front-end consuming Java Spring Boot REST API. Containerized with Docker and engineered CI/CD via GitHub Actions.</li>
                 <li><b>Pawprint Haven Vet Clinic | Full Stack:</b> Developed comprehensive veterinary management web app (PHP, MySQL) with role-specific secure dashboards.</li>
@@ -517,9 +574,9 @@
               </ul>
             </div>
 
-            <div>
-              <h2 class="text-[7px] font-bold bg-primary-fixed inline-block px-1 mb-1 border border-primary">LEADERSHIP & EXPERIENCE</h2>
-              <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 space-y-1">
+            <div class="mt-3 cv-section">
+              <h2 class="text-[7px] font-bold bg-primary-fixed inline-block px-1 mb-1 border border-primary cv-heading">LEADERSHIP & EXPERIENCE</h2>
+              <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 space-y-1 cv-list cv-text">
                 <li><b>CSS Head of Dept (Student Advocacy):</b> Managed leadership selection for 2026 Induction Days.</li>
                 <li><b>PEMIRA CSS Head of Publication:</b> Directed 10-person team for event documentation and social media.</li>
                 <li><b>CCIT Induction Days Head of Medics:</b> Trained staff on first-aid and managed emergency medical care.</li>
@@ -527,9 +584,9 @@
               </ul>
             </div>
 
-            <div>
-              <h2 class="text-[7px] font-bold bg-[#ffffa5] inline-block px-1 mb-1 border border-outline">TECHNICAL SKILLS</h2>
-              <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3">
+            <div class="mt-3 cv-section">
+              <h2 class="text-[7px] font-bold bg-[#ffffa5] inline-block px-1 mb-1 border border-outline cv-heading">TECHNICAL SKILLS</h2>
+              <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 cv-list cv-text">
                 <li><b>Programming:</b> PHP (Codeigniter 4), Web Application Programming (WAP).</li>
                 <li><b>Database:</b> Relational (MySQL), NoSQL (MongoDB), Schema Design, Normalization, Data Integrity.</li>
                 <li><b>Engineering:</b> SAD, SDLC, Git/GitHub, Docker, Postman, SQA/Gherkin.</li>
@@ -538,24 +595,29 @@
               </ul>
             </div>
             
-            <div>
-              <h2 class="text-[7px] font-bold bg-surface-variant inline-block px-1 mb-1 border border-outline">SOFT SKILLS</h2>
-              <p class="text-[6px] leading-tight text-on-surface-variant">
+            <div class="mt-3 cv-section">
+              <h2 class="text-[7px] font-bold bg-surface-variant inline-block px-1 mb-1 border border-outline cv-heading">SOFT SKILLS</h2>
+              <p class="text-[6px] leading-tight text-on-surface-variant cv-text">
                 Analytical Thinking, Attention to Detail, Technical Communication, Collaborative Teamwork.
               </p>
             </div>
           </div>
+        </div>
 
-          <a href="assets/Debra_Stevenson_CV.pdf" download="Debra_Stevenson_CV.pdf" class="y2k-sticker px-6 py-2 mt-2 flex items-center gap-2 relative z-10 w-3/4 justify-center text-on-surface hover:text-on-surface">
+        <div class="w-full p-4 flex justify-center items-center bg-surface-container-low border-t border-outline/20">
+          <a href="assets/Debra_Stevenson_CV.pdf" download="Debra_Stevenson_CV.pdf" class="y2k-sticker px-6 py-2 flex items-center gap-2 w-3/4 max-w-sm justify-center text-on-surface hover:text-on-surface">
             <span class="material-symbols-outlined">download</span>
             DOWNLOAD CV
           </a>
         </div>
+
       </div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pb-10">
+      
       <div class="lg:col-span-8 flex flex-col gap-6">
+        
         <div class="y2k-window">
           <div class="y2k-window-header bg-gradient-to-r from-secondary-container to-secondary-fixed">
             <div class="y2k-window-header-title">
@@ -569,6 +631,7 @@
             </div>
           </div>
           <div class="p-6 bg-surface grid grid-cols-1 sm:grid-cols-2 gap-4 h-72 overflow-y-auto custom-scroll border-t border-outline/30">
+            
             <div onclick="openModal('comicDevModal')" class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group">
               <div class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
                 <img alt="Comic Web App API" class="w-full h-full object-cover" src="assets/comic_api2.png" onerror="this.src='https://placehold.co/400x225/e7e8ed/82737a?text=Comic+API'" />
@@ -657,39 +720,34 @@
             </div>
           </div>
           <div class="p-6 bg-surface-container-highest flex gap-6 overflow-x-auto custom-scroll border-t border-outline/30 items-center min-h-[220px]">
-            
             <div class="min-w-[150px] bg-white p-3 pb-8 border border-outline shadow-[4px_4px_0px_rgba(130,115,122,0.3)] transform rotate-[-3deg] hover:rotate-0 hover:-translate-y-2 transition-all cursor-pointer">
-              <div class="aspect-square bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-90">
+              <div class="aspect-square bg-primary-container mb-3 border border-outline border-dashed flex items-center justify-center opacity-90">
                 <img alt="Head of Dept" class="w-full h-full object-cover" src="assets/advokema.jpeg" onerror="this.src='https://placehold.co/400x400/ffb7e1/7c4468?text=Photo+1'" />
               </div>
               <p class="font-label-mono text-xs text-center text-on-surface font-bold">Head of Dept</p>
-              <p class="font-label-mono text-[9px] text-center text-on-surface-variant mt-1">Student Advocacy</p>
+              <p class="font-label-mono text-[10px] text-center text-on-surface-variant mt-1">Student Advocacy</p>
             </div>
-
             <div class="min-w-[150px] bg-white p-3 pb-8 border border-outline shadow-[4px_4px_0px_rgba(130,115,122,0.3)] transform rotate-[4deg] hover:rotate-0 hover:-translate-y-2 transition-all cursor-pointer">
-              <div class="aspect-square bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-90">
+              <div class="aspect-square bg-secondary-container mb-3 border border-outline border-dashed flex items-center justify-center opacity-90">
                 <img alt="Head of Publication" class="w-full h-full object-cover" src="assets/PDD.jpeg" onerror="this.src='https://placehold.co/400x400/c2b0fd/504084?text=Photo+2'" />
               </div>
               <p class="font-label-mono text-xs text-center text-on-surface font-bold">Head of Publication</p>
-              <p class="font-label-mono text-[9px] text-center text-on-surface-variant mt-1">PEMIRA CSS</p>
+              <p class="font-label-mono text-[10px] text-center text-on-surface-variant mt-1">PEMIRA CSS</p>
             </div>
-
             <div class="min-w-[150px] bg-white p-3 pb-8 border border-outline shadow-[4px_4px_0px_rgba(130,115,122,0.3)] transform rotate-[-2deg] hover:rotate-0 hover:-translate-y-2 transition-all cursor-pointer">
-              <div class="aspect-square bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-90">
+              <div class="aspect-square bg-tertiary-container mb-3 border border-outline border-dashed flex items-center justify-center opacity-90">
                 <img alt="Head of Medics" class="w-full h-full object-cover" src="assets/medic.jpeg" onerror="this.src='https://placehold.co/400x400/a3d7c5/2d5f50?text=Photo+3'" />
               </div>
               <p class="font-label-mono text-xs text-center text-on-surface font-bold">Head of Medics</p>
-              <p class="font-label-mono text-[9px] text-center text-on-surface-variant mt-1">CCIT Induction Days 2025</p>
+              <p class="font-label-mono text-[10px] text-center text-on-surface-variant mt-1">CCIT Induction Days</p>
             </div>
-
             <div class="min-w-[150px] bg-white p-3 pb-8 border border-outline shadow-[4px_4px_0px_rgba(130,115,122,0.3)] transform rotate-[2deg] hover:rotate-0 hover:-translate-y-2 transition-all cursor-pointer">
-              <div class="aspect-square bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-90">
+              <div class="aspect-square bg-surface-variant mb-3 border border-outline border-dashed flex items-center justify-center opacity-90">
                 <img alt="Staff Art & Culture" class="w-full h-full object-cover" src="assets/staff.jpeg" onerror="this.src='https://placehold.co/400x400/e1e2e7/50434a?text=Photo+4'" />
               </div>
               <p class="font-label-mono text-xs text-center text-on-surface font-bold">Staff</p>
-              <p class="font-label-mono text-[9px] text-center text-on-surface-variant mt-1">Art & Culture</p>
+              <p class="font-label-mono text-[10px] text-center text-on-surface-variant mt-1">Art & Culture</p>
             </div>
-            
           </div>
         </div>
       </div>
@@ -825,7 +883,7 @@
           <span class="font-label-mono text-label-mono text-on-surface">lunera_deep_dive.doc</span>
         </div>
         <div class="y2k-controls">
-          <button onclick="closeLuneraModal()" class="y2k-control-btn font-bold">×</button>
+          <button onclick="closeModal('luneraModal')" class="y2k-control-btn font-bold">×</button>
         </div>
       </div>
       
@@ -870,7 +928,7 @@ public function searchAPI() {
         </div>
       </div>
       <div class="p-3 bg-surface-container-low border-t border-outline flex justify-end">
-        <button onclick="closeLuneraModal()" class="y2k-sticker px-6 py-1 text-xs">OK</button>
+        <button onclick="closeModal('luneraModal')" class="y2k-sticker px-6 py-1 text-xs">OK</button>
       </div>
     </div>
   </div>
@@ -883,19 +941,19 @@ public function searchAPI() {
           <span class="font-label-mono text-label-mono text-on-surface">about_me.txt</span>
         </div>
         <div class="y2k-controls">
-          <button onclick="closeAboutModal()" class="y2k-control-btn font-bold">×</button>
+          <button onclick="closeModal('aboutModal')" class="y2k-control-btn font-bold">×</button>
         </div>
       </div>
       <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-4 bg-white">
         <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-primary mx-auto mb-4 shadow-[2px_2px_0px_#854b70] flex items-center justify-center bg-surface-container">
-            <img alt="Profile Picture" class="w-full h-full object-cover" src="assets/profile3.jpeg" />
+          <img alt="Profile Picture" class="w-full h-full object-cover" src="assets/profile3.jpeg" onerror="this.src='https://placehold.co/400x400/ffb7e1/7c4468?text=Photo'" />
         </div>
         <h4 class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1 text-center">Hi, I'm Debra!</h4>
         <p>I am an Analytical IT student at CCIT FTUI and Asia e University with a strong background in Full Stack development, Software Quality Assurance (SQA), and database management.</p>
         <p>I am highly dedicated to leveraging technical logic, modern DevOps practices, and data-driven insights to support evidence-based research and build highly scalable, secure web applications.</p>
       </div>
       <div class="p-3 bg-surface-container-low border-t border-outline flex justify-end">
-        <button onclick="closeAboutModal()" class="y2k-sticker px-6 py-1 text-xs">Close</button>
+        <button onclick="closeModal('aboutModal')" class="y2k-sticker px-6 py-1 text-xs">Close</button>
       </div>
     </div>
   </div>
@@ -908,7 +966,7 @@ public function searchAPI() {
           <span class="font-label-mono text-label-mono text-on-surface">tech_skills.sys</span>
         </div>
         <div class="y2k-controls">
-          <button onclick="closeSkillsModal()" class="y2k-control-btn font-bold">×</button>
+          <button onclick="closeModal('skillsModal')" class="y2k-control-btn font-bold">×</button>
         </div>
       </div>
       <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant bg-white">
@@ -940,7 +998,7 @@ public function searchAPI() {
         </div>
       </div>
       <div class="p-3 bg-surface-container-low border-t border-outline flex justify-end">
-        <button onclick="closeSkillsModal()" class="y2k-sticker px-6 py-1 text-xs">Close</button>
+        <button onclick="closeModal('skillsModal')" class="y2k-sticker px-6 py-1 text-xs">Close</button>
       </div>
     </div>
   </div>
