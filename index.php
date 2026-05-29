@@ -413,7 +413,7 @@
         </div>
         <div class="p-6 bg-surface">
           <div class="aspect-video bg-surface-container-high border border-outline mb-4 flex items-center justify-center overflow-hidden">
-              <img alt="Screenshot of Lunera Project" class="w-full h-full object-cover" src="img/lunera-search.png" />
+              <img alt="Screenshot of Lunera Project" class="w-full h-full object-cover" src="assets/lunera-search.png" />
           </div>
           <div class="flex justify-between items-start mb-2">
             <h3 class="font-headline-lg-mobile text-xl text-primary">Project Lunera</h3>
@@ -449,21 +449,87 @@
           </div>
         </div>
         <div class="flex-grow bg-surface-container-low p-4 flex flex-col items-center justify-center gap-4 relative overflow-hidden">
-          <div class="w-3/4 aspect-[1/1.4] bg-white border border-outline shadow-md p-4 flex flex-col gap-2 relative z-10 custom-scroll overflow-y-auto">
-            <div class="h-4 bg-outline-variant w-1/2 mb-4"></div>
-            <div class="h-2 bg-surface-variant w-full"></div>
-            <div class="h-2 bg-surface-variant w-full"></div>
-            <div class="h-2 bg-surface-variant w-5/6 mb-4"></div>
-            <div class="h-3 bg-outline-variant w-1/3 mb-2"></div>
-            <div class="h-2 bg-surface-variant w-full"></div>
-            <div class="h-2 bg-surface-variant w-4/5"></div>
-            <div class="h-2 bg-surface-variant w-full"></div>
+          
+          <div class="w-3/4 aspect-[1/1.4] bg-white border border-outline shadow-md p-4 flex flex-col gap-3 relative z-10 custom-scroll overflow-y-auto font-label-mono text-on-surface">
+            
+            <div class="text-center border-b-2 border-outline pb-2">
+              <h1 class="text-[10px] font-bold text-primary">DEBRA NETHANIA STEVENSON</h1>
+              <p class="text-[6px] mt-1 text-on-surface-variant">debra.nethania.s@gmail.com | Jakarta, ID</p>
+            </div>
+            
+            <div>
+              <h2 class="text-[7px] font-bold bg-primary-container inline-block px-1 mb-1 border border-primary">ABOUT ME</h2>
+              <p class="text-[6px] leading-tight text-on-surface-variant">
+                Analytical IT student at CCIT FTUI and Asia e University with a background in Full Stack development, Software Quality Assurance (SQA), and database management. Dedicated to leveraging technical logic, DevOps practices, and data-driven insights to support evidence-based research and scalable application development.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-[7px] font-bold bg-secondary-container inline-block px-1 mb-1 border border-secondary text-on-secondary-fixed">EDUCATION</h2>
+              <div class="mb-1">
+                <p class="text-[6px] leading-tight font-bold">Asia e University | 2024-Now</p>
+                <p class="text-[6px] leading-tight text-on-surface-variant italic">Faculty of Information and Communication Technology</p>
+                <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3">
+                  <li>Relevant Coursework: Discrete Mathematics, Database Systems, Information Systems Analysis & Design, and DSS.</li>
+                  <li>Focus: Comprehensive understanding of information systems supporting organizational strategy and data security.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-[6px] leading-tight font-bold">CCIT FTUI | 2024-Now</p>
+                <p class="text-[6px] leading-tight text-on-surface-variant italic">Information Technology (Full Stack Developer)</p>
+                <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3">
+                  <li>Technical Focus: PHP, Web Application Programming (WAP), and DevOps.</li>
+                  <li>Database Management: Practical experience in MySQL and MongoDB for building scalable applications.</li>
+                  <li>Methodology: Software Engineering fundamentals and HCI to ensure user-centric product development.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <h2 class="text-[7px] font-bold bg-tertiary-container inline-block px-1 mb-1 border border-tertiary">TECHNICAL & ACADEMIC PROJECTS</h2>
+              <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 space-y-1">
+                <li><b>Lunera Streaming Platform | Full Stack & SQA:</b> Co-developed web/mobile platform (CI4/Flutter) using MVC. Executed Gherkin-style test cases and metrics for SQA.</li>
+                <li><b>Comic Web Application | Front-End & DevOps:</b> Built distributed PHP front-end consuming Java Spring Boot REST API. Containerized with Docker and engineered CI/CD via GitHub Actions.</li>
+                <li><b>Pawprint Haven Vet Clinic | Full Stack:</b> Developed comprehensive veterinary management web app (PHP, MySQL) with role-specific secure dashboards.</li>
+                <li><b>Portify | UI/UX Designer:</b> Prototyped in Figma applying 10 Usability Heuristics, responsive navigation, and system status indicators.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 class="text-[7px] font-bold bg-primary-fixed inline-block px-1 mb-1 border border-primary">LEADERSHIP & EXPERIENCE</h2>
+              <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 space-y-1">
+                <li><b>CSS Head of Dept (Student Advocacy):</b> Managed leadership selection for 2026 Induction Days.</li>
+                <li><b>PEMIRA CSS Head of Publication:</b> Directed 10-person team for event documentation and social media.</li>
+                <li><b>CCIT Induction Days Head of Medics:</b> Trained staff on first-aid and managed emergency medical care.</li>
+                <li><b>CSS Staff (Art & Culture):</b> Organized campus-wide photography/poster contest and managed finances.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 class="text-[7px] font-bold bg-[#ffffa5] inline-block px-1 mb-1 border border-outline">TECHNICAL SKILLS</h2>
+              <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3">
+                <li><b>Programming:</b> PHP (Codeigniter 4), Web Application Programming (WAP).</li>
+                <li><b>Database:</b> Relational (MySQL), NoSQL (MongoDB), Schema Design, Normalization, Data Integrity.</li>
+                <li><b>Engineering:</b> SAD, SDLC, Git/GitHub, Docker, Postman, SQA/Gherkin.</li>
+                <li><b>UX & Design:</b> Figma, HCI, UI Prototyping.</li>
+                <li><b>Languages:</b> Indonesian (Native), English (C1 Advance), Mandarin (Basic).</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h2 class="text-[7px] font-bold bg-surface-variant inline-block px-1 mb-1 border border-outline">SOFT SKILLS</h2>
+              <p class="text-[6px] leading-tight text-on-surface-variant">
+                Analytical Thinking, Attention to Detail, Technical Communication, Collaborative Teamwork.
+              </p>
+            </div>
           </div>
-          <button class="y2k-sticker px-6 py-2 mt-2 flex items-center gap-2 relative z-10 w-3/4 justify-center">
+
+          <a href="assets/Debra_Stevenson_CV.pdf" download="Debra_Stevenson_CV.pdf" class="y2k-sticker px-6 py-2 mt-2 flex items-center gap-2 relative z-10 w-3/4 justify-center text-on-surface hover:text-on-surface">
             <span class="material-symbols-outlined">download</span>
             DOWNLOAD CV
-          </button>
+          </a>
         </div>
+      </div>
       </div>
     </div>
 
@@ -517,7 +583,7 @@
           <div class="y2k-window-header bg-gradient-to-r from-primary-container to-primary-fixed">
             <div class="y2k-window-header-title">
               <span class="material-symbols-outlined text-sm">photo_library</span>
-              <span class="font-label-mono text-label-mono text-on-surface">past_orgs_gallery</span>
+              <span class="font-label-mono text-label-mono text-on-surface">orgs_gallery</span>
             </div>
             <div class="y2k-controls">
               <button class="y2k-control-btn">_</button>
