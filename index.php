@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>debra.exe - welcome to my world</title>
+  <title>debra.exe - welcome to my portfolio</title>
   
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com" rel="preconnect" />
@@ -143,6 +143,21 @@
       document.getElementById('cal-month-year').textContent = `${month} ${year}`;
       document.getElementById('cal-day-number').textContent = dayNumber;
       document.getElementById('cal-day-name').textContent = dayName;
+    }
+
+    // --- ABOUT & SKILLS MODAL LOGIC ---
+    function openAboutModal() {
+      document.getElementById('aboutModal').classList.remove('hidden');
+    }
+    function closeAboutModal() {
+      document.getElementById('aboutModal').classList.add('hidden');
+    }
+
+    function openSkillsModal() {
+      document.getElementById('skillsModal').classList.remove('hidden');
+    }
+    function closeSkillsModal() {
+      document.getElementById('skillsModal').classList.add('hidden');
     }
 
     window.onload = function() {
@@ -336,14 +351,14 @@
               <p class="font-label-mono text-label-mono text-on-surface-variant mt-1">status: trying my best...</p>
             </div>
             <div class="w-full border-t border-outline border-dashed pt-4 flex flex-col gap-2">
-              <a class="flex justify-between items-center text-sm font-label-mono hover:text-primary hover:bg-primary-container/20 px-2 py-1" href="#about">
+              <button onclick="openAboutModal()" class="w-full flex justify-between items-center text-sm font-label-mono hover:text-primary hover:bg-primary-container/20 px-2 py-1 cursor-pointer">
                 <span class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">favorite</span> about me</span>
                 <span>></span>
-              </a>
-              <a class="flex justify-between items-center text-sm font-label-mono hover:text-primary hover:bg-primary-container/20 px-2 py-1" href="#skills">
+              </button>
+              <button onclick="openSkillsModal()" class="w-full flex justify-between items-center text-sm font-label-mono hover:text-primary hover:bg-primary-container/20 px-2 py-1 cursor-pointer">
                 <span class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">star</span> skills</span>
                 <span>></span>
-              </a>
+              </button>
               <a class="flex justify-between items-center text-sm font-label-mono hover:text-primary hover:bg-primary-container/20 px-2 py-1" href="#contact">
                 <span class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span> contact</span>
                 <span>></span>
@@ -378,12 +393,11 @@
           <div class="p-8 md:p-12 flex flex-col items-center justify-center text-center gap-6 h-full relative overflow-hidden bg-white/50">
             <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#854b70 1px, transparent 1px); background-size: 20px 20px;"></div>
             <h1 class="font-display-xl text-4xl md:text-6xl text-primary drop-shadow-[3px_3px_0px_#ffb7e1] relative z-10">
-              welcome to<br/>my portfolio
+              HELLO, I'M <br> DEBRA STEVENSON
             </h1>
             <p class="font-label-mono text-base md:text-lg text-on-surface-variant max-w-lg relative z-10 bg-white/80 p-4 border border-outline border-dashed">
-              Hello, my name is Debra. <br> 
-              I'm a Full Stack Developer student at CEP CCIT FTUI and Asia E University. <br>
-              This is my portfolio about some of my projects that I've done while studying at CCIT FTUI 𑣲⋆
+              I am an Information Technology student at CCIT FTUI and Asia E University, dedicated to bridging the gap between robust backend architecture and intuitive UI/UX design.
+              I leverage tools like CodeIgniter 4, Spring Boot, and Flutter to build scalable applications while ensuring top-tier performance through rigorous automated testing. 𑣲⋆
             </p>
             <div class="flex gap-4 mt-4 relative z-10">
               <button class="y2k-sticker font-button-text text-button-text px-8 py-2 rounded-none uppercase tracking-wider flex items-center gap-2">
@@ -820,6 +834,81 @@ public function searchAPI() {
         <button onclick="closeLuneraModal()" class="y2k-sticker px-6 py-1 text-xs">
           OK
         </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal about me and skills -->
+   <div id="aboutModal" class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs">
+    <div class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]">
+      <div class="y2k-window-header bg-gradient-to-r from-primary-container to-secondary-container">
+        <div class="y2k-window-header-title">
+          <span class="material-symbols-outlined text-sm">favorite</span>
+          <span class="font-label-mono text-label-mono text-on-surface">about_me.txt</span>
+        </div>
+        <div class="y2k-controls">
+          <button onclick="closeAboutModal()" class="y2k-control-btn font-bold">×</button>
+        </div>
+      </div>
+      <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-4 bg-white">
+        <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-primary mx-auto mb-4 shadow-[2px_2px_0px_#854b70]">
+          <img alt="Debra" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoaRs9JO9MkfPwe4Msu0VIlHeXW_B5BrTt2pu_IV1xJvtp6uesCSi9X1I7oK2nZ8MbPxgw6FSMubjlyqjF3rhQldDzx2DWeMRJiyF3RQrCKAwbvjc4PBVmVg-r2X9Kt1xuUDO-I5Har03mYTd8U3Lvv5x65jISZo6AED5C_TtUtEF1EWt7nAqmtulPIBMpUk2sU_W9IgudBSfjZEdh4Jp58CwrR2cmp87PutcE2Og8jyu2nTfJcVO-w9L_sQ5rtg-WlULvLcBfmSw" />
+        </div>
+        <h4 class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1 text-center">Hi, I'm Debra!</h4>
+        <p>
+          I am an Analytical IT student at CCIT FTUI and Asia e University with a strong background in Full Stack development, Software Quality Assurance (SQA), and database management.
+        </p>
+        <p>
+          I am highly dedicated to leveraging technical logic, modern DevOps practices, and data-driven insights to support evidence-based research and build highly scalable, secure web applications.
+        </p>
+      </div>
+      <div class="p-3 bg-surface-container-low border-t border-outline flex justify-end">
+        <button onclick="closeAboutModal()" class="y2k-sticker px-6 py-1 text-xs">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="skillsModal" class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs">
+    <div class="y2k-window w-full max-w-lg max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]">
+      <div class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed">
+        <div class="y2k-window-header-title">
+          <span class="material-symbols-outlined text-sm">star</span>
+          <span class="font-label-mono text-label-mono text-on-surface">tech_skills.sys</span>
+        </div>
+        <div class="y2k-controls">
+          <button onclick="closeSkillsModal()" class="y2k-control-btn font-bold">×</button>
+        </div>
+      </div>
+      <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant bg-white">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div class="bg-surface-container-low border border-outline p-3 shadow-[2px_2px_0px_#82737a] flex flex-col items-center text-center hover:-translate-y-1 transition-transform cursor-default">
+                <p class="font-label-mono text-sm font-bold text-primary mb-1">Backend</p>
+                <p class="font-label-mono text-[10px] text-on-surface-variant leading-relaxed">PHP<br>CodeIgniter 4</p>
+            </div>
+            <div class="bg-surface-container-low border border-outline p-3 shadow-[2px_2px_0px_#82737a] flex flex-col items-center text-center hover:-translate-y-1 transition-transform cursor-default">
+                <p class="font-label-mono text-sm font-bold text-secondary mb-1">Mobile & UI</p>
+                <p class="font-label-mono text-[10px] text-on-surface-variant leading-relaxed">Flutter<br>Figma</p>
+            </div>
+            <div class="bg-surface-container-low border border-outline p-3 shadow-[2px_2px_0px_#82737a] flex flex-col items-center text-center hover:-translate-y-1 transition-transform cursor-default">
+                <p class="font-label-mono text-sm font-bold text-tertiary mb-1">QA / Test</p>
+                <p class="font-label-mono text-[10px] text-on-surface-variant leading-relaxed">Automated<br>Gherkin</p>
+            </div>
+            <div class="bg-surface-container-low border border-outline p-3 shadow-[2px_2px_0px_#82737a] flex flex-col items-center text-center hover:-translate-y-1 transition-transform cursor-default">
+                <p class="font-label-mono text-sm font-bold text-outline mb-1">Env / DB</p>
+                <p class="font-label-mono text-[10px] text-on-surface-variant leading-relaxed">MySQL<br>Docker / Git</p>
+            </div>
+        </div>
+        <div class="mt-6 p-4 bg-[#ffffa5] border border-outline shadow-[2px_2px_0px_rgba(0,0,0,0.1)]">
+            <h4 class="font-label-mono font-bold text-xs mb-2">Additional Strengths:</h4>
+            <ul class="list-disc pl-4 text-xs font-label-mono space-y-1">
+              <li>System Analysis & Design (SAD) and SDLC</li>
+              <li>Human-Computer Interaction (HCI) best practices</li>
+              <li>API Testing (Postman) & CI/CD Pipelines (GitHub Actions)</li>
+            </ul>
+        </div>
+      </div>
+      <div class="p-3 bg-surface-container-low border-t border-outline flex justify-end">
+        <button onclick="closeSkillsModal()" class="y2k-sticker px-6 py-1 text-xs">Close</button>
       </div>
     </div>
   </div>
