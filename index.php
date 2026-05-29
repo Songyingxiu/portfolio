@@ -352,7 +352,7 @@
           </div>
           <div class="p-4 flex flex-col items-center gap-4 bg-surface-container-low">
             <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-primary bg-surface-container shadow-[2px_2px_0px_#854b70]">
-              <img alt="A cute stylized portrait of a young woman" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoaRs9JO9MkfPwe4Msu0VIlHeXW_B5BrTt2pu_IV1xJvtp6uesCSi9X1I7oK2nZ8MbPxgw6FSMubjlyqjF3rhQldDzx2DWeMRJiyF3RQrCKAwbvjc4PBVmVg-r2X9Kt1xuUDO-I5Har03mYTd8U3Lvv5x65jISZo6AED5C_TtUtEF1EWt7nAqmtulPIBMpUk2sU_W9IgudBSfjZEdh4Jp58CwrR2cmp87PutcE2Og8jyu2nTfJcVO-w9L_sQ5rtg-WlULvLcBfmSw" />
+              <img alt="Profile Picture" class="w-full h-full object-cover" src="assets/profile3.jpeg" />
             </div>
             <div class="text-center">
               <h2 class="font-headline-lg-mobile text-xl text-primary">Debra Stevenson</h2>
@@ -377,9 +377,9 @@
         
         <div class="bg-[#ffffa5] p-4 border border-[#e5e594] shadow-[4px_4px_0px_rgba(0,0,0,0.1)] transform rotate-2 w-4/5 mx-auto">
           <ul class="font-label-mono text-sm leading-loose list-none">
-            <li><span class="material-symbols-outlined text-xs mr-1 align-middle">star</span>don't forget</li>
+            <li><span class="material-symbols-outlined text-xs mr-1 align-middle">star</span>don't ♭. ordinary</li>
             <li><span class="material-symbols-outlined text-xs mr-1 align-middle">star</span>drink water</li>
-            <li><span class="material-symbols-outlined text-xs mr-1 align-middle">star</span>write clean code</li>
+            <li><span class="material-symbols-outlined text-xs mr-1 align-middle">star</span>love yourself₊˚⊹♡</li>
             <li><span class="material-symbols-outlined text-xs mr-1 align-middle">star</span>have fun!</li>
           </ul>
         </div>
@@ -660,7 +660,7 @@
             
             <div class="min-w-[150px] bg-white p-3 pb-8 border border-outline shadow-[4px_4px_0px_rgba(130,115,122,0.3)] transform rotate-[-3deg] hover:rotate-0 hover:-translate-y-2 transition-all cursor-pointer">
               <div class="aspect-square bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-90">
-                <img alt="Head of Dept" class="w-full h-full object-cover" src="assets/org1.jpg" onerror="this.src='https://placehold.co/400x400/ffb7e1/7c4468?text=Photo+1'" />
+                <img alt="Head of Dept" class="w-full h-full object-cover" src="assets/advokema.jpeg" onerror="this.src='https://placehold.co/400x400/ffb7e1/7c4468?text=Photo+1'" />
               </div>
               <p class="font-label-mono text-xs text-center text-on-surface font-bold">Head of Dept</p>
               <p class="font-label-mono text-[9px] text-center text-on-surface-variant mt-1">Student Advocacy</p>
@@ -888,7 +888,7 @@ public function searchAPI() {
       </div>
       <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-4 bg-white">
         <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-primary mx-auto mb-4 shadow-[2px_2px_0px_#854b70] flex items-center justify-center bg-surface-container">
-          <span class="material-symbols-outlined text-6xl text-primary-container">face</span>
+            <img alt="Profile Picture" class="w-full h-full object-cover" src="assets/profile3.jpeg" />
         </div>
         <h4 class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1 text-center">Hi, I'm Debra!</h4>
         <p>I am an Analytical IT student at CCIT FTUI and Asia e University with a strong background in Full Stack development, Software Quality Assurance (SQA), and database management.</p>
