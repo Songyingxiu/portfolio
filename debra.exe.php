@@ -447,7 +447,7 @@
         </div>
 
         <div class="flex-none shrink-0 w-full p-4 flex justify-center bg-surface-container-low border-t border-outline/20">
-          <a href="assets/Debra_Stevenson_CV.pdf" download="Debra_Stevenson_CV.pdf" class="y2k-sticker px-6 py-2 flex items-center gap-2 w-3/4 max-w-sm justify-center text-on-surface hover:text-on-surface">
+          <a href="assets/CV-Debra Stevenson.pdf" download="Debra_Stevenson_CV.pdf" class="y2k-sticker px-6 py-2 flex items-center gap-2 w-3/4 max-w-sm justify-center text-on-surface hover:text-on-surface">
             <span class="material-symbols-outlined">download</span>
             DOWNLOAD CV
           </a>
