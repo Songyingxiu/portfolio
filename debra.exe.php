@@ -412,6 +412,7 @@
                 <li><b>Comic Web Application | Front-End & DevOps:</b> Built distributed PHP front-end consuming Java Spring Boot REST API. Containerized with Docker and engineered CI/CD via GitHub Actions.</li>
                 <li><b>Pawprint Haven Vet Clinic | Full Stack:</b> Developed comprehensive veterinary management web app (PHP, MySQL) with role-specific secure dashboards.</li>
                 <li><b>Portify | UI/UX Designer:</b> Prototyped in Figma applying 10 Usability Heuristics, responsive navigation, and system status indicators.</li>
+                <li><b>debra.exe Web Portfolio | Front-End:</b> Engineered a responsive, interactive Y2K OS-themed web application using HTML5, Tailwind CSS, and Vanilla JS, featuring custom flexbox window management and dynamic state rendering.</li>
               </ul>
             </div>
 
@@ -544,6 +545,14 @@
               <h4 class="font-button-text text-sm text-primary mb-1">E-Learning Desktop App</h4>
               <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">WPF interface prototype focused on strict Human-Computer Interaction (HCI) standards.</p>
             </div>
+
+            <div onclick="openModal('portfolioModal')" class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group">
+              <div class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
+                <img alt="debra.exe portfolio" class="w-full h-full object-cover" src="assets/debra.exe.png" onerror="this.src='https://placehold.co/400x225/e7e8ed/82737a?text=WPF+Interface'" />
+              </div>
+              <h4 class="font-button-text text-sm text-primary mb-1">debra.exe OS Portfolio</h4>
+              <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">Interactive Y2K desktop-themed portfolio built with Tailwind CSS.</p>
+            </div>
             
           </div>
         </div>
@@ -608,7 +617,7 @@
             </div>
           </div>
           <div class="bg-surface-container-low p-2 border-b border-outline">
-             <iframe data-testid="embed-iframe" style="border-radius:0px; border: 1px solid #82737a; box-shadow: inset 2px 2px 0px rgba(0,0,0,0.1);" src="https://open.spotify.com/embed/track/2oBMZYteeO8DyXV9gDx6Za?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+             <iframe data-testid="embed-iframe" style="border-radius:0px; border: 1px solid #82737a; box-shadow: inset 2px 2px 0px rgba(0,0,0,0.1);" src="https://open.spotify.com/embed/track/6rVCUwfnuYTAsX4P9fIdIu?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
           </div>
           <div class="bg-surface-container p-1 px-2 flex justify-between items-center text-[9px] font-label-mono text-on-surface-variant">
              <span>Status: Online</span>
@@ -1077,6 +1086,34 @@ public function searchAPI() {
       </div>
       <div class="p-3 bg-surface-container-low border-t border-outline flex justify-end items-center">
         <button onclick="closeModal('hciWpfModal')" class="y2k-sticker px-6 py-1 text-xs">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="portfolioModal" class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs">
+    <div class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]">
+      <div class="y2k-window-header bg-gradient-to-r from-primary-container to-secondary-container">
+        <div class="y2k-window-header-title">
+          <span class="material-symbols-outlined text-sm">folder</span>
+          <span class="font-label-mono text-label-mono text-on-surface">debra_exe_portfolio.txt</span>
+        </div>
+        <div class="y2k-controls">
+          <button onclick="closeModal('portfolioModal')" class="y2k-control-btn font-bold">×</button>
+        </div>
+      </div>
+      <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white">
+        <h4 class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1">debra.exe OS Portfolio</h4>
+        <div class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface">
+          <p><strong>Stack:</strong> HTML5, Tailwind CSS, Vanilla JavaScript</p>
+        </div>
+        <p>Designed and developed a fully responsive, interactive web portfolio styled as a retro Y2K graphical operating system.</p>
+        <p>Engineered custom CSS Grid and Flexbox layouts for window management, implemented Vanilla JS state management for dynamic modals and a functional search engine, and optimized UI/UX for cross-device compatibility.</p>
+      </div>
+      <div class="p-3 bg-surface-container-low border-t border-outline flex justify-between items-center">
+        <a href="https://github.com/Songyingxiu" target="_blank" rel="noopener noreferrer" class="border border-outline px-4 py-1 text-xs bg-white hover:bg-surface-container-low font-label-mono flex items-center gap-1 text-on-surface">
+          <span class="material-symbols-outlined text-[12px]">code</span> View Code
+        </a>
+        <button onclick="closeModal('portfolioModal')" class="y2k-sticker px-6 py-1 text-xs">Close</button>
       </div>
     </div>
   </div>
