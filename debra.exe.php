@@ -98,281 +98,10 @@
       }
     };
   </script>
+
+  <link rel="stylesheet" href="debrastyle.css">
+  <script src="debra_script.js" defer></script>
   
-  <script>
-    // --- SEARCH ENGINE LOGIC ---
-    function performSearch() {
-      const query = document.getElementById('searchInput').value.toLowerCase().trim();
-      if (!query) return;
-
-      if (query.includes('resume') || query.includes('cv')) {
-        document.getElementById('resume-window').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else if (query.includes('about') || query.includes('profile')) {
-        openAboutModal();
-      } else if (query.includes('skill')) {
-        openSkillsModal();
-      } else if (query.includes('project') || query.includes('portfolio') || query.includes('work')) {
-        document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
-      } else if (query.includes('contact') || query.includes('email') || query.includes('github') || query.includes('linkedin')) {
-        document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else if (query.includes('music') || query.includes('spotify')) {
-        document.getElementById('music-player').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else if (query.includes('calendar') || query.includes('date')) {
-        document.getElementById('calendar-app').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        alert("Error 404: File not found for '" + query + ".exe'");
-      }
-      
-      // Clear the input after searching
-      document.getElementById('searchInput').value = '';
-    }
-
-    // --- GENERIC DYNAMIC MODAL LOGIC (ADDED FOR PROJECTS) ---
-    function openModal(modalId) {
-      document.getElementById(modalId).classList.remove('hidden');
-    }
-    function closeModal(modalId) {
-      document.getElementById(modalId).classList.add('hidden');
-    }
-
-    // --- LUNERA MODAL LOGIC ---
-    function openLuneraModal() {
-      document.getElementById('luneraModal').classList.remove('hidden');
-    }
-
-    function closeLuneraModal() {
-      document.getElementById('luneraModal').classList.add('hidden');
-    }
-
-    function switchLuneraTab(tabName) {
-      const tabs = ['overview', 'backend', 'qa'];
-      tabs.forEach(t => {
-        const contentBlock = document.getElementById(`luneraTab-${t}`);
-        const currentBtn = document.getElementById(`tabBtn-${t}`);
-        if (t === tabName) {
-          contentBlock.classList.remove('hidden');
-          currentBtn.className = "px-4 py-1 text-xs font-label-mono bg-white border-t-2 border-x-2 border-outline -mb-[5px] relative z-10 font-bold text-primary";
-        } else {
-          contentBlock.classList.add('hidden');
-          currentBtn.className = "px-4 py-1 text-xs font-label-mono bg-surface-container border border-outline opacity-70 hover:opacity-100";
-        }
-      });
-    }
-
-    // --- REAL-TIME CLOCK & CALENDAR LOGIC (JAKARTA TIME) ---
-    function updateTimeAndDate() {
-      const timeOptions = { timeZone: 'Asia/Jakarta', hour: 'numeric', minute: '2-digit', hour12: true };
-      const dateOptions = { timeZone: 'Asia/Jakarta' };
-      const now = new Date();
-      
-      // Taskbar Clock
-      const timeString = new Intl.DateTimeFormat('en-US', timeOptions).format(now);
-      document.getElementById('taskbar-clock').textContent = timeString + " GMT +7";
-
-      // Calendar App
-      const month = new Intl.DateTimeFormat('en-US', { ...dateOptions, month: 'short' }).format(now);
-      const year = new Intl.DateTimeFormat('en-US', { ...dateOptions, year: 'numeric' }).format(now);
-      const dayName = new Intl.DateTimeFormat('en-US', { ...dateOptions, weekday: 'long' }).format(now);
-      const dayNumber = new Intl.DateTimeFormat('en-US', { ...dateOptions, day: 'numeric' }).format(now);
-
-      document.getElementById('cal-month-year').textContent = `${month} ${year}`;
-      document.getElementById('cal-day-number').textContent = dayNumber;
-      document.getElementById('cal-day-name').textContent = dayName;
-    }
-
-    // --- ABOUT & SKILLS MODAL LOGIC ---
-    function openAboutModal() {
-      document.getElementById('aboutModal').classList.remove('hidden');
-    }
-    function closeAboutModal() {
-      document.getElementById('aboutModal').classList.add('hidden');
-    }
-
-    function openSkillsModal() {
-      document.getElementById('skillsModal').classList.remove('hidden');
-    }
-    function closeSkillsModal() {
-      document.getElementById('skillsModal').classList.add('hidden');
-    }
-
-    // --- RESUME MAXIMIZE & MINIMIZE LOGIC ---
-    function maximizeResume() {
-      document.getElementById('resume-window').classList.add('y2k-maximized');
-    }
-    function minimizeResume() {
-      document.getElementById('resume-window').classList.remove('y2k-maximized');
-    }
-
-    window.onload = function() {
-      updateTimeAndDate();
-      setInterval(updateTimeAndDate, 1000);
-
-      // Listen for the "Enter" key on the search bar
-      document.getElementById('searchInput').addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-          performSearch();
-        }
-      });
-    };
-  </script>
-  
-  <style>
-    body {
-      background-color: #f8f9fe;
-      background-image:
-        url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/></svg>'),
-        radial-gradient(circle at 15% 50%, rgba(255, 183, 225, 0.2), transparent 40%),
-        radial-gradient(circle at 85% 30%, rgba(194, 176, 253, 0.2), transparent 40%);
-      background-attachment: fixed;
-      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23854b70" stroke="white" stroke-width="2" d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/></svg>') 1 1, auto;
-    }
-
-    .y2k-window {
-      background: rgba(255, 255, 255, 0.9);
-      border: 2px solid #82737a;
-      box-shadow: 4px 4px 0px rgba(130, 115, 122, 0.2);
-      border-radius: 0;
-      overflow: hidden;
-    }
-
-    /* BULLETPROOF CSS FOR MAXIMIZING THE RESUME */
-    .y2k-maximized {
-      position: fixed !important;
-      top: 80px !important; /* Locks safely below the top Navigation Tabs */
-      left: 20px !important; /* Leaves a preview gap on the sides */
-      right: 20px !important;
-      bottom: 60px !important; /* Locks safely above the bottom Taskbar */
-      width: auto !important;
-      height: auto !important;
-      z-index: 40 !important; /* Slides perfectly underneath the nav tabs (z-50) */
-      margin: 0 !important;
-      border: 2px solid #82737a !important; 
-      /* This massive shadow dims the background portfolio slightly without hiding the top/bottom bars! */
-      box-shadow: 0 0 0 100vmax rgba(25, 28, 31, 0.5), 8px 8px 0px rgba(130, 115, 122, 0.4) !important;
-    }
-
-    /* DYNAMIC CV TEXT SCALING FOR MAXIMIZED VIEW */
-    .y2k-maximized .cv-container {
-      max-width: 800px !important;
-      padding: 48px !important;
-    }
-    .y2k-maximized .cv-title {
-      font-size: 28px !important;
-      line-height: 36px !important;
-    }
-    .y2k-maximized .cv-subtitle {
-      font-size: 14px !important;
-      line-height: 20px !important;
-      margin-top: 8px !important;
-    }
-    .y2k-maximized .cv-header {
-      padding-bottom: 24px !important;
-    }
-    .y2k-maximized .cv-section {
-      margin-top: 24px !important;
-    }
-    .y2k-maximized .cv-heading {
-      font-size: 16px !important;
-      padding: 4px 8px !important;
-      margin-bottom: 12px !important;
-    }
-    .y2k-maximized .cv-text {
-      font-size: 14px !important;
-      line-height: 24px !important;
-    }
-    .y2k-maximized .cv-list {
-      padding-left: 24px !important;
-    }
-    .y2k-maximized .cv-list > li {
-      margin-bottom: 8px !important;
-    }
-    .y2k-maximized .cv-sub-section {
-      margin-bottom: 16px !important;
-    }
-
-    .y2k-window-header {
-      background: linear-gradient(90deg, #c2b0fd, #ffb7e1);
-      padding: 4px 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #82737a;
-    }
-
-    .y2k-window-header-title {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .y2k-controls {
-      display: flex;
-      gap: 4px;
-    }
-
-    .y2k-control-btn {
-      width: 16px;
-      height: 16px;
-      background: white;
-      border: 1px solid #82737a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      cursor: pointer;
-      color: #82737a;
-    }
-
-    .y2k-sticker {
-      background: #ffb7e1;
-      border: 2px solid #191c1f;
-      color: #191c1f;
-      box-shadow: 2px 2px 0px #191c1f;
-      transition: all 0.1s;
-      font-weight: bold;
-    }
-
-    .y2k-sticker:active {
-      transform: translate(2px, 2px);
-      box-shadow: 0px 0px 0px #191c1f;
-    }
-
-    .floating-element {
-      animation: float 6s ease-in-out infinite;
-      position: fixed; /* FIXED SO THEY ALWAYS SHOW WHEN SCROLLING! */
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-15px) rotate(5deg); }
-      100% { transform: translateY(0px) rotate(0deg); }
-    }
-
-    .pixel-border {
-      image-rendering: pixelated;
-    }
-
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    }
-
-    .custom-scroll::-webkit-scrollbar {
-      width: 12px;
-      height: 12px;
-    }
-
-    .custom-scroll::-webkit-scrollbar-track {
-      background: #f2f3f8;
-      border: 1px solid #82737a;
-    }
-
-    .custom-scroll::-webkit-scrollbar-thumb {
-      background: #d4c2c9;
-      border: 1px solid #82737a;
-    }
-  </style>
 </head>
 <body class="font-body-md text-body-md text-on-surface min-h-screen flex flex-col pt-[60px] pb-[40px] relative overflow-x-hidden">
 
@@ -628,21 +357,21 @@
 
       <div class="y2k-window transition-all duration-200 bg-surface-container-low h-[600px] lg:h-auto" id="resume-window" style="display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 100%; min-height: 500px;">
         
-        <div class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed w-full">
+        <div class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed flex-none shrink-0 min-h-[32px]">
           <div class="y2k-window-header-title">
             <span class="material-symbols-outlined text-sm">description</span>
             <span class="font-label-mono text-label-mono text-on-surface">resume.pdf</span>
           </div>
           <div class="y2k-controls">
-            <button class="y2k-control-btn" onclick="minimizeResume()" title="Restore Down">_</button>
-            <button class="y2k-control-btn" onclick="maximizeResume()" title="Maximize">□</button>
-            <button class="y2k-control-btn">×</button>
+            <button class="y2k-control-btn font-bold" onclick="minimizeResume()" title="Restore Down">_</button>
+            <button class="y2k-control-btn font-bold" onclick="maximizeResume()" title="Maximize">□</button>
+            <button class="y2k-control-btn font-bold">×</button>
           </div>
         </div>
         
-        <div class="w-full overflow-y-auto custom-scroll p-4 sm:p-6 flex justify-center">
+        <div class="flex-1 min-h-0 overflow-y-auto custom-scroll p-4 sm:p-6 flex flex-col items-center w-full">
           
-          <div class="w-full max-w-2xl bg-white border border-outline shadow-md p-4 sm:p-6 font-label-mono text-on-surface h-max cv-container">
+          <div class="w-full max-w-2xl bg-white border border-outline shadow-md p-4 sm:p-6 font-label-mono text-on-surface shrink-0 cv-container">
             <div class="text-center border-b-2 border-outline pb-2 cv-header">
               <h1 class="text-[10px] font-bold text-primary cv-title">DEBRA NETHANIA STEVENSON</h1>
               <p class="text-[6px] mt-1 text-on-surface-variant cv-subtitle">debra.nethania.s@gmail.com | Jakarta, ID</p>
@@ -716,7 +445,7 @@
           </div>
         </div>
 
-        <div class="w-full p-4 flex justify-center items-center bg-surface-container-low border-t border-outline/20">
+        <div class="flex-none shrink-0 w-full p-4 flex justify-center bg-surface-container-low border-t border-outline/20">
           <a href="assets/Debra_Stevenson_CV.pdf" download="Debra_Stevenson_CV.pdf" class="y2k-sticker px-6 py-2 flex items-center gap-2 w-3/4 max-w-sm justify-center text-on-surface hover:text-on-surface">
             <span class="material-symbols-outlined">download</span>
             DOWNLOAD CV

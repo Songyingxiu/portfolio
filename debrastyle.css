@@ -1,0 +1,178 @@
+body {
+  background-color: #f8f9fe;
+  background-image:
+    url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/></svg>'),
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(255, 183, 225, 0.2),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(194, 176, 253, 0.2),
+      transparent 40%
+    );
+  background-attachment: fixed;
+  cursor:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23854b70" stroke="white" stroke-width="2" d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/></svg>')
+      1 1,
+    auto;
+}
+
+.y2k-window {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #82737a;
+  box-shadow: 4px 4px 0px rgba(130, 115, 122, 0.2);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+/* BULLETPROOF CSS FOR MAXIMIZING THE RESUME */
+.y2k-maximized {
+  position: fixed !important;
+  top: 80px !important; /* Locks safely below the top Navigation Tabs */
+  left: 20px !important; /* Leaves a preview gap on the sides */
+  right: 20px !important;
+  bottom: 60px !important; /* Locks safely above the bottom Taskbar */
+  width: auto !important;
+  height: auto !important;
+  z-index: 40 !important; /* Slides perfectly underneath the nav tabs (z-50) */
+  margin: 0 !important;
+  border: 2px solid #82737a !important;
+  /* This massive shadow dims the background portfolio slightly without hiding the top/bottom bars! */
+  box-shadow:
+    0 0 0 100vmax rgba(25, 28, 31, 0.5),
+    8px 8px 0px rgba(130, 115, 122, 0.4) !important;
+}
+
+/* DYNAMIC CV TEXT SCALING FOR MAXIMIZED VIEW */
+.y2k-maximized .cv-container {
+  max-width: 800px !important;
+  padding: 48px !important;
+}
+.y2k-maximized .cv-title {
+  font-size: 28px !important;
+  line-height: 36px !important;
+}
+.y2k-maximized .cv-subtitle {
+  font-size: 14px !important;
+  line-height: 20px !important;
+  margin-top: 8px !important;
+}
+.y2k-maximized .cv-header {
+  padding-bottom: 24px !important;
+}
+.y2k-maximized .cv-section {
+  margin-top: 24px !important;
+}
+.y2k-maximized .cv-heading {
+  font-size: 16px !important;
+  padding: 4px 8px !important;
+  margin-bottom: 12px !important;
+}
+.y2k-maximized .cv-text {
+  font-size: 14px !important;
+  line-height: 24px !important;
+}
+.y2k-maximized .cv-list {
+  padding-left: 24px !important;
+}
+.y2k-maximized .cv-list > li {
+  margin-bottom: 8px !important;
+}
+.y2k-maximized .cv-sub-section {
+  margin-bottom: 16px !important;
+}
+
+.y2k-window-header {
+  background: linear-gradient(90deg, #c2b0fd, #ffb7e1);
+  padding: 4px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #82737a;
+}
+
+.y2k-window-header-title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.y2k-controls {
+  display: flex;
+  gap: 4px;
+}
+
+.y2k-control-btn {
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 1px solid #82737a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  cursor: pointer;
+  color: #82737a;
+}
+
+.y2k-sticker {
+  background: #ffb7e1;
+  border: 2px solid #191c1f;
+  color: #191c1f;
+  box-shadow: 2px 2px 0px #191c1f;
+  transition: all 0.1s;
+  font-weight: bold;
+}
+
+.y2k-sticker:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #191c1f;
+}
+
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+  position: fixed; /* FIXED SO THEY ALWAYS SHOW WHEN SCROLLING! */
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.pixel-border {
+  image-rendering: pixelated;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: #f2f3f8;
+  border: 1px solid #82737a;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #d4c2c9;
+  border: 1px solid #82737a;
+}
