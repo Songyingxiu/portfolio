@@ -1,1122 +1,2639 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="scroll-smooth" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>debra.exe - welcome to my world</title>
-  
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com" rel="preconnect" />
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Courier+Prime&family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-  
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary-container": "#ffb7e1",
-            "surface-container-high": "#e7e8ed",
-            "surface": "#f8f9fe",
-            "on-error-container": "#93000a",
-            "inverse-primary": "#f9b1db",
-            "on-secondary-fixed": "#1f0b52",
-            "surface-tint": "#854b70",
-            "primary-fixed": "#ffd8ec",
-            "tertiary-fixed-dim": "#9dd1bf",
-            "secondary-container": "#c2b0fd",
-            "on-primary": "#ffffff",
-            "on-tertiary-container": "#2d5f50",
-            "outline-variant": "#d4c2c9",
-            "surface-container-highest": "#e1e2e7",
-            "on-primary-container": "#7c4468",
-            "on-secondary-fixed-variant": "#4b3c7f",
-            "tertiary": "#366758",
-            "on-surface-variant": "#50434a",
-            "secondary": "#645499",
-            "secondary-fixed": "#e8deff",
-            "surface-bright": "#f8f9fe",
-            "on-primary-fixed-variant": "#6a3457",
-            "primary-fixed-dim": "#f9b1db",
-            "tertiary-container": "#a3d7c5",
-            "on-surface": "#191c1f",
-            "surface-container-lowest": "#ffffff",
-            "on-tertiary-fixed-variant": "#1c4f41",
-            "outline": "#82737a",
-            "on-background": "#191c1f",
-            "surface-variant": "#e1e2e7",
-            "primary": "#854b70",
-            "on-primary-fixed": "#36082a",
-            "on-secondary-container": "#504084",
-            "on-secondary": "#ffffff",
-            "inverse-surface": "#2e3134",
-            "on-tertiary-fixed": "#002018",
-            "surface-container": "#eceef3",
-            "error": "#ba1a1a",
-            "tertiary-fixed": "#b9eedb",
-            "background": "#f8f9fe",
-            "error-container": "#ffdad6",
-            "secondary-fixed-dim": "#cdbdff",
-            "surface-container-low": "#f2f3f8",
-            "on-error": "#ffffff",
-            "surface-dim": "#d8dadf",
-            "inverse-on-surface": "#eff0f5",
-            "on-tertiary": "#ffffff"
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>debra.exe - welcome to my world</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Courier+Prime&family=Plus+Jakarta+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#ffb7e1",
+              "surface-container-high": "#e7e8ed",
+              surface: "#f8f9fe",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#f9b1db",
+              "on-secondary-fixed": "#1f0b52",
+              "surface-tint": "#854b70",
+              "primary-fixed": "#ffd8ec",
+              "tertiary-fixed-dim": "#9dd1bf",
+              "secondary-container": "#c2b0fd",
+              "on-primary": "#ffffff",
+              "on-tertiary-container": "#2d5f50",
+              "outline-variant": "#d4c2c9",
+              "surface-container-highest": "#e1e2e7",
+              "on-primary-container": "#7c4468",
+              "on-secondary-fixed-variant": "#4b3c7f",
+              tertiary: "#366758",
+              "on-surface-variant": "#50434a",
+              secondary: "#645499",
+              "secondary-fixed": "#e8deff",
+              "surface-bright": "#f8f9fe",
+              "on-primary-fixed-variant": "#6a3457",
+              "primary-fixed-dim": "#f9b1db",
+              "tertiary-container": "#a3d7c5",
+              "on-surface": "#191c1f",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#1c4f41",
+              outline: "#82737a",
+              "on-background": "#191c1f",
+              "surface-variant": "#e1e2e7",
+              primary: "#854b70",
+              "on-primary-fixed": "#36082a",
+              "on-secondary-container": "#504084",
+              "on-secondary": "#ffffff",
+              "inverse-surface": "#2e3134",
+              "on-tertiary-fixed": "#002018",
+              "surface-container": "#eceef3",
+              error: "#ba1a1a",
+              "tertiary-fixed": "#b9eedb",
+              background: "#f8f9fe",
+              "error-container": "#ffdad6",
+              "secondary-fixed-dim": "#cdbdff",
+              "surface-container-low": "#f2f3f8",
+              "on-error": "#ffffff",
+              "surface-dim": "#d8dadf",
+              "inverse-on-surface": "#eff0f5",
+              "on-tertiary": "#ffffff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "stack-overlap": "-1rem",
+              "container-padding": "2rem",
+              base: "8px",
+              gutter: "1.5rem",
+              "window-gap": "2rem",
+            },
+            fontFamily: {
+              "headline-lg": ["Bricolage Grotesque"],
+              "headline-lg-mobile": ["Bricolage Grotesque"],
+              "label-mono": ["Courier Prime"],
+              "display-xl": ["Bricolage Grotesque"],
+              "button-text": ["Plus Jakarta Sans"],
+              "body-md": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "headline-lg": [
+                "2.5rem",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              "headline-lg-mobile": [
+                "1.75rem",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              "label-mono": [
+                "0.875rem",
+                {
+                  lineHeight: "1.4",
+                  letterSpacing: "0.05em",
+                  fontWeight: "400",
+                },
+              ],
+              "display-xl": [
+                "4.5rem",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "button-text": [
+                "0.938rem",
+                { lineHeight: "1", fontWeight: "700" },
+              ],
+              "body-md": ["1rem", { lineHeight: "1.6", fontWeight: "400" }],
+            },
           },
-          borderRadius: {
-            DEFAULT: "0.25rem",
-            lg: "0.5rem",
-            xl: "0.75rem",
-            full: "9999px"
-          },
-          spacing: {
-            "stack-overlap": "-1rem",
-            "container-padding": "2rem",
-            base: "8px",
-            gutter: "1.5rem",
-            "window-gap": "2rem"
-          },
-          fontFamily: {
-            "headline-lg": ["Bricolage Grotesque"],
-            "headline-lg-mobile": ["Bricolage Grotesque"],
-            "label-mono": ["Courier Prime"],
-            "display-xl": ["Bricolage Grotesque"],
-            "button-text": ["Plus Jakarta Sans"],
-            "body-md": ["Plus Jakarta Sans"]
-          },
-          fontSize: {
-            "headline-lg": ["2.5rem", { lineHeight: "1.2", fontWeight: "700" }],
-            "headline-lg-mobile": ["1.75rem", { lineHeight: "1.2", fontWeight: "700" }],
-            "label-mono": ["0.875rem", { lineHeight: "1.4", letterSpacing: "0.05em", fontWeight: "400" }],
-            "display-xl": ["4.5rem", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
-            "button-text": ["0.938rem", { lineHeight: "1", fontWeight: "700" }],
-            "body-md": ["1rem", { lineHeight: "1.6", fontWeight: "400" }]
-          }
-        }
-      }
-    };
-  </script>
+        },
+      };
+    </script>
 
-  <link rel="stylesheet" href="debrastyle.css">
-  <script src="debra_script.js" defer></script>
-  
-</head>
-<body class="font-body-md text-body-md text-on-surface min-h-screen flex flex-col pt-[60px] pb-[40px] relative overflow-x-hidden">
-
-  <div class="floating-element top-[10%] left-[5%] text-primary-container" style="animation-delay: 0s;">
-    <span class="material-symbols-outlined" style="font-size: 48px;">star</span>
-  </div>
-  <div class="floating-element top-[15%] right-[10%] text-secondary-container" style="animation-delay: 1s;">
-    <span class="material-symbols-outlined" style="font-size: 32px;">auto_awesome</span>
-  </div>
-  <div class="floating-element top-[30%] left-[15%] text-tertiary-container" style="animation-delay: 2s;">
-    <span class="material-symbols-outlined" style="font-size: 40px;">favorite</span>
-  </div>
-  <div class="floating-element top-[40%] right-[5%] text-primary-fixed" style="animation-delay: 1.5s;">
-    <span class="material-symbols-outlined" style="font-size: 56px;">star</span>
-  </div>
-  <div class="floating-element top-[60%] left-[25%] text-secondary-fixed" style="animation-delay: 0.5s;">
-    <span class="material-symbols-outlined" style="font-size: 36px;">filter_vintage</span>
-  </div>
-  <div class="floating-element bottom-[20%] right-[15%] text-primary-container" style="animation-delay: 2.5s;">
-    <span class="material-symbols-outlined" style="font-size: 42px;">favorite</span>
-  </div>
-  <div class="floating-element bottom-[10%] left-[10%] text-tertiary-container" style="animation-delay: 1.2s;">
-    <span class="material-symbols-outlined" style="font-size: 50px;">music_note</span>
-  </div>
-  <div class="floating-element top-[20%] left-[40%] text-outline-variant opacity-50" style="animation-delay: 3s;">
-    <span class="material-symbols-outlined" style="font-size: 24px;">cruelty_free</span>
-  </div>
-  <div class="floating-element top-[70%] right-[30%] text-secondary-container opacity-70" style="animation-delay: 0.8s;">
-    <span class="material-symbols-outlined" style="font-size: 38px;">local_cafe</span>
-  </div>
-  <div class="floating-element top-[50%] left-[5%] text-primary-fixed-dim" style="animation-delay: 1.8s;">
-    <span class="material-symbols-outlined" style="font-size: 30px;">mood</span>
-  </div>
-  <div class="floating-element bottom-[30%] left-[45%] text-secondary-fixed-dim" style="animation-delay: 2.2s;">
-    <span class="material-symbols-outlined" style="font-size: 28px;">bolt</span>
-  </div>
-  <div class="floating-element top-[5%] left-[60%] text-tertiary-fixed-dim" style="animation-delay: 0.3s;">
-    <span class="material-symbols-outlined" style="font-size: 35px;">auto_awesome</span>
-  </div>
-  <div class="floating-element top-[80%] left-[50%] text-primary opacity-40" style="animation-delay: 4s;">
-    <span class="material-symbols-outlined" style="font-size: 20px;">water_drop</span>
-  </div>
-  <div class="floating-element top-[25%] right-[25%] text-secondary opacity-30" style="animation-delay: 2.7s;">
-    <span class="material-symbols-outlined" style="font-size: 45px;">code</span>
-  </div>
-  <div class="floating-element bottom-[15%] right-[40%] text-tertiary opacity-50" style="animation-delay: 1.1s;">
-    <span class="material-symbols-outlined" style="font-size: 33px;">pets</span>
-  </div>
-  <div class="floating-element top-[45%] left-[80%] text-[#ffffa5] opacity-60" style="animation-delay: 3.5s;">
-    <span class="material-symbols-outlined" style="font-size: 26px;">cake</span>
-  </div>
-  <div class="floating-element top-[8%] right-[45%] text-primary-container opacity-80" style="animation-delay: 0.7s;">
-    <span class="material-symbols-outlined" style="font-size: 18px;">favorite</span>
-  </div>
-  <div class="floating-element bottom-[5%] right-[2%] text-secondary-container opacity-40" style="animation-delay: 4.2s;">
-    <span class="material-symbols-outlined" style="font-size: 64px;">star</span>
-  </div>
-  <div class="floating-element top-[55%] right-[15%] text-tertiary-container opacity-60" style="animation-delay: 1.9s;">
-    <span class="material-symbols-outlined" style="font-size: 22px;">filter_vintage</span>
-  </div>
-  <div class="floating-element top-[35%] left-[30%] text-primary-fixed opacity-70" style="animation-delay: 2.1s;">
-    <span class="material-symbols-outlined" style="font-size: 30px;">music_note</span>
-  </div>
-  <div class="floating-element bottom-[40%] right-[50%] text-secondary-fixed opacity-50" style="animation-delay: 3.8s;">
-    <span class="material-symbols-outlined" style="font-size: 40px;">auto_awesome</span>
-  </div>
-  <div class="floating-element top-[85%] left-[20%] text-tertiary-fixed opacity-30" style="animation-delay: 0.6s;">
-    <span class="material-symbols-outlined" style="font-size: 55px;">mood</span>
-  </div>
-  <div class="floating-element top-[12%] left-[25%] text-primary-fixed-dim opacity-60" style="animation-delay: 4.5s;">
-    <span class="material-symbols-outlined" style="font-size: 25px;">local_cafe</span>
-  </div>
-  <div class="floating-element bottom-[25%] left-[70%] text-secondary-fixed-dim opacity-40" style="animation-delay: 1.4s;">
-    <span class="material-symbols-outlined" style="font-size: 48px;">cruelty_free</span>
-  </div>
-  <div class="floating-element top-[65%] right-[5%] text-tertiary-fixed-dim opacity-70" style="animation-delay: 2.9s;">
-    <span class="material-symbols-outlined" style="font-size: 34px;">bolt</span>
-  </div>
-  <div class="floating-element top-[75%] left-[35%] text-outline-variant opacity-50" style="animation-delay: 3.2s;">
-    <span class="material-symbols-outlined" style="font-size: 28px;">terminal</span>
-  </div>
-  <div class="floating-element bottom-[45%] left-[10%] text-primary-container opacity-90" style="animation-delay: 0.2s;">
-    <span class="material-symbols-outlined" style="font-size: 20px;">star</span>
-  </div>
-  <div class="floating-element top-[5%] left-[85%] text-secondary-container opacity-50" style="animation-delay: 4.8s;">
-    <span class="material-symbols-outlined" style="font-size: 36px;">favorite</span>
-  </div>
-  <div class="floating-element bottom-[50%] right-[20%] text-tertiary-container opacity-20" style="animation-delay: 1.6s;">
-    <span class="material-symbols-outlined" style="font-size: 50px;">code</span>
-  </div>
-  <div class="floating-element top-[90%] right-[80%] text-[#ffffa5] opacity-80" style="animation-delay: 3.1s;">
-    <span class="material-symbols-outlined" style="font-size: 26px;">auto_awesome</span>
-  </div>
-
-  <header class="fixed w-full z-50 top-0 border-b-2 border-outline bg-surface-container-low shadow-[0_2px_0_rgba(130,115,122,0.2)]">
-    <nav class="flex justify-between items-center w-full px-container-padding py-2 max-w-[1440px] mx-auto">
-      <div class="font-display-xl text-primary text-3xl italic tracking-tight drop-shadow-[2px_2px_0px_#ffffff]">
-        debra.exe
-      </div>
-      <div class="hidden md:flex items-center gap-6">
-        <a class="font-button-text text-button-text text-primary flex flex-col items-center gap-1 hover:text-on-primary-container" href="#home">
-          <span class="material-symbols-outlined text-xl">home</span> home
-        </a>
-        <button onclick="openModal('aboutModal')" class="font-button-text text-button-text text-on-surface-variant flex flex-col items-center gap-1 hover:text-primary">
-          <span class="material-symbols-outlined text-xl">favorite</span> about
-        </button>
-        <a class="font-button-text text-button-text text-on-surface-variant flex flex-col items-center gap-1 hover:text-primary" href="#projects">
-          <span class="material-symbols-outlined text-xl">folder</span> projects
-        </a>
-        <button onclick="openModal('skillsModal')" class="font-button-text text-button-text text-on-surface-variant flex flex-col items-center gap-1 hover:text-primary">
-          <span class="material-symbols-outlined text-xl">star</span> skills
-        </button>
-        <a class="font-button-text text-button-text text-on-surface-variant flex flex-col items-center gap-1 hover:text-primary" href="#contact">
-          <span class="material-symbols-outlined text-xl">mail</span> contact
-        </a>
-      </div>
-      <div class="flex items-center gap-2">
-        <div class="relative bg-white border border-outline flex items-center px-2 py-1">
-          <input id="searchInput" class="border-none outline-none text-sm w-32 focus:ring-0 p-0" placeholder="search..." type="text" />
-          <span class="material-symbols-outlined text-sm text-outline">search</span>
-        </div>
-        <button onclick="performSearch()" class="y2k-sticker p-1 flex items-center justify-center">
-          <span class="material-symbols-outlined text-sm">search</span>
-        </button>
-      </div>
-    </nav>
-  </header>
-
-  <main class="flex-grow w-full max-w-[1440px] mx-auto px-4 sm:px-container-padding py-8 flex flex-col gap-6 relative z-10" id="home">
-    
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-      <div class="lg:col-span-3 flex flex-col gap-6">
-        <div class="y2k-window">
-          <div class="y2k-window-header">
-            <div class="y2k-window-header-title">
-              <span class="material-symbols-outlined text-sm">person</span>
-              <span class="font-label-mono text-label-mono text-on-surface">profile.exe</span>
-            </div>
-            <div class="y2k-controls">
-              <button class="y2k-control-btn">_</button>
-              <button class="y2k-control-btn">□</button>
-              <button class="y2k-control-btn">×</button>
-            </div>
-          </div>
-          <div class="p-4 flex flex-col items-center gap-4 bg-surface-container-low">
-            <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-primary bg-surface-container shadow-[2px_2px_0px_#854b70]">
-              <img alt="Profile Picture" class="w-full h-full object-cover" src="assets/profile3.jpeg" onerror="this.src='https://placehold.co/400x400/ffb7e1/7c4468?text=Photo'" />
-            </div>
-            <div class="text-center">
-              <h2 class="font-headline-lg-mobile text-xl text-primary">Debra Stevenson</h2>
-              <p class="font-label-mono text-label-mono text-on-surface-variant mt-1">status: trying my best...</p>
-            </div>
-            <div class="w-full border-t border-outline border-dashed pt-4 flex flex-col gap-2">
-              <button onclick="openModal('aboutModal')" class="w-full flex justify-between items-center text-sm font-label-mono hover:text-primary hover:bg-primary-container/20 px-2 py-1 cursor-pointer">
-                <span class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">favorite</span> about me</span>
-                <span>></span>
-              </button>
-              <button onclick="openModal('skillsModal')" class="w-full flex justify-between items-center text-sm font-label-mono hover:text-primary hover:bg-primary-container/20 px-2 py-1 cursor-pointer">
-                <span class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">star</span> skills</span>
-                <span>></span>
-              </button>
-              <a class="flex justify-between items-center text-sm font-label-mono hover:text-primary hover:bg-primary-container/20 px-2 py-1" href="#contact">
-                <span class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span> contact</span>
-                <span>></span>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="bg-[#ffffa5] p-4 border border-[#e5e594] shadow-[4px_4px_0px_rgba(0,0,0,0.1)] transform rotate-2 w-4/5 mx-auto">
-          <ul class="font-label-mono text-sm leading-loose list-none">
-            <li><span class="material-symbols-outlined text-xs mr-1 align-middle">star</span>don't ♭. ordinary</li>
-            <li><span class="material-symbols-outlined text-xs mr-1 align-middle">star</span>drink water</li>
-            <li><span class="material-symbols-outlined text-xs mr-1 align-middle">star</span>love yourself₊˚⊹♡</li>
-            <li><span class="material-symbols-outlined text-xs mr-1 align-middle">star</span>have fun!</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="lg:col-span-9 flex flex-col justify-center">
-        <div class="y2k-window w-full lg:w-5/6 mx-auto shadow-[8px_8px_0px_rgba(130,115,122,0.2)]">
-          <div class="y2k-window-header">
-            <div class="y2k-window-header-title">
-              <span class="material-symbols-outlined text-sm">terminal</span>
-              <span class="font-label-mono text-label-mono text-on-surface">welcome.exe</span>
-            </div>
-            <div class="y2k-controls">
-              <button class="y2k-control-btn">_</button>
-              <button class="y2k-control-btn">□</button>
-              <button class="y2k-control-btn">×</button>
-            </div>
-          </div>
-          <div class="p-6 md:p-8 flex flex-col items-center justify-center text-center gap-4 relative overflow-hidden bg-white/50">
-            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#854b70 1px, transparent 1px); background-size: 20px 20px;"></div>
-            
-            <h1 class="font-display-xl text-3xl md:text-5xl text-primary drop-shadow-[2px_2px_0px_#ffb7e1] relative z-10 leading-tight">
-              HELLO, I'M <br> DEBRA STEVENSON
-            </h1>
-            
-            <p class="font-label-mono text-sm text-on-surface-variant max-w-md relative z-10 bg-white/80 p-4 border border-outline border-dashed">
-              I am an Information Technology student at CCIT FTUI and Asia E University, dedicated to bridging the gap between robust backend architecture and intuitive UI/UX design.
-              I leverage tools like CodeIgniter 4, Spring Boot, and Flutter to build scalable applications while ensuring top-tier performance through rigorous automated testing. 𑣲⋆
-            </p>
-            
-            <div class="flex gap-4 mt-2 relative z-10">
-              <a href="#projects" class="y2k-sticker font-button-text text-button-text px-6 py-2 rounded-none uppercase tracking-wider flex items-center gap-2 text-on-surface hover:text-on-surface">
-                enter <span class="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
-              <button onclick="openModal('aboutModal')" class="bg-surface-container-low border-2 border-outline px-6 py-2 font-button-text uppercase tracking-wider shadow-[2px_2px_0px_#82737a] hover:bg-surface-container transition-colors">
-                about me
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <link rel="stylesheet" href="debrastyle.css" />
+    <script src="debra_script.js" defer></script>
+  </head>
+  <body
+    class="font-body-md text-body-md text-on-surface min-h-screen flex flex-col pt-[60px] pb-[40px] relative overflow-x-hidden"
+  >
+    <div
+      class="floating-element top-[10%] left-[5%] text-primary-container"
+      style="animation-delay: 0s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 48px"
+        >star</span
+      >
+    </div>
+    <div
+      class="floating-element top-[15%] right-[10%] text-secondary-container"
+      style="animation-delay: 1s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 32px"
+        >auto_awesome</span
+      >
+    </div>
+    <div
+      class="floating-element top-[30%] left-[15%] text-tertiary-container"
+      style="animation-delay: 2s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 40px"
+        >favorite</span
+      >
+    </div>
+    <div
+      class="floating-element top-[40%] right-[5%] text-primary-fixed"
+      style="animation-delay: 1.5s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 56px"
+        >star</span
+      >
+    </div>
+    <div
+      class="floating-element top-[60%] left-[25%] text-secondary-fixed"
+      style="animation-delay: 0.5s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 36px"
+        >filter_vintage</span
+      >
+    </div>
+    <div
+      class="floating-element bottom-[20%] right-[15%] text-primary-container"
+      style="animation-delay: 2.5s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 42px"
+        >favorite</span
+      >
+    </div>
+    <div
+      class="floating-element bottom-[10%] left-[10%] text-tertiary-container"
+      style="animation-delay: 1.2s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 50px"
+        >music_note</span
+      >
+    </div>
+    <div
+      class="floating-element top-[20%] left-[40%] text-outline-variant opacity-50"
+      style="animation-delay: 3s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 24px"
+        >cruelty_free</span
+      >
+    </div>
+    <div
+      class="floating-element top-[70%] right-[30%] text-secondary-container opacity-70"
+      style="animation-delay: 0.8s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 38px"
+        >local_cafe</span
+      >
+    </div>
+    <div
+      class="floating-element top-[50%] left-[5%] text-primary-fixed-dim"
+      style="animation-delay: 1.8s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 30px"
+        >mood</span
+      >
+    </div>
+    <div
+      class="floating-element bottom-[30%] left-[45%] text-secondary-fixed-dim"
+      style="animation-delay: 2.2s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 28px"
+        >bolt</span
+      >
+    </div>
+    <div
+      class="floating-element top-[5%] left-[60%] text-tertiary-fixed-dim"
+      style="animation-delay: 0.3s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 35px"
+        >auto_awesome</span
+      >
+    </div>
+    <div
+      class="floating-element top-[80%] left-[50%] text-primary opacity-40"
+      style="animation-delay: 4s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 20px"
+        >water_drop</span
+      >
+    </div>
+    <div
+      class="floating-element top-[25%] right-[25%] text-secondary opacity-30"
+      style="animation-delay: 2.7s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 45px"
+        >code</span
+      >
+    </div>
+    <div
+      class="floating-element bottom-[15%] right-[40%] text-tertiary opacity-50"
+      style="animation-delay: 1.1s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 33px"
+        >pets</span
+      >
+    </div>
+    <div
+      class="floating-element top-[45%] left-[80%] text-[#ffffa5] opacity-60"
+      style="animation-delay: 3.5s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 26px"
+        >cake</span
+      >
+    </div>
+    <div
+      class="floating-element top-[8%] right-[45%] text-primary-container opacity-80"
+      style="animation-delay: 0.7s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 18px"
+        >favorite</span
+      >
+    </div>
+    <div
+      class="floating-element bottom-[5%] right-[2%] text-secondary-container opacity-40"
+      style="animation-delay: 4.2s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 64px"
+        >star</span
+      >
+    </div>
+    <div
+      class="floating-element top-[55%] right-[15%] text-tertiary-container opacity-60"
+      style="animation-delay: 1.9s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 22px"
+        >filter_vintage</span
+      >
+    </div>
+    <div
+      class="floating-element top-[35%] left-[30%] text-primary-fixed opacity-70"
+      style="animation-delay: 2.1s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 30px"
+        >music_note</span
+      >
+    </div>
+    <div
+      class="floating-element bottom-[40%] right-[50%] text-secondary-fixed opacity-50"
+      style="animation-delay: 3.8s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 40px"
+        >auto_awesome</span
+      >
+    </div>
+    <div
+      class="floating-element top-[85%] left-[20%] text-tertiary-fixed opacity-30"
+      style="animation-delay: 0.6s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 55px"
+        >mood</span
+      >
+    </div>
+    <div
+      class="floating-element top-[12%] left-[25%] text-primary-fixed-dim opacity-60"
+      style="animation-delay: 4.5s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 25px"
+        >local_cafe</span
+      >
+    </div>
+    <div
+      class="floating-element bottom-[25%] left-[70%] text-secondary-fixed-dim opacity-40"
+      style="animation-delay: 1.4s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 48px"
+        >cruelty_free</span
+      >
+    </div>
+    <div
+      class="floating-element top-[65%] right-[5%] text-tertiary-fixed-dim opacity-70"
+      style="animation-delay: 2.9s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 34px"
+        >bolt</span
+      >
+    </div>
+    <div
+      class="floating-element top-[75%] left-[35%] text-outline-variant opacity-50"
+      style="animation-delay: 3.2s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 28px"
+        >terminal</span
+      >
+    </div>
+    <div
+      class="floating-element bottom-[45%] left-[10%] text-primary-container opacity-90"
+      style="animation-delay: 0.2s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 20px"
+        >star</span
+      >
+    </div>
+    <div
+      class="floating-element top-[5%] left-[85%] text-secondary-container opacity-50"
+      style="animation-delay: 4.8s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 36px"
+        >favorite</span
+      >
+    </div>
+    <div
+      class="floating-element bottom-[50%] right-[20%] text-tertiary-container opacity-20"
+      style="animation-delay: 1.6s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 50px"
+        >code</span
+      >
+    </div>
+    <div
+      class="floating-element top-[90%] right-[80%] text-[#ffffa5] opacity-80"
+      style="animation-delay: 3.1s"
+    >
+      <span class="material-symbols-outlined" style="font-size: 26px"
+        >auto_awesome</span
+      >
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="projects">
-      <div class="y2k-window">
-        <div class="y2k-window-header bg-gradient-to-r from-secondary-container to-secondary-fixed">
-          <div class="y2k-window-header-title">
-            <span class="material-symbols-outlined text-sm">star</span>
-            <span class="font-label-mono text-label-mono text-on-surface">lunera_app.exe</span>
+    <header
+      class="fixed w-full z-50 top-0 border-b-2 border-outline bg-surface-container-low shadow-[0_2px_0_rgba(130,115,122,0.2)]"
+    >
+      <nav
+        class="flex justify-between items-center w-full px-container-padding py-2 max-w-[1440px] mx-auto"
+      >
+        <div
+          class="font-display-xl text-primary text-3xl italic tracking-tight drop-shadow-[2px_2px_0px_#ffffff]"
+        >
+          debra.exe
+        </div>
+        <div class="hidden md:flex items-center gap-6">
+          <a
+            class="font-button-text text-button-text text-primary flex flex-col items-center gap-1 hover:text-on-primary-container"
+            href="#home"
+          >
+            <span class="material-symbols-outlined text-xl">home</span> home
+          </a>
+          <button
+            onclick="openModal('aboutModal')"
+            class="font-button-text text-button-text text-on-surface-variant flex flex-col items-center gap-1 hover:text-primary"
+          >
+            <span class="material-symbols-outlined text-xl">favorite</span>
+            about
+          </button>
+          <a
+            class="font-button-text text-button-text text-on-surface-variant flex flex-col items-center gap-1 hover:text-primary"
+            href="#projects"
+          >
+            <span class="material-symbols-outlined text-xl">folder</span>
+            projects
+          </a>
+          <button
+            onclick="openModal('skillsModal')"
+            class="font-button-text text-button-text text-on-surface-variant flex flex-col items-center gap-1 hover:text-primary"
+          >
+            <span class="material-symbols-outlined text-xl">star</span> skills
+          </button>
+          <a
+            class="font-button-text text-button-text text-on-surface-variant flex flex-col items-center gap-1 hover:text-primary"
+            href="#contact"
+          >
+            <span class="material-symbols-outlined text-xl">mail</span> contact
+          </a>
+        </div>
+        <div class="flex items-center gap-2">
+          <div
+            class="relative bg-white border border-outline flex items-center px-2 py-1"
+          >
+            <input
+              id="searchInput"
+              class="border-none outline-none text-sm w-32 focus:ring-0 p-0"
+              placeholder="search..."
+              type="text"
+            />
+            <span class="material-symbols-outlined text-sm text-outline"
+              >search</span
+            >
           </div>
-          <div class="y2k-controls">
-            <button class="y2k-control-btn">_</button>
-            <button class="y2k-control-btn">□</button>
-            <button class="y2k-control-btn">×</button>
+          <button
+            onclick="performSearch()"
+            class="y2k-sticker p-1 flex items-center justify-center"
+          >
+            <span class="material-symbols-outlined text-sm">search</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main
+      class="flex-grow w-full max-w-[1440px] mx-auto px-4 sm:px-container-padding py-8 flex flex-col gap-6 relative z-10"
+      id="home"
+    >
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-3 flex flex-col gap-6">
+          <div class="y2k-window">
+            <div class="y2k-window-header">
+              <div class="y2k-window-header-title">
+                <span class="material-symbols-outlined text-sm">person</span>
+                <span class="font-label-mono text-label-mono text-on-surface"
+                  >profile.exe</span
+                >
+              </div>
+              <div class="y2k-controls">
+                <button class="y2k-control-btn">_</button>
+                <button class="y2k-control-btn">□</button>
+                <button class="y2k-control-btn">×</button>
+              </div>
+            </div>
+            <div
+              class="p-4 flex flex-col items-center gap-4 bg-surface-container-low"
+            >
+              <div
+                class="w-24 h-24 rounded-full overflow-hidden border-2 border-primary bg-surface-container shadow-[2px_2px_0px_#854b70]"
+              >
+                <img
+                  alt="Profile Picture"
+                  class="w-full h-full object-cover"
+                  src="assets/profile3.jpeg"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/400x400/ffb7e1/7c4468?text=Photo'
+                  "
+                />
+              </div>
+              <div class="text-center">
+                <h2 class="font-headline-lg-mobile text-xl text-primary">
+                  Debra Stevenson
+                </h2>
+                <p
+                  class="font-label-mono text-label-mono text-on-surface-variant mt-1"
+                >
+                  status: trying my best...
+                </p>
+              </div>
+              <div
+                class="w-full border-t border-outline border-dashed pt-4 flex flex-col gap-2"
+              >
+                <button
+                  onclick="openModal('aboutModal')"
+                  class="w-full flex justify-between items-center text-sm font-label-mono hover:text-primary hover:bg-primary-container/20 px-2 py-1 cursor-pointer"
+                >
+                  <span class="flex items-center gap-2"
+                    ><span class="material-symbols-outlined text-sm"
+                      >favorite</span
+                    >
+                    about me</span
+                  >
+                  <span>></span>
+                </button>
+                <button
+                  onclick="openModal('skillsModal')"
+                  class="w-full flex justify-between items-center text-sm font-label-mono hover:text-primary hover:bg-primary-container/20 px-2 py-1 cursor-pointer"
+                >
+                  <span class="flex items-center gap-2"
+                    ><span class="material-symbols-outlined text-sm">star</span>
+                    skills</span
+                  >
+                  <span>></span>
+                </button>
+                <a
+                  class="flex justify-between items-center text-sm font-label-mono hover:text-primary hover:bg-primary-container/20 px-2 py-1"
+                  href="#contact"
+                >
+                  <span class="flex items-center gap-2"
+                    ><span class="material-symbols-outlined text-sm">mail</span>
+                    contact</span
+                  >
+                  <span>></span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#ffffa5] p-4 border border-[#e5e594] shadow-[4px_4px_0px_rgba(0,0,0,0.1)] transform rotate-2 w-4/5 mx-auto"
+          >
+            <ul class="font-label-mono text-sm leading-loose list-none">
+              <li>
+                <span
+                  class="material-symbols-outlined text-xs mr-1 align-middle"
+                  >star</span
+                >don't ♭. ordinary
+              </li>
+              <li>
+                <span
+                  class="material-symbols-outlined text-xs mr-1 align-middle"
+                  >star</span
+                >drink water
+              </li>
+              <li>
+                <span
+                  class="material-symbols-outlined text-xs mr-1 align-middle"
+                  >star</span
+                >love yourself₊˚⊹♡
+              </li>
+              <li>
+                <span
+                  class="material-symbols-outlined text-xs mr-1 align-middle"
+                  >star</span
+                >have fun!
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="p-6 bg-surface">
-          <div class="aspect-video bg-surface-container-high border border-outline mb-4 flex items-center justify-center overflow-hidden">
-              <img alt="Screenshot of Lunera Project" class="w-full h-full object-cover" src="assets/lunera-search.png" />
+
+        <div class="lg:col-span-9 flex flex-col justify-center">
+          <div
+            class="y2k-window w-full lg:w-5/6 mx-auto shadow-[8px_8px_0px_rgba(130,115,122,0.2)]"
+          >
+            <div class="y2k-window-header">
+              <div class="y2k-window-header-title">
+                <span class="material-symbols-outlined text-sm">terminal</span>
+                <span class="font-label-mono text-label-mono text-on-surface"
+                  >welcome.exe</span
+                >
+              </div>
+              <div class="y2k-controls">
+                <button class="y2k-control-btn">_</button>
+                <button class="y2k-control-btn">□</button>
+                <button class="y2k-control-btn">×</button>
+              </div>
+            </div>
+            <div
+              class="p-6 md:p-8 flex flex-col items-center justify-center text-center gap-4 relative overflow-hidden bg-white/50"
+            >
+              <div
+                class="absolute inset-0 opacity-10"
+                style="
+                  background-image: radial-gradient(
+                    #854b70 1px,
+                    transparent 1px
+                  );
+                  background-size: 20px 20px;
+                "
+              ></div>
+
+              <h1
+                class="font-display-xl text-3xl md:text-5xl text-primary drop-shadow-[2px_2px_0px_#ffb7e1] relative z-10 leading-tight"
+              >
+                HELLO, I'M <br />
+                DEBRA STEVENSON
+              </h1>
+
+              <p
+                class="font-label-mono text-sm text-on-surface-variant max-w-md relative z-10 bg-white/80 p-4 border border-outline border-dashed"
+              >
+                I am an Information Technology student at CCIT FTUI and Asia E
+                University, dedicated to bridging the gap between robust backend
+                architecture and intuitive UI/UX design. I leverage tools like
+                CodeIgniter 4, Spring Boot, and Flutter to build scalable
+                applications while ensuring top-tier performance through
+                rigorous automated testing. 𑣲⋆
+              </p>
+
+              <div class="flex gap-4 mt-2 relative z-10">
+                <a
+                  href="#projects"
+                  class="y2k-sticker font-button-text text-button-text px-6 py-2 rounded-none uppercase tracking-wider flex items-center gap-2 text-on-surface hover:text-on-surface"
+                >
+                  enter
+                  <span class="material-symbols-outlined text-sm"
+                    >arrow_forward</span
+                  >
+                </a>
+                <button
+                  onclick="openModal('aboutModal')"
+                  class="bg-surface-container-low border-2 border-outline px-6 py-2 font-button-text uppercase tracking-wider shadow-[2px_2px_0px_#82737a] hover:bg-surface-container transition-colors"
+                >
+                  about me
+                </button>
+              </div>
+            </div>
           </div>
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="font-headline-lg-mobile text-xl text-primary">Project Lunera</h3>
-            <span class="bg-secondary-container px-2 py-1 text-xs font-label-mono border border-secondary text-on-secondary-fixed">CI4 + SQA</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="projects">
+        <div class="y2k-window">
+          <div
+            class="y2k-window-header bg-gradient-to-r from-secondary-container to-secondary-fixed"
+          >
+            <div class="y2k-window-header-title">
+              <span class="material-symbols-outlined text-sm">star</span>
+              <span class="font-label-mono text-label-mono text-on-surface"
+                >lunera_app.exe</span
+              >
+            </div>
+            <div class="y2k-controls">
+              <button class="y2k-control-btn">_</button>
+              <button class="y2k-control-btn">□</button>
+              <button class="y2k-control-btn">×</button>
+            </div>
           </div>
-          <p class="font-body-md text-sm text-on-surface-variant mb-4">
-            Project Lunera, collaboratively developed by myself and my friend, is a secure full-stack content management system and RESTful API designed for organizing Anime streaming media. <br><br>
-            Bridging a robust CodeIgniter 4 backend with a Flutter frontend, the platform features a role-based Admin Dashboard for managing catalogs and users, alongside a strictly controlled, read-only public API. Built with a strong focus on Software Quality Assurance (SQA), Lunera implements strict routing firewalls to block unauthorized write requests, dynamic input validations, and secure credential hashing to ensure data integrity.
-          </p>
-          <div class="flex gap-2">
-            <button onclick="openLuneraModal()" class="y2k-sticker px-4 py-1 text-sm flex items-center gap-1">
-              <span class="material-symbols-outlined text-xs">visibility</span> view case study
-            </button>
-            <a href="https://github.com/Songyingxiu/lunera" target="_blank" rel="noopener noreferrer" class="border border-outline px-4 py-1 text-sm bg-white hover:bg-surface-container-low font-label-mono flex items-center gap-1 text-on-surface">
-              <span class="material-symbols-outlined text-xs">code</span> github repo
+          <div class="p-6 bg-surface">
+            <div
+              class="aspect-video bg-surface-container-high border border-outline mb-4 flex items-center justify-center overflow-hidden"
+            >
+              <img
+                alt="Screenshot of Lunera Project"
+                class="w-full h-full object-cover"
+                src="assets/lunera-search.png"
+              />
+            </div>
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-headline-lg-mobile text-xl text-primary">
+                Project Lunera
+              </h3>
+              <span
+                class="bg-secondary-container px-2 py-1 text-xs font-label-mono border border-secondary text-on-secondary-fixed"
+                >CI4 + SQA</span
+              >
+            </div>
+            <p class="font-body-md text-sm text-on-surface-variant mb-4">
+              Project Lunera, collaboratively developed by myself and my friend,
+              is a secure full-stack content management system and RESTful API
+              designed for organizing Anime streaming media. <br /><br />
+              Bridging a robust CodeIgniter 4 backend with a Flutter frontend,
+              the platform features a role-based Admin Dashboard for managing
+              catalogs and users, alongside a strictly controlled, read-only
+              public API. Built with a strong focus on Software Quality
+              Assurance (SQA), Lunera implements strict routing firewalls to
+              block unauthorized write requests, dynamic input validations, and
+              secure credential hashing to ensure data integrity.
+            </p>
+            <div class="flex gap-2">
+              <button
+                onclick="openLuneraModal()"
+                class="y2k-sticker px-4 py-1 text-sm flex items-center gap-1"
+              >
+                <span class="material-symbols-outlined text-xs"
+                  >visibility</span
+                >
+                view case study
+              </button>
+              <a
+                href="https://github.com/Songyingxiu/lunera"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="border border-outline px-4 py-1 text-sm bg-white hover:bg-surface-container-low font-label-mono flex items-center gap-1 text-on-surface"
+              >
+                <span class="material-symbols-outlined text-xs">code</span>
+                github repo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="y2k-window transition-all duration-200 bg-surface-container-low h-[600px] lg:h-auto"
+          id="resume-window"
+          style="
+            display: grid;
+            grid-template-rows: auto minmax(0, 1fr) auto;
+            height: 100%;
+            min-height: 500px;
+          "
+        >
+          <div
+            class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed flex-none shrink-0 min-h-[32px]"
+          >
+            <div class="y2k-window-header-title">
+              <span class="material-symbols-outlined text-sm">description</span>
+              <span class="font-label-mono text-label-mono text-on-surface"
+                >resume.pdf</span
+              >
+            </div>
+            <div class="y2k-controls">
+              <button
+                class="y2k-control-btn font-bold"
+                onclick="minimizeResume()"
+                title="Restore Down"
+              >
+                _
+              </button>
+              <button
+                class="y2k-control-btn font-bold"
+                onclick="maximizeResume()"
+                title="Maximize"
+              >
+                □
+              </button>
+              <button class="y2k-control-btn font-bold">×</button>
+            </div>
+          </div>
+
+          <div
+            class="flex-1 min-h-0 overflow-y-auto custom-scroll p-4 sm:p-6 flex flex-col items-center w-full"
+          >
+            <div
+              class="w-full max-w-2xl bg-white border border-outline shadow-md p-4 sm:p-6 font-label-mono text-on-surface shrink-0 cv-container"
+            >
+              <div class="text-center border-b-2 border-outline pb-2 cv-header">
+                <h1 class="text-[10px] font-bold text-primary cv-title">
+                  DEBRA NETHANIA STEVENSON
+                </h1>
+                <p class="text-[6px] mt-1 text-on-surface-variant cv-subtitle">
+                  debra.nethania.s@gmail.com | Jakarta, ID
+                </p>
+              </div>
+
+              <div class="mt-3 cv-section">
+                <h2
+                  class="text-[7px] font-bold bg-primary-container inline-block px-1 mb-1 border border-primary cv-heading"
+                >
+                  ABOUT ME
+                </h2>
+                <p
+                  class="text-[6px] leading-tight text-on-surface-variant cv-text"
+                >
+                  Analytical IT student at CCIT FTUI and Asia e University with
+                  a background in Full Stack development, Software Quality
+                  Assurance (SQA), and database management. Dedicated to
+                  leveraging technical logic, DevOps practices, and data-driven
+                  insights to support evidence-based research and scalable
+                  application development.
+                </p>
+              </div>
+
+              <div class="mt-3 cv-section">
+                <h2
+                  class="text-[7px] font-bold bg-secondary-container inline-block px-1 mb-1 border border-secondary text-on-secondary-fixed cv-heading"
+                >
+                  EDUCATION
+                </h2>
+                <div class="mb-1 cv-sub-section">
+                  <p class="text-[6px] leading-tight font-bold cv-text">
+                    Asia e University | 2024-Now
+                  </p>
+                  <p
+                    class="text-[6px] leading-tight text-on-surface-variant italic cv-text"
+                  >
+                    Faculty of Information and Communication Technology
+                  </p>
+                  <ul
+                    class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 cv-list cv-text"
+                  >
+                    <li>
+                      Relevant Coursework: Discrete Mathematics, Database
+                      Systems, Information Systems Analysis & Design, and DSS.
+                    </li>
+                    <li>
+                      Focus: Comprehensive understanding of information systems
+                      supporting organizational strategy and data security.
+                    </li>
+                  </ul>
+                </div>
+                <div class="cv-sub-section">
+                  <p class="text-[6px] leading-tight font-bold cv-text">
+                    CCIT FTUI | 2024-Now
+                  </p>
+                  <p
+                    class="text-[6px] leading-tight text-on-surface-variant italic cv-text"
+                  >
+                    Information Technology (Full Stack Developer)
+                  </p>
+                  <ul
+                    class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 cv-list cv-text"
+                  >
+                    <li>
+                      Technical Focus: PHP, Web Application Programming (WAP),
+                      and DevOps.
+                    </li>
+                    <li>
+                      Database Management: Practical experience in MySQL and
+                      MongoDB for building scalable applications.
+                    </li>
+                    <li>
+                      Methodology: Software Engineering fundamentals and HCI to
+                      ensure user-centric product development.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-3 cv-section">
+                <h2
+                  class="text-[7px] font-bold bg-tertiary-container inline-block px-1 mb-1 border border-tertiary cv-heading"
+                >
+                  TECHNICAL & ACADEMIC PROJECTS
+                </h2>
+                <ul
+                  class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 space-y-1 cv-list cv-text"
+                >
+                  <li>
+                    <b>Lunera Streaming Platform | Full Stack & SQA:</b>
+                    Co-developed web/mobile platform (CI4/Flutter) using MVC.
+                    Executed Gherkin-style test cases and metrics for SQA.
+                  </li>
+                  <li>
+                    <b>Comic Web Application | Front-End & DevOps:</b> Built
+                    distributed PHP front-end consuming Java Spring Boot REST
+                    API. Containerized with Docker and engineered CI/CD via
+                    GitHub Actions.
+                  </li>
+                  <li>
+                    <b>Pawprint Haven Vet Clinic | Full Stack:</b> Developed
+                    comprehensive veterinary management web app (PHP, MySQL)
+                    with role-specific secure dashboards.
+                  </li>
+                  <li>
+                    <b>Portify | UI/UX Designer:</b> Prototyped in Figma
+                    applying 10 Usability Heuristics, responsive navigation, and
+                    system status indicators.
+                  </li>
+                  <li>
+                    <b>debra.exe Web Portfolio | Front-End:</b> Engineered a
+                    responsive, interactive Y2K OS-themed web application using
+                    HTML5, Tailwind CSS, and Vanilla JS, featuring custom
+                    flexbox window management and dynamic state rendering.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-3 cv-section">
+                <h2
+                  class="text-[7px] font-bold bg-primary-fixed inline-block px-1 mb-1 border border-primary cv-heading"
+                >
+                  LEADERSHIP & EXPERIENCE
+                </h2>
+                <ul
+                  class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 space-y-1 cv-list cv-text"
+                >
+                  <li>
+                    <b>CSS Head of Dept (Student Advocacy):</b> Managed
+                    leadership selection for 2026 Induction Days.
+                  </li>
+                  <li>
+                    <b>PEMIRA CSS Head of Publication:</b> Directed 10-person
+                    team for event documentation and social media.
+                  </li>
+                  <li>
+                    <b>CCIT Induction Days Head of Medics:</b> Trained staff on
+                    first-aid and managed emergency medical care.
+                  </li>
+                  <li>
+                    <b>CSS Staff (Art & Culture):</b> Organized campus-wide
+                    photography/poster contest and managed finances.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-3 cv-section">
+                <h2
+                  class="text-[7px] font-bold bg-[#ffffa5] inline-block px-1 mb-1 border border-outline cv-heading"
+                >
+                  TECHNICAL SKILLS
+                </h2>
+                <ul
+                  class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 cv-list cv-text"
+                >
+                  <li>
+                    <b>Programming:</b> PHP (Codeigniter 4), Web Application
+                    Programming (WAP).
+                  </li>
+                  <li>
+                    <b>Database:</b> Relational (MySQL), NoSQL (MongoDB), Schema
+                    Design, Normalization, Data Integrity.
+                  </li>
+                  <li>
+                    <b>Engineering:</b> SAD, SDLC, Git/GitHub, Docker, Postman,
+                    SQA/Gherkin.
+                  </li>
+                  <li><b>UX & Design:</b> Figma, HCI, UI Prototyping.</li>
+                  <li>
+                    <b>Languages:</b> Indonesian (Native), English (C1 Advance),
+                    Mandarin (Basic).
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-3 cv-section">
+                <h2
+                  class="text-[7px] font-bold bg-surface-variant inline-block px-1 mb-1 border border-outline cv-heading"
+                >
+                  SOFT SKILLS
+                </h2>
+                <p
+                  class="text-[6px] leading-tight text-on-surface-variant cv-text"
+                >
+                  Analytical Thinking, Attention to Detail, Technical
+                  Communication, Collaborative Teamwork.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex-none shrink-0 w-full p-4 flex justify-center bg-surface-container-low border-t border-outline/20"
+          >
+            <a
+              href="assets/CV-Debra Stevenson.pdf"
+              download="Debra_Stevenson_CV.pdf"
+              class="y2k-sticker px-6 py-2 flex items-center gap-2 w-3/4 max-w-sm justify-center text-on-surface hover:text-on-surface"
+            >
+              <span class="material-symbols-outlined">download</span>
+              DOWNLOAD CV
             </a>
           </div>
         </div>
       </div>
 
-      <div class="y2k-window transition-all duration-200 bg-surface-container-low h-[600px] lg:h-auto" id="resume-window" style="display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 100%; min-height: 500px;">
-        
-        <div class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed flex-none shrink-0 min-h-[32px]">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pb-10">
+        <div class="lg:col-span-8 flex flex-col gap-6">
+          <div class="y2k-window">
+            <div
+              class="y2k-window-header bg-gradient-to-r from-secondary-container to-secondary-fixed"
+            >
+              <div class="y2k-window-header-title">
+                <span class="material-symbols-outlined text-sm">folder</span>
+                <span class="font-label-mono text-label-mono text-on-surface"
+                  >campus_projects.exe</span
+                >
+              </div>
+              <div class="y2k-controls">
+                <button class="y2k-control-btn">_</button>
+                <button class="y2k-control-btn">□</button>
+                <button class="y2k-control-btn">×</button>
+              </div>
+            </div>
+            <div
+              class="p-6 bg-surface grid grid-cols-1 sm:grid-cols-2 gap-4 h-72 overflow-y-auto custom-scroll border-t border-outline/30"
+            >
+              <div
+                onclick="openModal('comicDevModal')"
+                class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group"
+              >
+                <div
+                  class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity"
+                >
+                  <img
+                    alt="Comic Web App API"
+                    class="w-full h-full object-cover"
+                    src="assets/comic_api2.png"
+                    onerror="
+                      this.src =
+                        'https://placehold.co/400x225/e7e8ed/82737a?text=Comic+API'
+                    "
+                  />
+                </div>
+                <h4 class="font-button-text text-sm text-primary mb-1">
+                  Comic Web: Architecture
+                </h4>
+                <p
+                  class="font-body-md text-xs text-on-surface-variant leading-relaxed"
+                >
+                  Distributed PHP frontend consuming a Java Spring Boot REST
+                  API.
+                </p>
+              </div>
+
+              <div
+                onclick="openModal('comicOpsModal')"
+                class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group"
+              >
+                <div
+                  class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity"
+                >
+                  <img
+                    alt="Comic Web CI/CD"
+                    class="w-full h-full object-cover"
+                    src="assets/docker+cicd.png"
+                    onerror="
+                      this.src =
+                        'https://placehold.co/400x225/e7e8ed/82737a?text=Docker+%2B+CI/CD'
+                    "
+                  />
+                </div>
+                <h4 class="font-button-text text-sm text-primary mb-1">
+                  Comic Web: DevOps Pipeline
+                </h4>
+                <p
+                  class="font-body-md text-xs text-on-surface-variant leading-relaxed"
+                >
+                  Engineered Docker containerization and automated GitHub
+                  Actions workflows.
+                </p>
+              </div>
+
+              <div
+                onclick="openModal('vetModal')"
+                class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group"
+              >
+                <div
+                  class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity"
+                >
+                  <img
+                    alt="Vet Clinic"
+                    class="w-full h-full object-cover"
+                    src="assets/vetclinic1.png"
+                    onerror="
+                      this.src =
+                        'https://placehold.co/400x225/e7e8ed/82737a?text=Vet+Clinic'
+                    "
+                  />
+                </div>
+                <h4 class="font-button-text text-sm text-primary mb-1">
+                  Pawprint Haven
+                </h4>
+                <p
+                  class="font-body-md text-xs text-on-surface-variant leading-relaxed"
+                >
+                  Comprehensive veterinary management web app built natively
+                  with PHP.
+                </p>
+              </div>
+
+              <div
+                onclick="openModal('mobileModal')"
+                class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group"
+              >
+                <div
+                  class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity"
+                >
+                  <img
+                    alt="Lunera Mobile"
+                    class="w-full h-full object-cover"
+                    src="assets/lunera_mobile.png"
+                    onerror="
+                      this.src =
+                        'https://placehold.co/400x225/e7e8ed/82737a?text=Lunera+Mobile'
+                    "
+                  />
+                </div>
+                <h4 class="font-button-text text-sm text-primary mb-1">
+                  Lunera Mobile
+                </h4>
+                <p
+                  class="font-body-md text-xs text-on-surface-variant leading-relaxed"
+                >
+                  Flutter mobile client consuming custom CodeIgniter 4 REST
+                  APIs.
+                </p>
+              </div>
+
+              <div
+                onclick="openModal('portifyModal')"
+                class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group"
+              >
+                <div
+                  class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity"
+                >
+                  <img
+                    alt="Portify UX"
+                    class="w-full h-full object-cover"
+                    src="assets/portify.png"
+                    onerror="
+                      this.src =
+                        'https://placehold.co/400x225/e7e8ed/82737a?text=Portify+UX'
+                    "
+                  />
+                </div>
+                <h4 class="font-button-text text-sm text-primary mb-1">
+                  Portify UX/UI
+                </h4>
+                <p
+                  class="font-body-md text-xs text-on-surface-variant leading-relaxed"
+                >
+                  Figma prototype applying 10 Usability Heuristics for a
+                  portfolio platform.
+                </p>
+              </div>
+
+              <div
+                onclick="openModal('mongoModal')"
+                class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group"
+              >
+                <div
+                  class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity"
+                >
+                  <img
+                    alt="Mongo DB"
+                    class="w-full h-full object-cover"
+                    src="assets/mongodb.png"
+                    onerror="
+                      this.src =
+                        'https://placehold.co/400x225/e7e8ed/82737a?text=Mongo+DB'
+                    "
+                  />
+                </div>
+                <h4 class="font-button-text text-sm text-primary mb-1">
+                  In-Game Transaction DB
+                </h4>
+                <p
+                  class="font-body-md text-xs text-on-surface-variant leading-relaxed"
+                >
+                  NoSQL architecture using MongoDB to handle player balances.
+                </p>
+              </div>
+
+              <div
+                onclick="openModal('bakeModal')"
+                class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group"
+              >
+                <div
+                  class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity"
+                >
+                  <img
+                    alt="Bake My Day"
+                    class="w-full h-full object-cover"
+                    src="assets/bakemyday1.png"
+                    onerror="
+                      this.src =
+                        'https://placehold.co/400x225/e7e8ed/82737a?text=Bake+My+Day'
+                    "
+                  />
+                </div>
+                <h4 class="font-button-text text-sm text-primary mb-1">
+                  Bake My Day
+                </h4>
+                <p
+                  class="font-body-md text-xs text-on-surface-variant leading-relaxed"
+                >
+                  Responsive baking recipe website built with native HTML, CSS,
+                  and JS.
+                </p>
+              </div>
+
+              <div
+                onclick="openModal('hotelModal')"
+                class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group"
+              >
+                <div
+                  class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity"
+                >
+                  <img
+                    alt="Hotel GUI"
+                    class="w-full h-full object-cover"
+                    src="assets/hotelGUI.png"
+                    onerror="
+                      this.src =
+                        'https://placehold.co/400x225/e7e8ed/82737a?text=Hotel+GUI'
+                    "
+                  />
+                </div>
+                <h4 class="font-button-text text-sm text-primary mb-1">
+                  Hotel Reservation GUI
+                </h4>
+                <p
+                  class="font-body-md text-xs text-on-surface-variant leading-relaxed"
+                >
+                  Java-based desktop application utilizing Apache Netbeans and
+                  MySQL.
+                </p>
+              </div>
+
+              <div
+                onclick="openModal('hciWpfModal')"
+                class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group"
+              >
+                <div
+                  class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity"
+                >
+                  <img
+                    alt="WPF Desktop UI Screenshot"
+                    class="w-full h-full object-cover"
+                    src="assets/wpfinterface.png"
+                    onerror="
+                      this.src =
+                        'https://placehold.co/400x225/e7e8ed/82737a?text=WPF+Interface'
+                    "
+                  />
+                </div>
+                <h4 class="font-button-text text-sm text-primary mb-1">
+                  E-Learning Desktop App
+                </h4>
+                <p
+                  class="font-body-md text-xs text-on-surface-variant leading-relaxed"
+                >
+                  WPF interface prototype focused on strict Human-Computer
+                  Interaction (HCI) standards.
+                </p>
+              </div>
+
+              <div
+                onclick="openModal('portfolioModal')"
+                class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group"
+              >
+                <div
+                  class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity"
+                >
+                  <img
+                    alt="debra.exe portfolio"
+                    class="w-full h-full object-cover"
+                    src="assets/debra.exe.png"
+                    onerror="
+                      this.src =
+                        'https://placehold.co/400x225/e7e8ed/82737a?text=WPF+Interface'
+                    "
+                  />
+                </div>
+                <h4 class="font-button-text text-sm text-primary mb-1">
+                  debra.exe OS Portfolio
+                </h4>
+                <p
+                  class="font-body-md text-xs text-on-surface-variant leading-relaxed"
+                >
+                  Interactive Y2K desktop-themed portfolio built with Tailwind
+                  CSS.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="y2k-window">
+            <div
+              class="y2k-window-header bg-gradient-to-r from-primary-container to-primary-fixed"
+            >
+              <div class="y2k-window-header-title">
+                <span class="material-symbols-outlined text-sm"
+                  >photo_library</span
+                >
+                <span class="font-label-mono text-label-mono text-on-surface"
+                  >orgs_gallery</span
+                >
+              </div>
+              <div class="y2k-controls">
+                <button class="y2k-control-btn">_</button>
+                <button class="y2k-control-btn">□</button>
+                <button class="y2k-control-btn">×</button>
+              </div>
+            </div>
+            <div
+              class="p-6 bg-surface-container-highest flex gap-6 overflow-x-auto custom-scroll border-t border-outline/30 items-center min-h-[220px]"
+            >
+              <div
+                class="min-w-[150px] bg-white p-3 pb-8 border border-outline shadow-[4px_4px_0px_rgba(130,115,122,0.3)] transform rotate-[-3deg] hover:rotate-0 hover:-translate-y-2 transition-all cursor-pointer"
+              >
+                <div
+                  class="aspect-square bg-primary-container mb-3 border border-outline border-dashed flex items-center justify-center opacity-90"
+                >
+                  <img
+                    alt="Head of Dept"
+                    class="w-full h-full object-cover"
+                    src="assets/advokema.jpeg"
+                    onerror="
+                      this.src =
+                        'https://placehold.co/400x400/ffb7e1/7c4468?text=Photo+1'
+                    "
+                  />
+                </div>
+                <p
+                  class="font-label-mono text-xs text-center text-on-surface font-bold"
+                >
+                  Head of Dept
+                </p>
+                <p
+                  class="font-label-mono text-[10px] text-center text-on-surface-variant mt-1"
+                >
+                  Student Advocacy
+                </p>
+              </div>
+              <div
+                class="min-w-[150px] bg-white p-3 pb-8 border border-outline shadow-[4px_4px_0px_rgba(130,115,122,0.3)] transform rotate-[4deg] hover:rotate-0 hover:-translate-y-2 transition-all cursor-pointer"
+              >
+                <div
+                  class="aspect-square bg-secondary-container mb-3 border border-outline border-dashed flex items-center justify-center opacity-90"
+                >
+                  <img
+                    alt="Head of Publication"
+                    class="w-full h-full object-cover"
+                    src="assets/PDD.jpeg"
+                    onerror="
+                      this.src =
+                        'https://placehold.co/400x400/c2b0fd/504084?text=Photo+2'
+                    "
+                  />
+                </div>
+                <p
+                  class="font-label-mono text-xs text-center text-on-surface font-bold"
+                >
+                  Head of Publication
+                </p>
+                <p
+                  class="font-label-mono text-[10px] text-center text-on-surface-variant mt-1"
+                >
+                  PEMIRA CSS
+                </p>
+              </div>
+              <div
+                class="min-w-[150px] bg-white p-3 pb-8 border border-outline shadow-[4px_4px_0px_rgba(130,115,122,0.3)] transform rotate-[-2deg] hover:rotate-0 hover:-translate-y-2 transition-all cursor-pointer"
+              >
+                <div
+                  class="aspect-square bg-tertiary-container mb-3 border border-outline border-dashed flex items-center justify-center opacity-90"
+                >
+                  <img
+                    alt="Head of Medics"
+                    class="w-full h-full object-cover"
+                    src="assets/medic.jpeg"
+                    onerror="
+                      this.src =
+                        'https://placehold.co/400x400/a3d7c5/2d5f50?text=Photo+3'
+                    "
+                  />
+                </div>
+                <p
+                  class="font-label-mono text-xs text-center text-on-surface font-bold"
+                >
+                  Head of Medics
+                </p>
+                <p
+                  class="font-label-mono text-[10px] text-center text-on-surface-variant mt-1"
+                >
+                  CCIT Induction Days
+                </p>
+              </div>
+              <div
+                class="min-w-[150px] bg-white p-3 pb-8 border border-outline shadow-[4px_4px_0px_rgba(130,115,122,0.3)] transform rotate-[2deg] hover:rotate-0 hover:-translate-y-2 transition-all cursor-pointer"
+              >
+                <div
+                  class="aspect-square bg-surface-variant mb-3 border border-outline border-dashed flex items-center justify-center opacity-90"
+                >
+                  <img
+                    alt="Staff Art & Culture"
+                    class="w-full h-full object-cover"
+                    src="assets/staff.jpeg"
+                    onerror="
+                      this.src =
+                        'https://placehold.co/400x400/e1e2e7/50434a?text=Photo+4'
+                    "
+                  />
+                </div>
+                <p
+                  class="font-label-mono text-xs text-center text-on-surface font-bold"
+                >
+                  Staff
+                </p>
+                <p
+                  class="font-label-mono text-[10px] text-center text-on-surface-variant mt-1"
+                >
+                  Art & Culture
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 flex flex-col gap-6">
+          <div class="y2k-window w-full" id="music-player">
+            <div
+              class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed"
+            >
+              <div class="y2k-window-header-title">
+                <span class="material-symbols-outlined text-sm"
+                  >music_note</span
+                >
+                <span class="font-label-mono text-label-mono text-on-surface"
+                  >music_player.exe</span
+                >
+              </div>
+              <div class="y2k-controls">
+                <button class="y2k-control-btn">_</button>
+                <button class="y2k-control-btn">□</button>
+                <button class="y2k-control-btn">×</button>
+              </div>
+            </div>
+            <div class="bg-surface-container-low p-2 border-b border-outline">
+              <iframe
+                data-testid="embed-iframe"
+                style="
+                  border-radius: 0px;
+                  border: 1px solid #82737a;
+                  box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.1);
+                "
+                src="https://open.spotify.com/embed/track/6rVCUwfnuYTAsX4P9fIdIu?utm_source=generator"
+                width="100%"
+                height="152"
+                frameborder="0"
+                allowfullscreen=""
+                allow="
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  fullscreen;
+                  picture-in-picture;
+                "
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div
+              class="bg-surface-container p-1 px-2 flex justify-between items-center text-[9px] font-label-mono text-on-surface-variant"
+            >
+              <span>Status: Online</span>
+              <span>Bitrate: 320kbps</span>
+            </div>
+          </div>
+
+          <div class="y2k-window w-full" id="calendar-app">
+            <div
+              class="y2k-window-header bg-gradient-to-r from-primary-container to-secondary-container"
+            >
+              <div class="y2k-window-header-title">
+                <span class="material-symbols-outlined text-sm"
+                  >calendar_today</span
+                >
+                <span class="font-label-mono text-label-mono text-on-surface"
+                  >calendar.exe</span
+                >
+              </div>
+              <div class="y2k-controls">
+                <button class="y2k-control-btn">_</button>
+                <button class="y2k-control-btn">□</button>
+                <button class="y2k-control-btn">×</button>
+              </div>
+            </div>
+            <div class="p-3 bg-surface text-center">
+              <div
+                class="bg-white border border-outline p-2 mb-2 shadow-[2px_2px_0px_rgba(130,115,122,0.3)]"
+              >
+                <p
+                  id="cal-month-year"
+                  class="font-label-mono text-[10px] text-on-surface-variant uppercase tracking-widest font-bold"
+                >
+                  Loading...
+                </p>
+                <p
+                  id="cal-day-number"
+                  class="font-display-xl text-4xl text-primary mt-1 drop-shadow-[1px_1px_0px_#ffb7e1]"
+                >
+                  ...
+                </p>
+                <p
+                  id="cal-day-name"
+                  class="font-label-mono text-xs text-secondary mt-1"
+                >
+                  ...
+                </p>
+              </div>
+              <div
+                class="grid grid-cols-7 gap-1 text-[8px] font-label-mono text-on-surface-variant w-full"
+              >
+                <div>S</div>
+                <div>M</div>
+                <div>T</div>
+                <div>W</div>
+                <div class="text-primary font-bold">T</div>
+                <div>F</div>
+                <div>S</div>
+              </div>
+              <div class="w-full h-[2px] bg-outline-variant my-1"></div>
+              <p class="font-label-mono text-[9px] text-tertiary">
+                Timezone: WIB (Jakarta)
+              </p>
+            </div>
+          </div>
+
+          <div class="y2k-window w-full" id="contact">
+            <div
+              class="y2k-window-header bg-gradient-to-r from-primary-container to-primary-fixed"
+            >
+              <div class="y2k-window-header-title">
+                <span class="material-symbols-outlined text-sm">mail</span>
+                <span class="font-label-mono text-label-mono text-on-surface"
+                  >let's be friends!</span
+                >
+              </div>
+              <div class="y2k-controls">
+                <button class="y2k-control-btn">×</button>
+              </div>
+            </div>
+            <div
+              class="p-3 bg-surface-container flex flex-col justify-center gap-2"
+            >
+              <p
+                class="font-label-mono text-[9px] text-center text-on-surface-variant"
+              >
+                connect with me
+              </p>
+              <div
+                class="grid grid-cols-4 gap-2 px-1 w-full justify-items-center"
+              >
+                <a
+                  class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=debra.nethania.s@gmail.com"
+                >
+                  <div
+                    class="w-8 h-8 bg-white border border-outline flex items-center justify-center shadow-[2px_2px_0px_#82737a]"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary text-base"
+                      >mail</span
+                    >
+                  </div>
+                  <span class="font-label-mono text-[7px] mt-1">email</span>
+                </a>
+
+                <a
+                  class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full"
+                  href="https://github.com/Songyingxiu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div
+                    class="w-8 h-8 bg-white border border-outline flex items-center justify-center shadow-[2px_2px_0px_#82737a]"
+                  >
+                    <span
+                      class="material-symbols-outlined text-secondary text-base"
+                      >terminal</span
+                    >
+                  </div>
+                  <span class="font-label-mono text-[7px] mt-1">github</span>
+                </a>
+
+                <a
+                  class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full"
+                  href="https://www.linkedin.com/in/debra-stevenson-257109373"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div
+                    class="w-8 h-8 bg-white border border-outline flex items-center justify-center shadow-[2px_2px_0px_#82737a]"
+                  >
+                    <span
+                      class="material-symbols-outlined text-tertiary text-base"
+                      >work</span
+                    >
+                  </div>
+                  <span class="font-label-mono text-[7px] mt-1">linkedin</span>
+                </a>
+
+                <a
+                  class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full"
+                  href="https://debra-portfolio-pi.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div
+                    class="w-8 h-8 bg-white border border-outline flex items-center justify-center shadow-[2px_2px_0px_#82737a]"
+                  >
+                    <span
+                      class="material-symbols-outlined text-outline text-base"
+                      >link</span
+                    >
+                  </div>
+                  <span class="font-label-mono text-[7px] mt-1">links</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="fixed bottom-0 w-full z-50 flex items-center h-10 bg-surface-container-highest border-t-2 border-outline shadow-[0_-2px_0_rgba(130,115,122,0.2)]"
+    >
+      <div
+        class="flex justify-between items-center px-2 w-full h-full gap-4 max-w-[1440px] mx-auto"
+      >
+        <div class="flex gap-2 h-full items-center">
+          <button
+            class="bg-surface-container-lowest border border-outline px-3 py-1 font-button-text text-sm flex items-center gap-1 shadow-[inset_-1px_-1px_0px_rgba(0,0,0,0.2),inset_1px_1px_0px_rgba(255,255,255,0.8)] active:shadow-[inset_1px_1px_0px_rgba(0,0,0,0.2)]"
+          >
+            <span class="material-symbols-outlined text-sm text-primary"
+              >start</span
+            >
+            <span class="font-bold">start</span>
+          </button>
+          <div class="h-6 w-px bg-outline mx-1 hidden sm:block"></div>
+          <div
+            class="hidden sm:flex items-center bg-surface-container border border-outline px-2 h-7 shadow-[inset_1px_1px_0px_rgba(0,0,0,0.1)] gap-2"
+          >
+            <span class="material-symbols-outlined text-sm">terminal</span>
+            <span class="font-label-mono text-xs truncate max-w-[100px]"
+              >welcome.exe</span
+            >
+          </div>
+        </div>
+        <div class="flex items-center gap-2 h-full">
+          <div
+            class="flex items-center border border-outline bg-surface px-2 h-7 shadow-[inset_1px_1px_0px_rgba(0,0,0,0.1)] gap-2"
+          >
+            <span class="material-symbols-outlined text-xs">volume_up</span>
+            <span class="material-symbols-outlined text-xs">wifi</span>
+            <span class="material-symbols-outlined text-xs">battery_full</span>
+            <span id="taskbar-clock" class="font-label-mono text-xs ml-1"
+              >Loading...</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      id="luneraModal"
+      class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs"
+    >
+      <div
+        class="y2k-window w-full max-w-2xl max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]"
+      >
+        <div
+          class="y2k-window-header bg-gradient-to-r from-primary-container to-secondary-container"
+        >
           <div class="y2k-window-header-title">
-            <span class="material-symbols-outlined text-sm">description</span>
-            <span class="font-label-mono text-label-mono text-on-surface">resume.pdf</span>
+            <span class="material-symbols-outlined text-sm">terminal</span>
+            <span class="font-label-mono text-label-mono text-on-surface"
+              >lunera_deep_dive.doc</span
+            >
           </div>
           <div class="y2k-controls">
-            <button class="y2k-control-btn font-bold" onclick="minimizeResume()" title="Restore Down">_</button>
-            <button class="y2k-control-btn font-bold" onclick="maximizeResume()" title="Maximize">□</button>
-            <button class="y2k-control-btn font-bold">×</button>
+            <button
+              onclick="closeModal('luneraModal')"
+              class="y2k-control-btn font-bold"
+            >
+              ×
+            </button>
           </div>
         </div>
-        
-        <div class="flex-1 min-h-0 overflow-y-auto custom-scroll p-4 sm:p-6 flex flex-col items-center w-full">
-          
-          <div class="w-full max-w-2xl bg-white border border-outline shadow-md p-4 sm:p-6 font-label-mono text-on-surface shrink-0 cv-container">
-            <div class="text-center border-b-2 border-outline pb-2 cv-header">
-              <h1 class="text-[10px] font-bold text-primary cv-title">DEBRA NETHANIA STEVENSON</h1>
-              <p class="text-[6px] mt-1 text-on-surface-variant cv-subtitle">debra.nethania.s@gmail.com | Jakarta, ID</p>
-            </div>
-            
-            <div class="mt-3 cv-section">
-              <h2 class="text-[7px] font-bold bg-primary-container inline-block px-1 mb-1 border border-primary cv-heading">ABOUT ME</h2>
-              <p class="text-[6px] leading-tight text-on-surface-variant cv-text">
-                Analytical IT student at CCIT FTUI and Asia e University with a background in Full Stack development, Software Quality Assurance (SQA), and database management. Dedicated to leveraging technical logic, DevOps practices, and data-driven insights to support evidence-based research and scalable application development.
-              </p>
-            </div>
 
-            <div class="mt-3 cv-section">
-              <h2 class="text-[7px] font-bold bg-secondary-container inline-block px-1 mb-1 border border-secondary text-on-secondary-fixed cv-heading">EDUCATION</h2>
-              <div class="mb-1 cv-sub-section">
-                <p class="text-[6px] leading-tight font-bold cv-text">Asia e University | 2024-Now</p>
-                <p class="text-[6px] leading-tight text-on-surface-variant italic cv-text">Faculty of Information and Communication Technology</p>
-                <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 cv-list cv-text">
-                  <li>Relevant Coursework: Discrete Mathematics, Database Systems, Information Systems Analysis & Design, and DSS.</li>
-                  <li>Focus: Comprehensive understanding of information systems supporting organizational strategy and data security.</li>
-                </ul>
-              </div>
-              <div class="cv-sub-section">
-                <p class="text-[6px] leading-tight font-bold cv-text">CCIT FTUI | 2024-Now</p>
-                <p class="text-[6px] leading-tight text-on-surface-variant italic cv-text">Information Technology (Full Stack Developer)</p>
-                <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 cv-list cv-text">
-                  <li>Technical Focus: PHP, Web Application Programming (WAP), and DevOps.</li>
-                  <li>Database Management: Practical experience in MySQL and MongoDB for building scalable applications.</li>
-                  <li>Methodology: Software Engineering fundamentals and HCI to ensure user-centric product development.</li>
-                </ul>
-              </div>
-            </div>
+        <div
+          class="flex border-b border-outline bg-surface-container-low p-1 gap-1"
+        >
+          <button
+            id="tabBtn-overview"
+            onclick="switchLuneraTab('overview')"
+            class="px-4 py-1 text-xs font-label-mono bg-white border-t-2 border-x-2 border-outline -mb-[5px] relative z-10 font-bold text-primary"
+          >
+            Overview
+          </button>
+          <button
+            id="tabBtn-backend"
+            onclick="switchLuneraTab('backend')"
+            class="px-4 py-1 text-xs font-label-mono bg-surface-container border border-outline opacity-70 hover:opacity-100"
+          >
+            Backend & API
+          </button>
+          <button
+            id="tabBtn-qa"
+            onclick="switchLuneraTab('qa')"
+            class="px-4 py-1 text-xs font-label-mono bg-surface-container border border-outline opacity-70 hover:opacity-100"
+          >
+            QA & Testing
+          </button>
+        </div>
 
-            <div class="mt-3 cv-section">
-              <h2 class="text-[7px] font-bold bg-tertiary-container inline-block px-1 mb-1 border border-tertiary cv-heading">TECHNICAL & ACADEMIC PROJECTS</h2>
-              <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 space-y-1 cv-list cv-text">
-                <li><b>Lunera Streaming Platform | Full Stack & SQA:</b> Co-developed web/mobile platform (CI4/Flutter) using MVC. Executed Gherkin-style test cases and metrics for SQA.</li>
-                <li><b>Comic Web Application | Front-End & DevOps:</b> Built distributed PHP front-end consuming Java Spring Boot REST API. Containerized with Docker and engineered CI/CD via GitHub Actions.</li>
-                <li><b>Pawprint Haven Vet Clinic | Full Stack:</b> Developed comprehensive veterinary management web app (PHP, MySQL) with role-specific secure dashboards.</li>
-                <li><b>Portify | UI/UX Designer:</b> Prototyped in Figma applying 10 Usability Heuristics, responsive navigation, and system status indicators.</li>
-                <li><b>debra.exe Web Portfolio | Front-End:</b> Engineered a responsive, interactive Y2K OS-themed web application using HTML5, Tailwind CSS, and Vanilla JS, featuring custom flexbox window management and dynamic state rendering.</li>
-              </ul>
-            </div>
-
-            <div class="mt-3 cv-section">
-              <h2 class="text-[7px] font-bold bg-primary-fixed inline-block px-1 mb-1 border border-primary cv-heading">LEADERSHIP & EXPERIENCE</h2>
-              <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 space-y-1 cv-list cv-text">
-                <li><b>CSS Head of Dept (Student Advocacy):</b> Managed leadership selection for 2026 Induction Days.</li>
-                <li><b>PEMIRA CSS Head of Publication:</b> Directed 10-person team for event documentation and social media.</li>
-                <li><b>CCIT Induction Days Head of Medics:</b> Trained staff on first-aid and managed emergency medical care.</li>
-                <li><b>CSS Staff (Art & Culture):</b> Organized campus-wide photography/poster contest and managed finances.</li>
-              </ul>
-            </div>
-
-            <div class="mt-3 cv-section">
-              <h2 class="text-[7px] font-bold bg-[#ffffa5] inline-block px-1 mb-1 border border-outline cv-heading">TECHNICAL SKILLS</h2>
-              <ul class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 cv-list cv-text">
-                <li><b>Programming:</b> PHP (Codeigniter 4), Web Application Programming (WAP).</li>
-                <li><b>Database:</b> Relational (MySQL), NoSQL (MongoDB), Schema Design, Normalization, Data Integrity.</li>
-                <li><b>Engineering:</b> SAD, SDLC, Git/GitHub, Docker, Postman, SQA/Gherkin.</li>
-                <li><b>UX & Design:</b> Figma, HCI, UI Prototyping.</li>
-                <li><b>Languages:</b> Indonesian (Native), English (C1 Advance), Mandarin (Basic).</li>
-              </ul>
-            </div>
-            
-            <div class="mt-3 cv-section">
-              <h2 class="text-[7px] font-bold bg-surface-variant inline-block px-1 mb-1 border border-outline cv-heading">SOFT SKILLS</h2>
-              <p class="text-[6px] leading-tight text-on-surface-variant cv-text">
-                Analytical Thinking, Attention to Detail, Technical Communication, Collaborative Teamwork.
+        <div
+          class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-4 bg-white"
+        >
+          <div id="luneraTab-overview" class="space-y-3">
+            <h4
+              class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1"
+            >
+              Project Summary
+            </h4>
+            <p>
+              <strong>Lunera</strong> was built to solve specific challenges in
+              real-time information lookups. Developed as a full-stack system,
+              it targets rapid, reliable data rendering while ensuring high
+              operational stability under active user load.
+            </p>
+            <div
+              class="bg-surface-container-low border border-outline p-3 rounded-none font-label-mono text-xs"
+            >
+              <p><strong>Role:</strong> Full-Stack Developer & SQA Engineer</p>
+              <p><strong>Timeline:</strong> Academic Development Term</p>
+              <p>
+                <strong>Core Stack:</strong> CodeIgniter 4, MySQL, Automated QA
+                Suites
               </p>
             </div>
           </div>
+          <div id="luneraTab-backend" class="hidden space-y-3">
+            <h4
+              class="text-secondary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1"
+            >
+              Architecture & Search API
+            </h4>
+            <p>
+              The backend engine leverages
+              <strong>CodeIgniter 4</strong> following precise MVC guidelines.
+              The highlight is an optimized dynamic <code>SearchAPI</code> logic
+              layer designed to execute multi-column queries across the MySQL
+              database securely.
+            </p>
+            <div
+              class="bg-inverse-surface text-tertiary-fixed-dim p-3 rounded-none font-label-mono text-xs shadow-[inset_2px_2px_4px_rgba(0,0,0,0.5)] overflow-x-auto whitespace-pre"
+            >
+              // Search API Controller Action Example public function
+              searchAPI() { $keyword = $this->request->getVar('q'); $results =
+              $this->luneraModel->searchData($keyword); return
+              $this->response->setJSON($results); }
+            </div>
+          </div>
+          <div id="luneraTab-qa" class="hidden space-y-3">
+            <h4
+              class="text-tertiary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1"
+            >
+              Software Quality Assurance
+            </h4>
+            <p>
+              Instead of basic manual checks, this project stands out through
+              thorough structural auditing. Feature behaviors were validated
+              utilizing automated framework tests paired with declarative test
+              parameters.
+            </p>
+            <div
+              class="bg-surface-container-low border border-outline p-3 rounded-none font-label-mono text-xs"
+            >
+              <p class="text-primary font-bold mb-1">
+                # Gherkin Behavior Specification:
+              </p>
+              <p class="text-on-surface">
+                <span class="text-secondary font-bold">Feature:</span> Live
+                Query Auto-Suggestions
+              </p>
+              <p class="pl-4">
+                <span class="text-tertiary font-bold">Scenario:</span>
+                Successfully matching active database records
+              </p>
+              <p class="pl-8">
+                <span class="text-outline font-bold">Given</span> I am logged
+                into the main dashboard resource
+              </p>
+              <p class="pl-8">
+                <span class="text-outline font-bold">When</span> I type
+                "diagnostic" into the search endpoint
+              </p>
+              <p class="pl-8">
+                <span class="text-outline font-bold">Then</span> the JSON
+                payloads should resolve status code 200
+              </p>
+            </div>
+          </div>
         </div>
-
-        <div class="flex-none shrink-0 w-full p-4 flex justify-center bg-surface-container-low border-t border-outline/20">
-          <a href="assets/CV-Debra Stevenson.pdf" download="Debra_Stevenson_CV.pdf" class="y2k-sticker px-6 py-2 flex items-center gap-2 w-3/4 max-w-sm justify-center text-on-surface hover:text-on-surface">
-            <span class="material-symbols-outlined">download</span>
-            DOWNLOAD CV
-          </a>
+        <div
+          class="p-3 bg-surface-container-low border-t border-outline flex justify-end"
+        >
+          <button
+            onclick="closeModal('luneraModal')"
+            class="y2k-sticker px-6 py-1 text-xs"
+          >
+            OK
+          </button>
         </div>
-
       </div>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pb-10">
-      
-      <div class="lg:col-span-8 flex flex-col gap-6">
-        
-        <div class="y2k-window">
-          <div class="y2k-window-header bg-gradient-to-r from-secondary-container to-secondary-fixed">
-            <div class="y2k-window-header-title">
-              <span class="material-symbols-outlined text-sm">folder</span>
-              <span class="font-label-mono text-label-mono text-on-surface">campus_projects.exe</span>
-            </div>
-            <div class="y2k-controls">
-              <button class="y2k-control-btn">_</button>
-              <button class="y2k-control-btn">□</button>
-              <button class="y2k-control-btn">×</button>
-            </div>
+    <div
+      id="aboutModal"
+      class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs"
+    >
+      <div
+        class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]"
+      >
+        <div
+          class="y2k-window-header bg-gradient-to-r from-primary-container to-secondary-container"
+        >
+          <div class="y2k-window-header-title">
+            <span class="material-symbols-outlined text-sm">favorite</span>
+            <span class="font-label-mono text-label-mono text-on-surface"
+              >about_me.txt</span
+            >
           </div>
-          <div class="p-6 bg-surface grid grid-cols-1 sm:grid-cols-2 gap-4 h-72 overflow-y-auto custom-scroll border-t border-outline/30">
-            
-            <div onclick="openModal('comicDevModal')" class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group">
-              <div class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
-                <img alt="Comic Web App API" class="w-full h-full object-cover" src="assets/comic_api2.png" onerror="this.src='https://placehold.co/400x225/e7e8ed/82737a?text=Comic+API'" />
-              </div>
-              <h4 class="font-button-text text-sm text-primary mb-1">Comic Web: Architecture</h4>
-              <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">Distributed PHP frontend consuming a Java Spring Boot REST API.</p>
-            </div>
-
-            <div onclick="openModal('comicOpsModal')" class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group">
-              <div class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
-                <img alt="Comic Web CI/CD" class="w-full h-full object-cover" src="assets/docker+cicd.png" onerror="this.src='https://placehold.co/400x225/e7e8ed/82737a?text=Docker+%2B+CI/CD'" />
-              </div>
-              <h4 class="font-button-text text-sm text-primary mb-1">Comic Web: DevOps Pipeline</h4>
-              <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">Engineered Docker containerization and automated GitHub Actions workflows.</p>
-            </div>
-
-            <div onclick="openModal('vetModal')" class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group">
-              <div class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
-                <img alt="Vet Clinic" class="w-full h-full object-cover" src="assets/vetclinic1.png" onerror="this.src='https://placehold.co/400x225/e7e8ed/82737a?text=Vet+Clinic'" />
-              </div>
-              <h4 class="font-button-text text-sm text-primary mb-1">Pawprint Haven</h4>
-              <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">Comprehensive veterinary management web app built natively with PHP.</p>
-            </div>
-
-            <div onclick="openModal('mobileModal')" class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group">
-              <div class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
-                <img alt="Lunera Mobile" class="w-full h-full object-cover" src="assets/lunera_mobile.png" onerror="this.src='https://placehold.co/400x225/e7e8ed/82737a?text=Lunera+Mobile'" />
-              </div>
-              <h4 class="font-button-text text-sm text-primary mb-1">Lunera Mobile</h4>
-              <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">Flutter mobile client consuming custom CodeIgniter 4 REST APIs.</p>
-            </div>
-
-            <div onclick="openModal('portifyModal')" class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group">
-              <div class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
-                <img alt="Portify UX" class="w-full h-full object-cover" src="assets/portify.png" onerror="this.src='https://placehold.co/400x225/e7e8ed/82737a?text=Portify+UX'" />
-              </div>
-              <h4 class="font-button-text text-sm text-primary mb-1">Portify UX/UI</h4>
-              <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">Figma prototype applying 10 Usability Heuristics for a portfolio platform.</p>
-            </div>
-
-            <div onclick="openModal('mongoModal')" class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group">
-              <div class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
-                <img alt="Mongo DB" class="w-full h-full object-cover" src="assets/mongodb.png" onerror="this.src='https://placehold.co/400x225/e7e8ed/82737a?text=Mongo+DB'" />
-              </div>
-              <h4 class="font-button-text text-sm text-primary mb-1">In-Game Transaction DB</h4>
-              <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">NoSQL architecture using MongoDB to handle player balances.</p>
-            </div>
-
-            <div onclick="openModal('bakeModal')" class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group">
-              <div class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
-                <img alt="Bake My Day" class="w-full h-full object-cover" src="assets/bakemyday1.png" onerror="this.src='https://placehold.co/400x225/e7e8ed/82737a?text=Bake+My+Day'" />
-              </div>
-              <h4 class="font-button-text text-sm text-primary mb-1">Bake My Day</h4>
-              <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">Responsive baking recipe website built with native HTML, CSS, and JS.</p>
-            </div>
-
-            <div onclick="openModal('hotelModal')" class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group">
-              <div class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
-                <img alt="Hotel GUI" class="w-full h-full object-cover" src="assets/hotelGUI.png" onerror="this.src='https://placehold.co/400x225/e7e8ed/82737a?text=Hotel+GUI'" />
-              </div>
-              <h4 class="font-button-text text-sm text-primary mb-1">Hotel Reservation GUI</h4>
-              <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">Java-based desktop application utilizing Apache Netbeans and MySQL.</p>
-            </div>
-
-            <div onclick="openModal('hciWpfModal')" class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group">
-              <div class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
-                <img alt="WPF Desktop UI Screenshot" class="w-full h-full object-cover" src="assets/wpfinterface.png" onerror="this.src='https://placehold.co/400x225/e7e8ed/82737a?text=WPF+Interface'" />
-              </div>
-              <h4 class="font-button-text text-sm text-primary mb-1">E-Learning Desktop App</h4>
-              <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">WPF interface prototype focused on strict Human-Computer Interaction (HCI) standards.</p>
-            </div>
-
-            <div onclick="openModal('portfolioModal')" class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group">
-              <div class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
-                <img alt="debra.exe portfolio" class="w-full h-full object-cover" src="assets/debra.exe.png" onerror="this.src='https://placehold.co/400x225/e7e8ed/82737a?text=WPF+Interface'" />
-              </div>
-              <h4 class="font-button-text text-sm text-primary mb-1">debra.exe OS Portfolio</h4>
-              <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">Interactive Y2K desktop-themed portfolio built with Tailwind CSS.</p>
-            </div>
-            
+          <div class="y2k-controls">
+            <button
+              onclick="closeModal('aboutModal')"
+              class="y2k-control-btn font-bold"
+            >
+              ×
+            </button>
           </div>
         </div>
-
-        <div class="y2k-window">
-          <div class="y2k-window-header bg-gradient-to-r from-primary-container to-primary-fixed">
-            <div class="y2k-window-header-title">
-              <span class="material-symbols-outlined text-sm">photo_library</span>
-              <span class="font-label-mono text-label-mono text-on-surface">orgs_gallery</span>
-            </div>
-            <div class="y2k-controls">
-              <button class="y2k-control-btn">_</button>
-              <button class="y2k-control-btn">□</button>
-              <button class="y2k-control-btn">×</button>
-            </div>
+        <div
+          class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-4 bg-white"
+        >
+          <div
+            class="w-24 h-24 rounded-full overflow-hidden border-2 border-primary mx-auto mb-4 shadow-[2px_2px_0px_#854b70] flex items-center justify-center bg-surface-container"
+          >
+            <img
+              alt="Profile Picture"
+              class="w-full h-full object-cover"
+              src="assets/profile3.jpeg"
+              onerror="
+                this.src =
+                  'https://placehold.co/400x400/ffb7e1/7c4468?text=Photo'
+              "
+            />
           </div>
-          <div class="p-6 bg-surface-container-highest flex gap-6 overflow-x-auto custom-scroll border-t border-outline/30 items-center min-h-[220px]">
-            <div class="min-w-[150px] bg-white p-3 pb-8 border border-outline shadow-[4px_4px_0px_rgba(130,115,122,0.3)] transform rotate-[-3deg] hover:rotate-0 hover:-translate-y-2 transition-all cursor-pointer">
-              <div class="aspect-square bg-primary-container mb-3 border border-outline border-dashed flex items-center justify-center opacity-90">
-                <img alt="Head of Dept" class="w-full h-full object-cover" src="assets/advokema.jpeg" onerror="this.src='https://placehold.co/400x400/ffb7e1/7c4468?text=Photo+1'" />
-              </div>
-              <p class="font-label-mono text-xs text-center text-on-surface font-bold">Head of Dept</p>
-              <p class="font-label-mono text-[10px] text-center text-on-surface-variant mt-1">Student Advocacy</p>
-            </div>
-            <div class="min-w-[150px] bg-white p-3 pb-8 border border-outline shadow-[4px_4px_0px_rgba(130,115,122,0.3)] transform rotate-[4deg] hover:rotate-0 hover:-translate-y-2 transition-all cursor-pointer">
-              <div class="aspect-square bg-secondary-container mb-3 border border-outline border-dashed flex items-center justify-center opacity-90">
-                <img alt="Head of Publication" class="w-full h-full object-cover" src="assets/PDD.jpeg" onerror="this.src='https://placehold.co/400x400/c2b0fd/504084?text=Photo+2'" />
-              </div>
-              <p class="font-label-mono text-xs text-center text-on-surface font-bold">Head of Publication</p>
-              <p class="font-label-mono text-[10px] text-center text-on-surface-variant mt-1">PEMIRA CSS</p>
-            </div>
-            <div class="min-w-[150px] bg-white p-3 pb-8 border border-outline shadow-[4px_4px_0px_rgba(130,115,122,0.3)] transform rotate-[-2deg] hover:rotate-0 hover:-translate-y-2 transition-all cursor-pointer">
-              <div class="aspect-square bg-tertiary-container mb-3 border border-outline border-dashed flex items-center justify-center opacity-90">
-                <img alt="Head of Medics" class="w-full h-full object-cover" src="assets/medic.jpeg" onerror="this.src='https://placehold.co/400x400/a3d7c5/2d5f50?text=Photo+3'" />
-              </div>
-              <p class="font-label-mono text-xs text-center text-on-surface font-bold">Head of Medics</p>
-              <p class="font-label-mono text-[10px] text-center text-on-surface-variant mt-1">CCIT Induction Days</p>
-            </div>
-            <div class="min-w-[150px] bg-white p-3 pb-8 border border-outline shadow-[4px_4px_0px_rgba(130,115,122,0.3)] transform rotate-[2deg] hover:rotate-0 hover:-translate-y-2 transition-all cursor-pointer">
-              <div class="aspect-square bg-surface-variant mb-3 border border-outline border-dashed flex items-center justify-center opacity-90">
-                <img alt="Staff Art & Culture" class="w-full h-full object-cover" src="assets/staff.jpeg" onerror="this.src='https://placehold.co/400x400/e1e2e7/50434a?text=Photo+4'" />
-              </div>
-              <p class="font-label-mono text-xs text-center text-on-surface font-bold">Staff</p>
-              <p class="font-label-mono text-[10px] text-center text-on-surface-variant mt-1">Art & Culture</p>
-            </div>
-          </div>
+          <h4
+            class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1 text-center"
+          >
+            Hi, I'm Debra!
+          </h4>
+          <p>
+            I am an Analytical IT student at CCIT FTUI and Asia e University
+            with a strong background in Full Stack development, Software Quality
+            Assurance (SQA), and database management.
+          </p>
+          <p>
+            I am highly dedicated to leveraging technical logic, modern DevOps
+            practices, and data-driven insights to support evidence-based
+            research and build highly scalable, secure web applications.
+          </p>
         </div>
-      </div>
-
-      <div class="lg:col-span-4 flex flex-col gap-6">
-        
-        <div class="y2k-window w-full" id="music-player">
-          <div class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed">
-            <div class="y2k-window-header-title">
-              <span class="material-symbols-outlined text-sm">music_note</span>
-              <span class="font-label-mono text-label-mono text-on-surface">music_player.exe</span>
-            </div>
-            <div class="y2k-controls">
-              <button class="y2k-control-btn">_</button>
-              <button class="y2k-control-btn">□</button>
-              <button class="y2k-control-btn">×</button>
-            </div>
-          </div>
-          <div class="bg-surface-container-low p-2 border-b border-outline">
-             <iframe data-testid="embed-iframe" style="border-radius:0px; border: 1px solid #82737a; box-shadow: inset 2px 2px 0px rgba(0,0,0,0.1);" src="https://open.spotify.com/embed/track/6rVCUwfnuYTAsX4P9fIdIu?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </div>
-          <div class="bg-surface-container p-1 px-2 flex justify-between items-center text-[9px] font-label-mono text-on-surface-variant">
-             <span>Status: Online</span>
-             <span>Bitrate: 320kbps</span>
-          </div>
-        </div>
-
-        <div class="y2k-window w-full" id="calendar-app">
-          <div class="y2k-window-header bg-gradient-to-r from-primary-container to-secondary-container">
-            <div class="y2k-window-header-title">
-              <span class="material-symbols-outlined text-sm">calendar_today</span>
-              <span class="font-label-mono text-label-mono text-on-surface">calendar.exe</span>
-            </div>
-            <div class="y2k-controls">
-              <button class="y2k-control-btn">_</button>
-              <button class="y2k-control-btn">□</button>
-              <button class="y2k-control-btn">×</button>
-            </div>
-          </div>
-          <div class="p-3 bg-surface text-center">
-            <div class="bg-white border border-outline p-2 mb-2 shadow-[2px_2px_0px_rgba(130,115,122,0.3)]">
-              <p id="cal-month-year" class="font-label-mono text-[10px] text-on-surface-variant uppercase tracking-widest font-bold">Loading...</p>
-              <p id="cal-day-number" class="font-display-xl text-4xl text-primary mt-1 drop-shadow-[1px_1px_0px_#ffb7e1]">...</p>
-              <p id="cal-day-name" class="font-label-mono text-xs text-secondary mt-1">...</p>
-            </div>
-            <div class="grid grid-cols-7 gap-1 text-[8px] font-label-mono text-on-surface-variant w-full">
-              <div>S</div><div>M</div><div>T</div><div>W</div><div class="text-primary font-bold">T</div><div>F</div><div>S</div>
-            </div>
-            <div class="w-full h-[2px] bg-outline-variant my-1"></div>
-            <p class="font-label-mono text-[9px] text-tertiary">Timezone: WIB (Jakarta)</p>
-          </div>
-        </div>
-
-        <div class="y2k-window w-full" id="contact">
-          <div class="y2k-window-header bg-gradient-to-r from-primary-container to-primary-fixed">
-            <div class="y2k-window-header-title">
-              <span class="material-symbols-outlined text-sm">mail</span>
-              <span class="font-label-mono text-label-mono text-on-surface">let's be friends!</span>
-            </div>
-            <div class="y2k-controls">
-              <button class="y2k-control-btn">×</button>
-            </div>
-          </div>
-          <div class="p-3 bg-surface-container flex flex-col justify-center gap-2">
-            <p class="font-label-mono text-[9px] text-center text-on-surface-variant">connect with me</p>
-            <div class="grid grid-cols-4 gap-2 px-1 w-full justify-items-center">
-              
-              <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full" href="mailto:debra.nethania.s@gmail.com">
-                <div class="w-8 h-8 bg-white border border-outline flex items-center justify-center shadow-[2px_2px_0px_#82737a]">
-                  <span class="material-symbols-outlined text-primary text-base">mail</span>
-                </div>
-                <span class="font-label-mono text-[7px] mt-1">email</span>
-              </a>
-              
-              <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full" href="https://github.com/Songyingxiu" target="_blank" rel="noopener noreferrer">
-                <div class="w-8 h-8 bg-white border border-outline flex items-center justify-center shadow-[2px_2px_0px_#82737a]">
-                  <span class="material-symbols-outlined text-secondary text-base">terminal</span>
-                </div>
-                <span class="font-label-mono text-[7px] mt-1">github</span>
-              </a>
-              
-              <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full" href="https://www.linkedin.com/in/debra-stevenson-257109373" target="_blank" rel="noopener noreferrer">
-                <div class="w-8 h-8 bg-white border border-outline flex items-center justify-center shadow-[2px_2px_0px_#82737a]">
-                  <span class="material-symbols-outlined text-tertiary text-base">work</span>
-                </div>
-                <span class="font-label-mono text-[7px] mt-1">linkedin</span>
-              </a>
-              
-              <a class="flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform w-full" href="https://github.com/Songyingxiu" target="_blank" rel="noopener noreferrer">
-                <div class="w-8 h-8 bg-white border border-outline flex items-center justify-center shadow-[2px_2px_0px_#82737a]">
-                  <span class="material-symbols-outlined text-outline text-base">link</span>
-                </div>
-                <span class="font-label-mono text-[7px] mt-1">links</span>
-              </a>
-
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </main>
-
-  <footer class="fixed bottom-0 w-full z-50 flex items-center h-10 bg-surface-container-highest border-t-2 border-outline shadow-[0_-2px_0_rgba(130,115,122,0.2)]">
-    <div class="flex justify-between items-center px-2 w-full h-full gap-4 max-w-[1440px] mx-auto">
-      <div class="flex gap-2 h-full items-center">
-        <button class="bg-surface-container-lowest border border-outline px-3 py-1 font-button-text text-sm flex items-center gap-1 shadow-[inset_-1px_-1px_0px_rgba(0,0,0,0.2),inset_1px_1px_0px_rgba(255,255,255,0.8)] active:shadow-[inset_1px_1px_0px_rgba(0,0,0,0.2)]">
-          <span class="material-symbols-outlined text-sm text-primary">start</span>
-          <span class="font-bold">start</span>
-        </button>
-        <div class="h-6 w-px bg-outline mx-1 hidden sm:block"></div>
-        <div class="hidden sm:flex items-center bg-surface-container border border-outline px-2 h-7 shadow-[inset_1px_1px_0px_rgba(0,0,0,0.1)] gap-2">
-          <span class="material-symbols-outlined text-sm">terminal</span>
-          <span class="font-label-mono text-xs truncate max-w-[100px]">welcome.exe</span>
-        </div>
-      </div>
-      <div class="flex items-center gap-2 h-full">
-        <div class="flex items-center border border-outline bg-surface px-2 h-7 shadow-[inset_1px_1px_0px_rgba(0,0,0,0.1)] gap-2">
-          <span class="material-symbols-outlined text-xs">volume_up</span>
-          <span class="material-symbols-outlined text-xs">wifi</span>
-          <span class="material-symbols-outlined text-xs">battery_full</span>
-          <span id="taskbar-clock" class="font-label-mono text-xs ml-1">Loading...</span>
+        <div
+          class="p-3 bg-surface-container-low border-t border-outline flex justify-end"
+        >
+          <button
+            onclick="closeModal('aboutModal')"
+            class="y2k-sticker px-6 py-1 text-xs"
+          >
+            Close
+          </button>
         </div>
       </div>
     </div>
-  </footer>
 
-  <div id="luneraModal" class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs">
-    <div class="y2k-window w-full max-w-2xl max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]">
-      <div class="y2k-window-header bg-gradient-to-r from-primary-container to-secondary-container">
-        <div class="y2k-window-header-title">
-          <span class="material-symbols-outlined text-sm">terminal</span>
-          <span class="font-label-mono text-label-mono text-on-surface">lunera_deep_dive.doc</span>
-        </div>
-        <div class="y2k-controls">
-          <button onclick="closeModal('luneraModal')" class="y2k-control-btn font-bold">×</button>
-        </div>
-      </div>
-      
-      <div class="flex border-b border-outline bg-surface-container-low p-1 gap-1">
-        <button id="tabBtn-overview" onclick="switchLuneraTab('overview')" class="px-4 py-1 text-xs font-label-mono bg-white border-t-2 border-x-2 border-outline -mb-[5px] relative z-10 font-bold text-primary">Overview</button>
-        <button id="tabBtn-backend" onclick="switchLuneraTab('backend')" class="px-4 py-1 text-xs font-label-mono bg-surface-container border border-outline opacity-70 hover:opacity-100">Backend & API</button>
-        <button id="tabBtn-qa" onclick="switchLuneraTab('qa')" class="px-4 py-1 text-xs font-label-mono bg-surface-container border border-outline opacity-70 hover:opacity-100">QA & Testing</button>
-      </div>
-
-      <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-4 bg-white">
-        <div id="luneraTab-overview" class="space-y-3">
-          <h4 class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1">Project Summary</h4>
-          <p><strong>Lunera</strong> was built to solve specific challenges in real-time information lookups. Developed as a full-stack system, it targets rapid, reliable data rendering while ensuring high operational stability under active user load.</p>
-          <div class="bg-surface-container-low border border-outline p-3 rounded-none font-label-mono text-xs">
-            <p><strong>Role:</strong> Full-Stack Developer & SQA Engineer</p>
-            <p><strong>Timeline:</strong> Academic Development Term</p>
-            <p><strong>Core Stack:</strong> CodeIgniter 4, MySQL, Automated QA Suites</p>
+    <div
+      id="skillsModal"
+      class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs"
+    >
+      <div
+        class="y2k-window w-full max-w-lg max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]"
+      >
+        <div
+          class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed"
+        >
+          <div class="y2k-window-header-title">
+            <span class="material-symbols-outlined text-sm">star</span>
+            <span class="font-label-mono text-label-mono text-on-surface"
+              >tech_skills.sys</span
+            >
+          </div>
+          <div class="y2k-controls">
+            <button
+              onclick="closeModal('skillsModal')"
+              class="y2k-control-btn font-bold"
+            >
+              ×
+            </button>
           </div>
         </div>
-        <div id="luneraTab-backend" class="hidden space-y-3">
-          <h4 class="text-secondary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1">Architecture & Search API</h4>
-          <p>The backend engine leverages <strong>CodeIgniter 4</strong> following precise MVC guidelines. The highlight is an optimized dynamic <code>SearchAPI</code> logic layer designed to execute multi-column queries across the MySQL database securely.</p>
-          <div class="bg-inverse-surface text-tertiary-fixed-dim p-3 rounded-none font-label-mono text-xs shadow-[inset_2px_2px_4px_rgba(0,0,0,0.5)] overflow-x-auto whitespace-pre">
-// Search API Controller Action Example
-public function searchAPI() {
-    $keyword = $this->request->getVar('q');
-    $results = $this->luneraModel->searchData($keyword);
-    return $this->response->setJSON($results);
-}</div>
-        </div>
-        <div id="luneraTab-qa" class="hidden space-y-3">
-          <h4 class="text-tertiary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1">Software Quality Assurance</h4>
-          <p>Instead of basic manual checks, this project stands out through thorough structural auditing. Feature behaviors were validated utilizing automated framework tests paired with declarative test parameters.</p>
-          <div class="bg-surface-container-low border border-outline p-3 rounded-none font-label-mono text-xs">
-            <p class="text-primary font-bold mb-1"># Gherkin Behavior Specification:</p>
-            <p class="text-on-surface"><span class="text-secondary font-bold">Feature:</span> Live Query Auto-Suggestions</p>
-            <p class="pl-4"><span class="text-tertiary font-bold">Scenario:</span> Successfully matching active database records</p>
-            <p class="pl-8"><span class="text-outline font-bold">Given</span> I am logged into the main dashboard resource</p>
-            <p class="pl-8"><span class="text-outline font-bold">When</span> I type "diagnostic" into the search endpoint</p>
-            <p class="pl-8"><span class="text-outline font-bold">Then</span> the JSON payloads should resolve status code 200</p>
-          </div>
-        </div>
-      </div>
-      <div class="p-3 bg-surface-container-low border-t border-outline flex justify-end">
-        <button onclick="closeModal('luneraModal')" class="y2k-sticker px-6 py-1 text-xs">OK</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="aboutModal" class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs">
-    <div class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]">
-      <div class="y2k-window-header bg-gradient-to-r from-primary-container to-secondary-container">
-        <div class="y2k-window-header-title">
-          <span class="material-symbols-outlined text-sm">favorite</span>
-          <span class="font-label-mono text-label-mono text-on-surface">about_me.txt</span>
-        </div>
-        <div class="y2k-controls">
-          <button onclick="closeModal('aboutModal')" class="y2k-control-btn font-bold">×</button>
-        </div>
-      </div>
-      <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-4 bg-white">
-        <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-primary mx-auto mb-4 shadow-[2px_2px_0px_#854b70] flex items-center justify-center bg-surface-container">
-          <img alt="Profile Picture" class="w-full h-full object-cover" src="assets/profile3.jpeg" onerror="this.src='https://placehold.co/400x400/ffb7e1/7c4468?text=Photo'" />
-        </div>
-        <h4 class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1 text-center">Hi, I'm Debra!</h4>
-        <p>I am an Analytical IT student at CCIT FTUI and Asia e University with a strong background in Full Stack development, Software Quality Assurance (SQA), and database management.</p>
-        <p>I am highly dedicated to leveraging technical logic, modern DevOps practices, and data-driven insights to support evidence-based research and build highly scalable, secure web applications.</p>
-      </div>
-      <div class="p-3 bg-surface-container-low border-t border-outline flex justify-end">
-        <button onclick="closeModal('aboutModal')" class="y2k-sticker px-6 py-1 text-xs">Close</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="skillsModal" class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs">
-    <div class="y2k-window w-full max-w-lg max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]">
-      <div class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed">
-        <div class="y2k-window-header-title">
-          <span class="material-symbols-outlined text-sm">star</span>
-          <span class="font-label-mono text-label-mono text-on-surface">tech_skills.sys</span>
-        </div>
-        <div class="y2k-controls">
-          <button onclick="closeModal('skillsModal')" class="y2k-control-btn font-bold">×</button>
-        </div>
-      </div>
-      <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant bg-white">
+        <div
+          class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant bg-white"
+        >
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <div class="bg-surface-container-low border border-outline p-3 shadow-[2px_2px_0px_#82737a] flex flex-col items-center text-center hover:-translate-y-1 transition-transform cursor-default">
-                <p class="font-label-mono text-sm font-bold text-primary mb-1">Backend</p>
-                <p class="font-label-mono text-[10px] text-on-surface-variant leading-relaxed">PHP<br>CodeIgniter 4</p>
+            <div
+              class="bg-surface-container-low border border-outline p-3 shadow-[2px_2px_0px_#82737a] flex flex-col items-center text-center hover:-translate-y-1 transition-transform cursor-default"
+            >
+              <p class="font-label-mono text-sm font-bold text-primary mb-1">
+                Backend
+              </p>
+              <p
+                class="font-label-mono text-[10px] text-on-surface-variant leading-relaxed"
+              >
+                PHP<br />CodeIgniter 4
+              </p>
             </div>
-            <div class="bg-surface-container-low border border-outline p-3 shadow-[2px_2px_0px_#82737a] flex flex-col items-center text-center hover:-translate-y-1 transition-transform cursor-default">
-                <p class="font-label-mono text-sm font-bold text-secondary mb-1">Mobile & UI</p>
-                <p class="font-label-mono text-[10px] text-on-surface-variant leading-relaxed">Flutter<br>Figma</p>
+            <div
+              class="bg-surface-container-low border border-outline p-3 shadow-[2px_2px_0px_#82737a] flex flex-col items-center text-center hover:-translate-y-1 transition-transform cursor-default"
+            >
+              <p class="font-label-mono text-sm font-bold text-secondary mb-1">
+                Mobile & UI
+              </p>
+              <p
+                class="font-label-mono text-[10px] text-on-surface-variant leading-relaxed"
+              >
+                Flutter<br />Figma
+              </p>
             </div>
-            <div class="bg-surface-container-low border border-outline p-3 shadow-[2px_2px_0px_#82737a] flex flex-col items-center text-center hover:-translate-y-1 transition-transform cursor-default">
-                <p class="font-label-mono text-sm font-bold text-tertiary mb-1">QA / Test</p>
-                <p class="font-label-mono text-[10px] text-on-surface-variant leading-relaxed">Automated<br>Gherkin</p>
+            <div
+              class="bg-surface-container-low border border-outline p-3 shadow-[2px_2px_0px_#82737a] flex flex-col items-center text-center hover:-translate-y-1 transition-transform cursor-default"
+            >
+              <p class="font-label-mono text-sm font-bold text-tertiary mb-1">
+                QA / Test
+              </p>
+              <p
+                class="font-label-mono text-[10px] text-on-surface-variant leading-relaxed"
+              >
+                Automated<br />Gherkin
+              </p>
             </div>
-            <div class="bg-surface-container-low border border-outline p-3 shadow-[2px_2px_0px_#82737a] flex flex-col items-center text-center hover:-translate-y-1 transition-transform cursor-default">
-                <p class="font-label-mono text-sm font-bold text-outline mb-1">Env / DB</p>
-                <p class="font-label-mono text-[10px] text-on-surface-variant leading-relaxed">MySQL<br>Docker / Git</p>
+            <div
+              class="bg-surface-container-low border border-outline p-3 shadow-[2px_2px_0px_#82737a] flex flex-col items-center text-center hover:-translate-y-1 transition-transform cursor-default"
+            >
+              <p class="font-label-mono text-sm font-bold text-outline mb-1">
+                Env / DB
+              </p>
+              <p
+                class="font-label-mono text-[10px] text-on-surface-variant leading-relaxed"
+              >
+                MySQL<br />Docker / Git
+              </p>
             </div>
-        </div>
-        <div class="mt-6 p-4 bg-[#ffffa5] border border-outline shadow-[2px_2px_0px_rgba(0,0,0,0.1)]">
-            <h4 class="font-label-mono font-bold text-xs mb-2">Additional Strengths:</h4>
+          </div>
+          <div
+            class="mt-6 p-4 bg-[#ffffa5] border border-outline shadow-[2px_2px_0px_rgba(0,0,0,0.1)]"
+          >
+            <h4 class="font-label-mono font-bold text-xs mb-2">
+              Additional Strengths:
+            </h4>
             <ul class="list-disc pl-4 text-xs font-label-mono space-y-1">
               <li>System Analysis & Design (SAD) and SDLC</li>
               <li>Human-Computer Interaction (HCI) best practices</li>
               <li>API Testing (Postman) & CI/CD Pipelines (GitHub Actions)</li>
             </ul>
+          </div>
         </div>
-      </div>
-      <div class="p-3 bg-surface-container-low border-t border-outline flex justify-end">
-        <button onclick="closeModal('skillsModal')" class="y2k-sticker px-6 py-1 text-xs">Close</button>
+        <div
+          class="p-3 bg-surface-container-low border-t border-outline flex justify-end"
+        >
+          <button
+            onclick="closeModal('skillsModal')"
+            class="y2k-sticker px-6 py-1 text-xs"
+          >
+            Close
+          </button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div id="comicDevModal" class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs">
-    <div class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]">
-      <div class="y2k-window-header bg-gradient-to-r from-secondary-container to-secondary-fixed">
-        <div class="y2k-window-header-title">
-          <span class="material-symbols-outlined text-sm">folder</span>
-          <span class="font-label-mono text-label-mono text-on-surface">comic_architecture.txt</span>
+    <div
+      id="comicDevModal"
+      class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs"
+    >
+      <div
+        class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]"
+      >
+        <div
+          class="y2k-window-header bg-gradient-to-r from-secondary-container to-secondary-fixed"
+        >
+          <div class="y2k-window-header-title">
+            <span class="material-symbols-outlined text-sm">folder</span>
+            <span class="font-label-mono text-label-mono text-on-surface"
+              >comic_architecture.txt</span
+            >
+          </div>
+          <div class="y2k-controls">
+            <button
+              onclick="closeModal('comicDevModal')"
+              class="y2k-control-btn font-bold"
+            >
+              ×
+            </button>
+          </div>
         </div>
-        <div class="y2k-controls">
-          <button onclick="closeModal('comicDevModal')" class="y2k-control-btn font-bold">×</button>
+        <div
+          class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white"
+        >
+          <h4
+            class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1"
+          >
+            Comic Web: Architecture
+          </h4>
+          <div
+            class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface"
+          >
+            <p>
+              <strong>Stack:</strong> PHP, Java Spring Boot, REST API, Swagger
+            </p>
+          </div>
+          <p>
+            Collaborated to build the core distributed architecture for a comic
+            web application.
+          </p>
+          <p>
+            Engineered the PHP-based front-end to efficiently consume a Java
+            Spring Boot REST API, implementing secure user/admin dashboards and
+            JWT token authentication for data access.
+          </p>
         </div>
-      </div>
-      <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white">
-        <h4 class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1">Comic Web: Architecture</h4>
-        <div class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface">
-          <p><strong>Stack:</strong> PHP, Java Spring Boot, REST API, Swagger</p>
+        <div
+          class="p-3 bg-surface-container-low border-t border-outline flex justify-between items-center"
+        >
+          <a
+            href="https://github.com/aufarmp/Project-Group-1---Webcomic"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border border-outline px-4 py-1 text-xs bg-white hover:bg-surface-container-low font-label-mono flex items-center gap-1 text-on-surface"
+          >
+            <span class="material-symbols-outlined text-[12px]">code</span> View
+            Code
+          </a>
+          <button
+            onclick="closeModal('comicDevModal')"
+            class="y2k-sticker px-6 py-1 text-xs"
+          >
+            Close
+          </button>
         </div>
-        <p>Collaborated to build the core distributed architecture for a comic web application.</p>
-        <p>Engineered the PHP-based front-end to efficiently consume a Java Spring Boot REST API, implementing secure user/admin dashboards and JWT token authentication for data access.</p>
-      </div>
-      <div class="p-3 bg-surface-container-low border-t border-outline flex justify-between items-center">
-        <a href="https://github.com/aufarmp/Project-Group-1---Webcomic" target="_blank" rel="noopener noreferrer" class="border border-outline px-4 py-1 text-xs bg-white hover:bg-surface-container-low font-label-mono flex items-center gap-1 text-on-surface">
-          <span class="material-symbols-outlined text-[12px]">code</span> View Code
-        </a>
-        <button onclick="closeModal('comicDevModal')" class="y2k-sticker px-6 py-1 text-xs">Close</button>
       </div>
     </div>
-  </div>
 
-  <div id="comicOpsModal" class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs">
-    <div class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]">
-      <div class="y2k-window-header bg-gradient-to-r from-primary-container to-primary-fixed">
-        <div class="y2k-window-header-title">
-          <span class="material-symbols-outlined text-sm">folder</span>
-          <span class="font-label-mono text-label-mono text-on-surface">comic_devops.txt</span>
+    <div
+      id="comicOpsModal"
+      class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs"
+    >
+      <div
+        class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]"
+      >
+        <div
+          class="y2k-window-header bg-gradient-to-r from-primary-container to-primary-fixed"
+        >
+          <div class="y2k-window-header-title">
+            <span class="material-symbols-outlined text-sm">folder</span>
+            <span class="font-label-mono text-label-mono text-on-surface"
+              >comic_devops.txt</span
+            >
+          </div>
+          <div class="y2k-controls">
+            <button
+              onclick="closeModal('comicOpsModal')"
+              class="y2k-control-btn font-bold"
+            >
+              ×
+            </button>
+          </div>
         </div>
-        <div class="y2k-controls">
-          <button onclick="closeModal('comicOpsModal')" class="y2k-control-btn font-bold">×</button>
+        <div
+          class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white"
+        >
+          <h4
+            class="text-secondary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1"
+          >
+            Comic Web: DevOps Pipeline
+          </h4>
+          <div
+            class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface"
+          >
+            <p><strong>Stack:</strong> Docker, GitHub Actions, YAML, CI/CD</p>
+          </div>
+          <p>
+            Designed and deployed a complete Continuous Integration and
+            Continuous Deployment (CI/CD) pipeline for the Comic Web
+            application.
+          </p>
+          <p>
+            Wrote custom Dockerfiles for containerization and authored YAML
+            configuration files to trigger automated GitHub Actions.
+            Successfully coordinated self-hosted runners to pull, rebuild, and
+            redeploy containers upon every commit.
+          </p>
         </div>
-      </div>
-      <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white">
-        <h4 class="text-secondary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1">Comic Web: DevOps Pipeline</h4>
-        <div class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface">
-          <p><strong>Stack:</strong> Docker, GitHub Actions, YAML, CI/CD</p>
+        <div
+          class="p-3 bg-surface-container-low border-t border-outline flex justify-between items-center"
+        >
+          <a
+            href="https://github.com/aufarmp/Project-Group-1---Webcomic"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border border-outline px-4 py-1 text-xs bg-white hover:bg-surface-container-low font-label-mono flex items-center gap-1 text-on-surface"
+          >
+            <span class="material-symbols-outlined text-[12px]">code</span> View
+            Code
+          </a>
+          <button
+            onclick="closeModal('comicOpsModal')"
+            class="y2k-sticker px-6 py-1 text-xs"
+          >
+            Close
+          </button>
         </div>
-        <p>Designed and deployed a complete Continuous Integration and Continuous Deployment (CI/CD) pipeline for the Comic Web application.</p>
-        <p>Wrote custom Dockerfiles for containerization and authored YAML configuration files to trigger automated GitHub Actions. Successfully coordinated self-hosted runners to pull, rebuild, and redeploy containers upon every commit.</p>
-      </div>
-      <div class="p-3 bg-surface-container-low border-t border-outline flex justify-between items-center">
-        <a href="https://github.com/aufarmp/Project-Group-1---Webcomic" target="_blank" rel="noopener noreferrer" class="border border-outline px-4 py-1 text-xs bg-white hover:bg-surface-container-low font-label-mono flex items-center gap-1 text-on-surface">
-          <span class="material-symbols-outlined text-[12px]">code</span> View Code
-        </a>
-        <button onclick="closeModal('comicOpsModal')" class="y2k-sticker px-6 py-1 text-xs">Close</button>
       </div>
     </div>
-  </div>
 
-  <div id="vetModal" class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs">
-    <div class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]">
-      <div class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed">
-        <div class="y2k-window-header-title">
-          <span class="material-symbols-outlined text-sm">folder</span>
-          <span class="font-label-mono text-label-mono text-on-surface">vet_clinic.txt</span>
+    <div
+      id="vetModal"
+      class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs"
+    >
+      <div
+        class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]"
+      >
+        <div
+          class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed"
+        >
+          <div class="y2k-window-header-title">
+            <span class="material-symbols-outlined text-sm">folder</span>
+            <span class="font-label-mono text-label-mono text-on-surface"
+              >vet_clinic.txt</span
+            >
+          </div>
+          <div class="y2k-controls">
+            <button
+              onclick="closeModal('vetModal')"
+              class="y2k-control-btn font-bold"
+            >
+              ×
+            </button>
+          </div>
         </div>
-        <div class="y2k-controls">
-          <button onclick="closeModal('vetModal')" class="y2k-control-btn font-bold">×</button>
+        <div
+          class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white"
+        >
+          <h4
+            class="text-tertiary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1"
+          >
+            Pawprint Haven
+          </h4>
+          <div
+            class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface"
+          >
+            <p><strong>Stack:</strong> PHP (Native), MySQL, HTML, CSS</p>
+          </div>
+          <p>
+            Independently developed a comprehensive veterinary management web
+            application from scratch to strengthen fundamental backend
+            architectures.
+          </p>
+          <p>
+            Engineered role-specific dashboards with secure session management,
+            isolating views and permissions for administrators, veterinarians,
+            and pet owners.
+          </p>
         </div>
-      </div>
-      <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white">
-        <h4 class="text-tertiary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1">Pawprint Haven</h4>
-        <div class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface">
-          <p><strong>Stack:</strong> PHP (Native), MySQL, HTML, CSS</p>
+        <div
+          class="p-3 bg-surface-container-low border-t border-outline flex justify-between items-center"
+        >
+          <a
+            href="https://github.com/Songyingxiu/vet-clinic"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border border-outline px-4 py-1 text-xs bg-white hover:bg-surface-container-low font-label-mono flex items-center gap-1 text-on-surface"
+          >
+            <span class="material-symbols-outlined text-[12px]">code</span> View
+            Code
+          </a>
+          <button
+            onclick="closeModal('vetModal')"
+            class="y2k-sticker px-6 py-1 text-xs"
+          >
+            Close
+          </button>
         </div>
-        <p>Independently developed a comprehensive veterinary management web application from scratch to strengthen fundamental backend architectures.</p>
-        <p>Engineered role-specific dashboards with secure session management, isolating views and permissions for administrators, veterinarians, and pet owners.</p>
-      </div>
-      <div class="p-3 bg-surface-container-low border-t border-outline flex justify-between items-center">
-        <a href="https://github.com/Songyingxiu/vet-clinic" target="_blank" rel="noopener noreferrer" class="border border-outline px-4 py-1 text-xs bg-white hover:bg-surface-container-low font-label-mono flex items-center gap-1 text-on-surface">
-          <span class="material-symbols-outlined text-[12px]">code</span> View Code
-        </a>
-        <button onclick="closeModal('vetModal')" class="y2k-sticker px-6 py-1 text-xs">Close</button>
       </div>
     </div>
-  </div>
 
-  <div id="mobileModal" class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs">
-    <div class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]">
-      <div class="y2k-window-header bg-gradient-to-r from-primary-container to-primary-fixed">
-        <div class="y2k-window-header-title">
-          <span class="material-symbols-outlined text-sm">folder</span>
-          <span class="font-label-mono text-label-mono text-on-surface">lunera_mobile.txt</span>
+    <div
+      id="mobileModal"
+      class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs"
+    >
+      <div
+        class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]"
+      >
+        <div
+          class="y2k-window-header bg-gradient-to-r from-primary-container to-primary-fixed"
+        >
+          <div class="y2k-window-header-title">
+            <span class="material-symbols-outlined text-sm">folder</span>
+            <span class="font-label-mono text-label-mono text-on-surface"
+              >lunera_mobile.txt</span
+            >
+          </div>
+          <div class="y2k-controls">
+            <button
+              onclick="closeModal('mobileModal')"
+              class="y2k-control-btn font-bold"
+            >
+              ×
+            </button>
+          </div>
         </div>
-        <div class="y2k-controls">
-          <button onclick="closeModal('mobileModal')" class="y2k-control-btn font-bold">×</button>
+        <div
+          class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white"
+        >
+          <h4
+            class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1"
+          >
+            Lunera Mobile App
+          </h4>
+          <div
+            class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface"
+          >
+            <p><strong>Stack:</strong> Flutter, Dart, REST API</p>
+          </div>
+          <p>
+            Co-developed the mobile client application for the Lunera Streaming
+            Platform, creating a seamless interface across platforms.
+          </p>
+          <p>
+            Built a custom media player UI, integrated multipart form
+            authentication (text + avatar uploads), and consumed complex JSON
+            payloads from the CodeIgniter 4 backend.
+          </p>
         </div>
-      </div>
-      <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white">
-        <h4 class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1">Lunera Mobile App</h4>
-        <div class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface">
-          <p><strong>Stack:</strong> Flutter, Dart, REST API</p>
+        <div
+          class="p-3 bg-surface-container-low border-t border-outline flex justify-between items-center"
+        >
+          <a
+            href="https://github.com/Songyingxiu/lunera-mobile"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border border-outline px-4 py-1 text-xs bg-white hover:bg-surface-container-low font-label-mono flex items-center gap-1 text-on-surface"
+          >
+            <span class="material-symbols-outlined text-[12px]">code</span> View
+            Code
+          </a>
+          <button
+            onclick="closeModal('mobileModal')"
+            class="y2k-sticker px-6 py-1 text-xs"
+          >
+            Close
+          </button>
         </div>
-        <p>Co-developed the mobile client application for the Lunera Streaming Platform, creating a seamless interface across platforms.</p>
-        <p>Built a custom media player UI, integrated multipart form authentication (text + avatar uploads), and consumed complex JSON payloads from the CodeIgniter 4 backend.</p>
-      </div>
-      <div class="p-3 bg-surface-container-low border-t border-outline flex justify-between items-center">
-        <a href="https://github.com/Songyingxiu/lunera-mobile" target="_blank" rel="noopener noreferrer" class="border border-outline px-4 py-1 text-xs bg-white hover:bg-surface-container-low font-label-mono flex items-center gap-1 text-on-surface">
-          <span class="material-symbols-outlined text-[12px]">code</span> View Code
-        </a>
-        <button onclick="closeModal('mobileModal')" class="y2k-sticker px-6 py-1 text-xs">Close</button>
       </div>
     </div>
-  </div>
 
-  <div id="portifyModal" class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs">
-    <div class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]">
-      <div class="y2k-window-header bg-gradient-to-r from-secondary-container to-tertiary-container">
-        <div class="y2k-window-header-title">
-          <span class="material-symbols-outlined text-sm">folder</span>
-          <span class="font-label-mono text-label-mono text-on-surface">portify_design.txt</span>
+    <div
+      id="portifyModal"
+      class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs"
+    >
+      <div
+        class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]"
+      >
+        <div
+          class="y2k-window-header bg-gradient-to-r from-secondary-container to-tertiary-container"
+        >
+          <div class="y2k-window-header-title">
+            <span class="material-symbols-outlined text-sm">folder</span>
+            <span class="font-label-mono text-label-mono text-on-surface"
+              >portify_design.txt</span
+            >
+          </div>
+          <div class="y2k-controls">
+            <button
+              onclick="closeModal('portifyModal')"
+              class="y2k-control-btn font-bold"
+            >
+              ×
+            </button>
+          </div>
         </div>
-        <div class="y2k-controls">
-          <button onclick="closeModal('portifyModal')" class="y2k-control-btn font-bold">×</button>
+        <div
+          class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white"
+        >
+          <h4
+            class="text-outline font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1"
+          >
+            Portify UX/UI Prototype
+          </h4>
+          <div
+            class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface"
+          >
+            <p>
+              <strong>Tools:</strong> Figma, Human-Computer Interaction (HCI)
+            </p>
+          </div>
+          <p>
+            Partnered to design an online portfolio platform prototype in Figma,
+            applying the 10 Usability Heuristics for an intuitive user
+            experience.
+          </p>
+          <p>
+            Co-developed responsive navigation frameworks, clear system status
+            indicators, and wireframes to streamline user onboarding.
+          </p>
         </div>
-      </div>
-      <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white">
-        <h4 class="text-outline font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1">Portify UX/UI Prototype</h4>
-        <div class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface">
-          <p><strong>Tools:</strong> Figma, Human-Computer Interaction (HCI)</p>
+        <div
+          class="p-3 bg-surface-container-low border-t border-outline flex justify-end items-center"
+        >
+          <button
+            onclick="closeModal('portifyModal')"
+            class="y2k-sticker px-6 py-1 text-xs"
+          >
+            Close
+          </button>
         </div>
-        <p>Partnered to design an online portfolio platform prototype in Figma, applying the 10 Usability Heuristics for an intuitive user experience.</p>
-        <p>Co-developed responsive navigation frameworks, clear system status indicators, and wireframes to streamline user onboarding.</p>
-      </div>
-      <div class="p-3 bg-surface-container-low border-t border-outline flex justify-end items-center">
-        <button onclick="closeModal('portifyModal')" class="y2k-sticker px-6 py-1 text-xs">Close</button>
       </div>
     </div>
-  </div>
 
-  <div id="mongoModal" class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs">
-    <div class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]">
-      <div class="y2k-window-header bg-gradient-to-r from-primary-container to-primary-fixed">
-        <div class="y2k-window-header-title">
-          <span class="material-symbols-outlined text-sm">folder</span>
-          <span class="font-label-mono text-label-mono text-on-surface">mongo_db.txt</span>
+    <div
+      id="mongoModal"
+      class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs"
+    >
+      <div
+        class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]"
+      >
+        <div
+          class="y2k-window-header bg-gradient-to-r from-primary-container to-primary-fixed"
+        >
+          <div class="y2k-window-header-title">
+            <span class="material-symbols-outlined text-sm">folder</span>
+            <span class="font-label-mono text-label-mono text-on-surface"
+              >mongo_db.txt</span
+            >
+          </div>
+          <div class="y2k-controls">
+            <button
+              onclick="closeModal('mongoModal')"
+              class="y2k-control-btn font-bold"
+            >
+              ×
+            </button>
+          </div>
         </div>
-        <div class="y2k-controls">
-          <button onclick="closeModal('mongoModal')" class="y2k-control-btn font-bold">×</button>
+        <div
+          class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white"
+        >
+          <h4
+            class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1"
+          >
+            In-Game Transaction DB
+          </h4>
+          <div
+            class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface"
+          >
+            <p><strong>Stack:</strong> MongoDB, NoSQL Querying</p>
+          </div>
+          <p>
+            Engineered a robust NoSQL database architecture to handle
+            high-frequency in-game transactions.
+          </p>
+          <p>
+            Designed structured JSON-like documents and complex aggregate
+            queries to track player information, calculate dynamic wallet
+            balances, and record real-time item purchases accurately.
+          </p>
         </div>
-      </div>
-      <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white">
-        <h4 class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1">In-Game Transaction DB</h4>
-        <div class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface">
-          <p><strong>Stack:</strong> MongoDB, NoSQL Querying</p>
+        <div
+          class="p-3 bg-surface-container-low border-t border-outline flex justify-end items-center"
+        >
+          <button
+            onclick="closeModal('mongoModal')"
+            class="y2k-sticker px-6 py-1 text-xs"
+          >
+            Close
+          </button>
         </div>
-        <p>Engineered a robust NoSQL database architecture to handle high-frequency in-game transactions.</p>
-        <p>Designed structured JSON-like documents and complex aggregate queries to track player information, calculate dynamic wallet balances, and record real-time item purchases accurately.</p>
-      </div>
-      <div class="p-3 bg-surface-container-low border-t border-outline flex justify-end items-center">
-        <button onclick="closeModal('mongoModal')" class="y2k-sticker px-6 py-1 text-xs">Close</button>
       </div>
     </div>
-  </div>
 
-  <div id="bakeModal" class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs">
-    <div class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]">
-      <div class="y2k-window-header bg-gradient-to-r from-secondary-container to-secondary-fixed">
-        <div class="y2k-window-header-title">
-          <span class="material-symbols-outlined text-sm">folder</span>
-          <span class="font-label-mono text-label-mono text-on-surface">bake_my_day.txt</span>
+    <div
+      id="bakeModal"
+      class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs"
+    >
+      <div
+        class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]"
+      >
+        <div
+          class="y2k-window-header bg-gradient-to-r from-secondary-container to-secondary-fixed"
+        >
+          <div class="y2k-window-header-title">
+            <span class="material-symbols-outlined text-sm">folder</span>
+            <span class="font-label-mono text-label-mono text-on-surface"
+              >bake_my_day.txt</span
+            >
+          </div>
+          <div class="y2k-controls">
+            <button
+              onclick="closeModal('bakeModal')"
+              class="y2k-control-btn font-bold"
+            >
+              ×
+            </button>
+          </div>
         </div>
-        <div class="y2k-controls">
-          <button onclick="closeModal('bakeModal')" class="y2k-control-btn font-bold">×</button>
+        <div
+          class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white"
+        >
+          <h4
+            class="text-secondary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1"
+          >
+            Bake My Day
+          </h4>
+          <div
+            class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface"
+          >
+            <p><strong>Stack:</strong> HTML5, CSS3, Vanilla JavaScript</p>
+          </div>
+          <p>
+            Developed an interactive, multi-page web platform dedicated to
+            baking recipes, emphasizing clean code structure and semantic HTML.
+          </p>
+          <p>
+            Implemented responsive styling and JavaScript-driven interactivity
+            to enhance user navigation through dynamic recipe galleries and
+            ingredient lists.
+          </p>
         </div>
-      </div>
-      <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white">
-        <h4 class="text-secondary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1">Bake My Day</h4>
-        <div class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface">
-          <p><strong>Stack:</strong> HTML5, CSS3, Vanilla JavaScript</p>
+        <div
+          class="p-3 bg-surface-container-low border-t border-outline flex justify-end items-center"
+        >
+          <button
+            onclick="closeModal('bakeModal')"
+            class="y2k-sticker px-6 py-1 text-xs"
+          >
+            Close
+          </button>
         </div>
-        <p>Developed an interactive, multi-page web platform dedicated to baking recipes, emphasizing clean code structure and semantic HTML.</p>
-        <p>Implemented responsive styling and JavaScript-driven interactivity to enhance user navigation through dynamic recipe galleries and ingredient lists.</p>
-      </div>
-      <div class="p-3 bg-surface-container-low border-t border-outline flex justify-end items-center">
-        <button onclick="closeModal('bakeModal')" class="y2k-sticker px-6 py-1 text-xs">Close</button>
       </div>
     </div>
-  </div>
 
-  <div id="hotelModal" class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs">
-    <div class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]">
-      <div class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed">
-        <div class="y2k-window-header-title">
-          <span class="material-symbols-outlined text-sm">folder</span>
-          <span class="font-label-mono text-label-mono text-on-surface">hotel_gui.exe</span>
+    <div
+      id="hotelModal"
+      class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs"
+    >
+      <div
+        class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]"
+      >
+        <div
+          class="y2k-window-header bg-gradient-to-r from-tertiary-container to-tertiary-fixed"
+        >
+          <div class="y2k-window-header-title">
+            <span class="material-symbols-outlined text-sm">folder</span>
+            <span class="font-label-mono text-label-mono text-on-surface"
+              >hotel_gui.exe</span
+            >
+          </div>
+          <div class="y2k-controls">
+            <button
+              onclick="closeModal('hotelModal')"
+              class="y2k-control-btn font-bold"
+            >
+              ×
+            </button>
+          </div>
         </div>
-        <div class="y2k-controls">
-          <button onclick="closeModal('hotelModal')" class="y2k-control-btn font-bold">×</button>
+        <div
+          class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white"
+        >
+          <h4
+            class="text-tertiary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1"
+          >
+            Hotel Reservation System
+          </h4>
+          <div
+            class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface"
+          >
+            <p><strong>Stack:</strong> Java, Apache Netbeans IDE, MySQL</p>
+          </div>
+          <p>
+            Built a robust desktop graphical user interface (GUI) application
+            handling comprehensive hotel management workflows.
+          </p>
+          <p>
+            Integrated a secure authentication system mapped to a relational
+            database, facilitating room selections, active bookings, and
+            complete account deletion logic for users.
+          </p>
         </div>
-      </div>
-      <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white">
-        <h4 class="text-tertiary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1">Hotel Reservation System</h4>
-        <div class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface">
-          <p><strong>Stack:</strong> Java, Apache Netbeans IDE, MySQL</p>
+        <div
+          class="p-3 bg-surface-container-low border-t border-outline flex justify-end items-center"
+        >
+          <button
+            onclick="closeModal('hotelModal')"
+            class="y2k-sticker px-6 py-1 text-xs"
+          >
+            Close
+          </button>
         </div>
-        <p>Built a robust desktop graphical user interface (GUI) application handling comprehensive hotel management workflows.</p>
-        <p>Integrated a secure authentication system mapped to a relational database, facilitating room selections, active bookings, and complete account deletion logic for users.</p>
-      </div>
-      <div class="p-3 bg-surface-container-low border-t border-outline flex justify-end items-center">
-        <button onclick="closeModal('hotelModal')" class="y2k-sticker px-6 py-1 text-xs">Close</button>
       </div>
     </div>
-  </div>
 
-  <div id="hciWpfModal" class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs">
-    <div class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]">
-      <div class="y2k-window-header bg-gradient-to-r from-secondary-container to-secondary-fixed">
-        <div class="y2k-window-header-title">
-          <span class="material-symbols-outlined text-sm">folder</span>
-          <span class="font-label-mono text-label-mono text-on-surface">hci_prototype.exe</span>
+    <div
+      id="hciWpfModal"
+      class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs"
+    >
+      <div
+        class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]"
+      >
+        <div
+          class="y2k-window-header bg-gradient-to-r from-secondary-container to-secondary-fixed"
+        >
+          <div class="y2k-window-header-title">
+            <span class="material-symbols-outlined text-sm">folder</span>
+            <span class="font-label-mono text-label-mono text-on-surface"
+              >hci_prototype.exe</span
+            >
+          </div>
+          <div class="y2k-controls">
+            <button
+              onclick="closeModal('hciWpfModal')"
+              class="y2k-control-btn font-bold"
+            >
+              ×
+            </button>
+          </div>
         </div>
-        <div class="y2k-controls">
-          <button onclick="closeModal('hciWpfModal')" class="y2k-control-btn font-bold">×</button>
+        <div
+          class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white"
+        >
+          <h4
+            class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1"
+          >
+            E-Learning Desktop App
+          </h4>
+          <div
+            class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface"
+          >
+            <p>
+              <strong>Stack:</strong> WPF (Windows Presentation Foundation), HCI
+              Principles
+            </p>
+          </div>
+          <p>
+            Built and evaluated an interactive desktop learning prototype using
+            WPF, driven by strict Human-Computer Interaction (HCI) standards to
+            minimize cognitive load and user errors.
+          </p>
+          <p>
+            Engineered core features including a progress tracker, interactive
+            quizzes, and structured lesson layouts. Validated the system's
+            usability, readability, and navigation through comprehensive
+            post-design user surveys.
+          </p>
         </div>
-      </div>
-      <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white">
-        <h4 class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1">E-Learning Desktop App</h4>
-        <div class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface">
-          <p><strong>Stack:</strong> WPF (Windows Presentation Foundation), HCI Principles</p>
+        <div
+          class="p-3 bg-surface-container-low border-t border-outline flex justify-end items-center"
+        >
+          <button
+            onclick="closeModal('hciWpfModal')"
+            class="y2k-sticker px-6 py-1 text-xs"
+          >
+            Close
+          </button>
         </div>
-        <p>Built and evaluated an interactive desktop learning prototype using WPF, driven by strict Human-Computer Interaction (HCI) standards to minimize cognitive load and user errors.</p>
-        <p>Engineered core features including a progress tracker, interactive quizzes, and structured lesson layouts. Validated the system's usability, readability, and navigation through comprehensive post-design user surveys.</p>
-      </div>
-      <div class="p-3 bg-surface-container-low border-t border-outline flex justify-end items-center">
-        <button onclick="closeModal('hciWpfModal')" class="y2k-sticker px-6 py-1 text-xs">Close</button>
       </div>
     </div>
-  </div>
 
-  <div id="portfolioModal" class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs">
-    <div class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]">
-      <div class="y2k-window-header bg-gradient-to-r from-primary-container to-secondary-container">
-        <div class="y2k-window-header-title">
-          <span class="material-symbols-outlined text-sm">folder</span>
-          <span class="font-label-mono text-label-mono text-on-surface">debra_exe_portfolio.txt</span>
+    <div
+      id="portfolioModal"
+      class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs"
+    >
+      <div
+        class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]"
+      >
+        <div
+          class="y2k-window-header bg-gradient-to-r from-primary-container to-secondary-container"
+        >
+          <div class="y2k-window-header-title">
+            <span class="material-symbols-outlined text-sm">folder</span>
+            <span class="font-label-mono text-label-mono text-on-surface"
+              >debra_exe_portfolio.txt</span
+            >
+          </div>
+          <div class="y2k-controls">
+            <button
+              onclick="closeModal('portfolioModal')"
+              class="y2k-control-btn font-bold"
+            >
+              ×
+            </button>
+          </div>
         </div>
-        <div class="y2k-controls">
-          <button onclick="closeModal('portfolioModal')" class="y2k-control-btn font-bold">×</button>
+        <div
+          class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white"
+        >
+          <h4
+            class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1"
+          >
+            debra.exe OS Portfolio
+          </h4>
+          <div
+            class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface"
+          >
+            <p>
+              <strong>Stack:</strong> HTML5, Tailwind CSS, Vanilla JavaScript
+            </p>
+          </div>
+          <p>
+            Designed and developed a fully responsive, interactive web portfolio
+            styled as a retro Y2K graphical operating system.
+          </p>
+          <p>
+            Engineered custom CSS Grid and Flexbox layouts for window
+            management, implemented Vanilla JS state management for dynamic
+            modals and a functional search engine, and optimized UI/UX for
+            cross-device compatibility.
+          </p>
         </div>
-      </div>
-      <div class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white">
-        <h4 class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1">debra.exe OS Portfolio</h4>
-        <div class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface">
-          <p><strong>Stack:</strong> HTML5, Tailwind CSS, Vanilla JavaScript</p>
+        <div
+          class="p-3 bg-surface-container-low border-t border-outline flex justify-between items-center"
+        >
+          <a
+            href="https://github.com/Songyingxiu"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border border-outline px-4 py-1 text-xs bg-white hover:bg-surface-container-low font-label-mono flex items-center gap-1 text-on-surface"
+          >
+            <span class="material-symbols-outlined text-[12px]">code</span> View
+            Code
+          </a>
+          <button
+            onclick="closeModal('portfolioModal')"
+            class="y2k-sticker px-6 py-1 text-xs"
+          >
+            Close
+          </button>
         </div>
-        <p>Designed and developed a fully responsive, interactive web portfolio styled as a retro Y2K graphical operating system.</p>
-        <p>Engineered custom CSS Grid and Flexbox layouts for window management, implemented Vanilla JS state management for dynamic modals and a functional search engine, and optimized UI/UX for cross-device compatibility.</p>
-      </div>
-      <div class="p-3 bg-surface-container-low border-t border-outline flex justify-between items-center">
-        <a href="https://github.com/Songyingxiu" target="_blank" rel="noopener noreferrer" class="border border-outline px-4 py-1 text-xs bg-white hover:bg-surface-container-low font-label-mono flex items-center gap-1 text-on-surface">
-          <span class="material-symbols-outlined text-[12px]">code</span> View Code
-        </a>
-        <button onclick="closeModal('portfolioModal')" class="y2k-sticker px-6 py-1 text-xs">Close</button>
       </div>
     </div>
-  </div>
-
-</body>
+  </body>
 </html>
