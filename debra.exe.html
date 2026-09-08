@@ -833,6 +833,41 @@
 
               <div class="mt-3 cv-section">
                 <h2
+                  class="text-[7px] font-bold bg-primary-fixed inline-block px-1 mb-1 border border-primary cv-heading"
+                >
+                  PROFESSIONAL EXPERIENCE
+                </h2>
+                <div class="mb-1 cv-sub-section">
+                  <p class="text-[6px] leading-tight font-bold cv-text">
+                    Full Stack Developer Intern | Hidden Brains InfoTech
+                  </p>
+                  <p
+                    class="text-[6px] leading-tight text-on-surface-variant italic cv-text"
+                  >
+                    Remote | June 2026 – Aug 2026
+                  </p>
+                  <ul
+                    class="text-[6px] leading-tight text-on-surface-variant list-disc pl-3 cv-list cv-text"
+                  >
+                    <li>
+                      Engineered a multi-role real estate marketplace platform
+                      using CodeIgniter 4 and MVC architecture.[cite: 1]
+                    </li>
+                    <li>
+                      Integrated Maps API, Brevo for transactional emails, and
+                      Firebase Authentication.[cite: 1]
+                    </li>
+                    <li>
+                      Conducted comprehensive manual testing and performed
+                      root-cause analysis on frontend-backend data
+                      exchanges.[cite: 1]
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-3 cv-section">
+                <h2
                   class="text-[7px] font-bold bg-tertiary-container inline-block px-1 mb-1 border border-tertiary cv-heading"
                 >
                   TECHNICAL & ACADEMIC PROJECTS
@@ -1443,16 +1478,16 @@
             </div>
           </div>
 
-          <div class="y2k-window w-full" id="calendar-app">
+          <div class="y2k-window w-full" id="experience-app">
             <div
               class="y2k-window-header bg-gradient-to-r from-primary-container to-secondary-container"
             >
               <div class="y2k-window-header-title">
-                <span class="material-symbols-outlined text-sm"
-                  >calendar_today</span
-                >
-                <span class="font-label-mono text-label-mono text-on-surface"
-                  >calendar.exe</span
+                <span class="material-symbols-outlined text-sm">work</span>
+                <span
+                  class="font-label-mono text-label-mono text-on-surface"
+                  data-i18n="experienceTitle"
+                  >experience.exe</span
                 >
               </div>
               <div class="y2k-controls">
@@ -1461,44 +1496,40 @@
                 <button class="y2k-control-btn">×</button>
               </div>
             </div>
-            <div class="p-3 bg-surface text-center">
+            <div class="p-3 bg-surface text-left">
               <div
-                class="bg-white border border-outline p-2 mb-2 shadow-[2px_2px_0px_rgba(130,115,122,0.3)]"
+                class="bg-white border border-outline p-3 shadow-[inset_1px_1px_2px_rgba(130,115,122,0.2)] h-full min-h-[145px] overflow-y-auto custom-scroll"
               >
-                <p
-                  id="cal-month-year"
-                  class="font-label-mono text-[10px] text-on-surface-variant uppercase tracking-widest font-bold"
-                >
-                  Loading...
-                </p>
-                <p
-                  id="cal-day-number"
-                  class="font-display-xl text-4xl text-primary mt-1 drop-shadow-[1px_1px_0px_#ffb7e1]"
-                >
-                  ...
-                </p>
-                <p
-                  id="cal-day-name"
-                  class="font-label-mono text-xs text-secondary mt-1"
-                >
-                  ...
-                </p>
+                <div class="border-b border-dashed border-outline pb-2">
+                  <strong class="text-primary font-bold text-xs font-label-mono"
+                    >Full Stack Developer Intern</strong
+                  ><br />
+                  <span
+                    class="text-[10px] font-label-mono text-on-surface-variant"
+                    >Hidden Brains InfoTech [Remote]</span
+                  ><br />
+                  <span class="text-[9px] font-label-mono text-secondary"
+                    >June 2026 - Aug 2026</span
+                  >
+                  <ul
+                    class="list-disc pl-4 mt-2 space-y-1 text-[10px] font-label-mono text-on-surface-variant leading-relaxed"
+                  >
+                    <li data-i18n="hbBullet1">
+                      Engineered a multi-role real estate marketplace (buyer,
+                      agent, admin) using CodeIgniter 4 and MVC
+                      architecture.[cite: 1]
+                    </li>
+                    <li data-i18n="hbBullet2">
+                      Integrated Maps API, Brevo for transactional emails, and
+                      Firebase Auth.[cite: 1]
+                    </li>
+                    <li data-i18n="hbBullet3">
+                      Executed staging test plans and root-cause analysis on
+                      frontend-backend data exchanges.[cite: 1]
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div
-                class="grid grid-cols-7 gap-1 text-[8px] font-label-mono text-on-surface-variant w-full"
-              >
-                <div>S</div>
-                <div>M</div>
-                <div>T</div>
-                <div>W</div>
-                <div class="text-primary font-bold">T</div>
-                <div>F</div>
-                <div>S</div>
-              </div>
-              <div class="w-full h-[2px] bg-outline-variant my-1"></div>
-              <p class="font-label-mono text-[9px] text-tertiary">
-                Timezone: WIB (Jakarta)
-              </p>
             </div>
           </div>
 
