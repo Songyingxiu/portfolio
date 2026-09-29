@@ -1126,6 +1126,38 @@
               </div>
 
               <div
+                onclick="openModal('huniModal')"
+                class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group"
+              >
+                <div
+                  class="aspect-video bg-surface-container-high mb-3 border border-outline flex items-center justify-center overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity"
+                >
+                  <img
+                    alt="HuniKita: Real Estate Website"
+                    class="w-full h-full object-cover"
+                    src="assets/HuniKita.png"
+                    onerror="
+                      this.src =
+                        'https://placehold.co/400x225/e7e8ed/82737a?text=HuniKita'
+                    "
+                  />
+                </div>
+                <h4
+                  class="font-button-text text-sm text-primary mb-1"
+                  data-i18n="huniCardTitle"
+                >
+                  HuniKita: Real Estate
+                </h4>
+                <p
+                  class="font-body-md text-xs text-on-surface-variant leading-relaxed"
+                  data-i18n="huniCardDesc"
+                >
+                  Multi-role real estate marketplace with agent verification and
+                  property management.
+                </p>
+              </div>
+
+              <div
                 onclick="openModal('portifyModal')"
                 class="bg-surface-container-low border border-outline p-3 hover:bg-surface-container transition-colors shadow-[2px_2px_0px_#82737a] cursor-pointer group"
               >
@@ -2210,6 +2242,7 @@
       </div>
     </div>
 
+    <!-- Restored Mobile Modal -->
     <div
       id="mobileModal"
       class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs"
@@ -2273,6 +2306,85 @@
           <button
             onclick="closeModal('mobileModal')"
             class="y2k-sticker px-6 py-1 text-xs"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- New HuniKita Modal -->
+    <div
+      id="huniModal"
+      class="hidden fixed inset-0 z-[100] bg-on-surface/40 flex items-center justify-center p-4 backdrop-blur-xs"
+    >
+      <div
+        class="y2k-window w-full max-w-md max-h-[85vh] flex flex-col bg-surface shadow-[8px_8px_0px_rgba(130,115,122,0.4)]"
+      >
+        <div
+          class="y2k-window-header bg-gradient-to-r from-primary-container to-primary-fixed"
+        >
+          <div class="y2k-window-header-title">
+            <span class="material-symbols-outlined text-sm">folder</span>
+            <span class="font-label-mono text-label-mono text-on-surface"
+              >HuniKita.exe</span
+            >
+          </div>
+          <div class="y2k-controls">
+            <button
+              onclick="closeModal('huniModal')"
+              class="y2k-control-btn font-bold"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+        <div
+          class="p-6 overflow-y-auto custom-scroll flex-grow font-body-md text-sm text-on-surface-variant space-y-3 bg-white"
+        >
+          <h4
+            class="text-primary font-headline-lg-mobile text-lg border-b border-outline border-dashed pb-1"
+            data-i18n="huniModalTitle"
+          >
+            HuniKita: Real Estate Platform
+          </h4>
+          <div
+            class="bg-surface-container-low border border-outline p-2 font-label-mono text-xs text-on-surface"
+          >
+            <p>
+              <strong>Stack:</strong> CodeIgniter 4, Maps API, Full Stack, UI/UX
+            </p>
+          </div>
+          <p data-i18n="huniModalDesc1">
+            Developed a responsive, full-stack real estate marketplace tailored
+            for the Indonesian property market.
+          </p>
+          <p data-i18n="huniModalDesc2">
+            Engineered a comprehensive multi-role system isolating views and
+            permissions for System Admins, Property Owners/Buyers, and Real
+            Estate Agents.
+          </p>
+          <p data-i18n="huniModalDesc3">
+            Implemented strict verification workflows for agent onboarding and
+            secure property listing uploads.
+          </p>
+        </div>
+        <div
+          class="p-3 bg-surface-container-low border-t border-outline flex justify-between items-center"
+        >
+          <a
+            href="https://github.com/Songyingxiu/indo-real-estate"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border border-outline px-4 py-1 text-xs bg-white hover:bg-surface-container-low font-label-mono flex items-center gap-1 text-on-surface"
+          >
+            <span class="material-symbols-outlined text-[12px]">code</span> View
+            Code
+          </a>
+          <button
+            onclick="closeModal('huniModal')"
+            class="y2k-sticker px-6 py-1 text-xs"
+            data-i18n="closeBtn"
           >
             Close
           </button>
